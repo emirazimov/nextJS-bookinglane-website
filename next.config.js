@@ -5,12 +5,35 @@
 
 //   // withImages()
 // }
-// const withImages = require("next-images")
-// module.exports = withImages()
+
 // module.exports = withTM({
 //   transpileModules: ["react-calendar"],
 //   // withImages()
 // })
-// module.exports = withTM({
-
-// })
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "less-loader",
+            options: { javascriptEnabled: true }, // compiles Less to CSS
+          },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg)$/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot)$/,
+        use: ["file-loader"],
+      },
+    ],
+  },
+}

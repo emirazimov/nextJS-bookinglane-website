@@ -81,51 +81,33 @@ export const OurTeam = () => {
             }
             transitionMs={300}
           >
-            <Image
-              src={Evgeniy}
-              alt="Our Team"
-              style={{ width: "82%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Becca}
-              alt="Our Team"
-              style={{ width: "82%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Ivan}
-              alt="Our Team"
-              style={{ width: "82%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Almaz}
-              alt="Our Team"
-              style={{ width: "80%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Emir}
-              alt="Our Team"
-              style={{ width: "80%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Azim}
-              alt="Our Team"
-              style={{ width: "80%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Saltanat}
-              alt="Our Team"
-              style={{ width: "82.7%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Suleyman}
-              alt="Our Team"
-              style={{ width: "80.7%", height: "100%", borderRadius: "8px" }}
-            />
-            <Image
-              src={Aytemir}
-              alt="Our Team"
-              style={{ width: "80.7%", height: "100%", borderRadius: "8px" }}
-            />
+            <ImageContainer1>
+              <Image src={Evgeniy} alt="Our Team" objectFit="contain" />
+            </ImageContainer1>
+            <ImageContainer2>
+              <Image src={Becca} alt="Our Team" objectFit="contain" />
+            </ImageContainer2>
+            <ImageContainer3>
+              <Image src={Ivan} alt="Our Team" objectFit="contain" />
+            </ImageContainer3>
+            <ImageContainer4>
+              <Image src={Almaz} alt="Our Team" objectFit="contain" />
+            </ImageContainer4>
+            <ImageContainer5>
+              <Image src={Emir} alt="Our Team" objectFit="contain" />
+            </ImageContainer5>
+            <ImageContainer6>
+              <Image src={Azim} alt="Our Team" objectFit="contain" />
+            </ImageContainer6>
+            <ImageContainer7>
+              <Image src={Saltanat} alt="Our Team" objectFit="contain" />
+            </ImageContainer7>
+            <ImageContainer8>
+              <Image src={Suleyman} alt="Our Team" objectFit="contain" />
+            </ImageContainer8>
+            <ImageContainer9>
+              <Image src={Aytemir} alt="Our Team" objectFit="contain" />
+            </ImageContainer9>
           </Carousel>
         ) : (
           <ContainerForImages>
@@ -252,4 +234,49 @@ const Page = styled.div`
   height: 7px;
   border-radius: 10px;
   background: #c4c4c4;
+`
+const ImageContainer1 = styled.div`
+  width: 82%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer2 = styled.div`
+  width: 82%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer3 = styled.div`
+  width: 82%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer4 = styled.div`
+  width: 80%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer5 = styled.div`
+  width: 80%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer6 = styled.div`
+  width: 80%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer7 = styled.div`
+  width: 82.7%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer8 = styled.div`
+  width: 80.7%;
+  height: 100%;
+  border-radius: 8px;
+`
+const ImageContainer9 = styled.div`
+  width: 80.7%;
+  height: 100%;
+  border-radius: 8px;
 `

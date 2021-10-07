@@ -24,24 +24,20 @@ import { WhyBookingLane } from "./WhyBookingLane"
 import { Pricing } from "./Pricing"
 import { WebsiteWidget } from "./WebsiteWidget"
 import { DownloadMobileApp } from "./DownloadMobileApp"
-import { Instagram } from "./Instagram"
+// import { Instagram } from "./Instagram"
 import { AboutUs } from "./AboutUs"
 import { OurTeam } from "./OurTeam"
 import { Footer } from "./Footer"
 import { scroller } from "react-scroll"
 import { AppBar } from "@material-ui/core"
 import { useSpring, animated } from "react-spring"
-import { InView } from "react-intersection-observer"
+// import { InView } from "react-intersection-observer"
 import { getEvents } from "./RequestDemo"
 import { useDispatch } from "react-redux"
-import { Calendar, calendar } from "./calendar"
+// import { Calendar, calendar } from "./calendar"
 import { ContactUs } from "./ContactUs"
 import styles from "../styles/Header.module.scss"
 import dynamic from "next/dynamic"
-
-const RequestDemo = dynamic(() => import("./RequestDemo"), {
-  ssr: false,
-})
 
 // const imgUrl = require("../public/BgMobilePhone-min.png").default
 const drawerWidth = 240
@@ -115,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 const scrollToSectionHeader = () => {
   scroller.scrollTo("Header", {
@@ -139,20 +135,7 @@ const scrollToSectionPricing = () => {
     smooth: "easeInOutQuart",
   })
 }
-const scrollToSectionWebsiteWidget = () => {
-  scroller.scrollTo("WebsiteWidget ", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
-const scrollToSectionDownloadMobileApp = () => {
-  scroller.scrollTo("DownloadMobileApp", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
+
 const scrollToSectionAboutUs = () => {
   scroller.scrollTo("AboutUs", {
     duration: 800,
@@ -160,21 +143,8 @@ const scrollToSectionAboutUs = () => {
     smooth: "easeInOutQuart",
   })
 }
-const scrollToSectionOurTeam = () => {
-  scroller.scrollTo("OurTeam", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
-const scrollToSectionFooter = () => {
-  scroller.scrollTo("Footer", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
-export const Header = () => {
+
+const Header = () => {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
@@ -186,24 +156,19 @@ export const Header = () => {
   const handleDrawerClose = () => {
     setOpen(false)
   }
+  const RequestDemo = dynamic(() => import("./RequestDemo"), {
+    ssr: false,
+  })
+  const ContactUs = dynamic(() => import("./ContactUs"))
+  // const myRef = useRef(null)
 
-  const myRef = useRef(null)
-
-  const executeScroll = () => scrollToRef(myRef)
+  // const executeScroll = () => scrollToRef(myRef)
 
   const [{ scroll }, set] = useSpring(() => ({ scroll: 0 }))
   const onScroll = useCallback(
     (e) => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }),
     []
   )
-
-  const styling = {
-    backgroundImage:
-      "url(`./../public/BgMobilePhone-min.png`) bottom right no-repeat ",
-    backgroundSize: "42%",
-    backgroundPositionX: "100%",
-    backgroundPositionY: "67%",
-  }
 
   const [requestDemoOpen, setRequestDemoOpen] = useState(false)
   const [contactUsOpen, setContactUsOpen] = useState(false)
@@ -409,9 +374,9 @@ export const Header = () => {
         <div className="Footer">
           <Footer />
         </div>
+        <ContactUs opened={contactUsOpen} />
         <RequestDemo opened={requestDemoOpen} />
         {/* <Calendar /> */}
-        <ContactUs opened={contactUsOpen} />
       </div>
     </>
   )
@@ -867,3 +832,4 @@ const SecondTextForDownloadButtons = styled.span`
   font-weight: 500;
 `
 // const HeaderIcon = styled.div``
+export default Header

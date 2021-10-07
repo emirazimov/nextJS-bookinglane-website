@@ -1,46 +1,185 @@
 import styled from "styled-components"
-import { css } from "styled-components"
+// import { css } from "styled-components"
 import React, { useState } from "react"
-import * as emailjs from "emailjs-com"
 import closeIcon from "../public/CloseIcon.svg"
-import { CircularProgress, Dialog, DialogTitle } from "@material-ui/core"
+import {
+  CircularProgress,
+  Dialog,
+  DialogTitle,
+  makeStyles,
+  MenuItem,
+  Select,
+} from "@material-ui/core"
 import { useDispatch, useSelector } from "react-redux"
 import { useForm } from "react-hook-form"
 import { Checkmark } from "./Helpers/Checkmark"
+import Image from "next/image"
 
-var USER_ID = `
-user_BwTw9tqgyd5qLmebyOlaQ`
-var TEMPLATE_ID = `hexpower_temp`
+const useStyles = makeStyles((theme) => ({
+  // root: {
+  //   width: "100%",
+  //   maxWidth: 360,
+  //   backgroundColor: theme.palette.background.paper,
+  // },
 
-// export const ContuctUs = () => {
-//   //   const handleSubmit = (e) => {
-//   //     e.preventDefault() // Prevents default refresh by the browser
-//   //     emailjs
-//   //       .sendForm(`gmail`, apiKey.TEMPLATE_ID, e.target, apiKey.USER_ID)
-//   //       .then(
-//   //         (result) => {
-//   //           alert("Message Sent, We will get back to you shortly", result.text)
-//   //         },
-//   //         (error) => {
-//   //           alert("An error occurred, Please try again", error.text)
-//   //         }
-//   //       )
-//   //   }
+  activeStart: {
+    backgroundColor: "red",
+  },
+  listItemStart: {
+    width: "120px",
+    height: "50px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "6px",
+    marginLeft: "6px",
+    backgroundColor: "#261952",
+    borderRadius: "8px",
+    fontSize: "16px",
+    // border: "#261952 solid 1px",
+    color: "white",
+    transition: "0.3s",
+    cursor: "pointer",
+    // "&:hover":
+    //  {
+    //   cursor: "pointer",
+    //   border: "#261952 solid 1px",
+    //   backgroundColor: "#ece9f5",
+    //   color: "black"
+    //   /* #301470 */
+    // },
+    // &:active {
+    //   background-color: #301470;
+    //   color: white;
+    // }
+    // &:focus {
+    //   background-color: #301470;
+    //   color: white;
+    // }
+    "@media (max-width: 664px)": {
+      width: "110px",
+      height: "45px",
+    },
+    // width: "50%",
+    // margin: 0,
+    // padding: 0,
+  },
+  listRootStart: {
+    "&.MuiListItem-root.Mui-selected, &.MuiListItem-root.Mui-selected:hover": {
+      backgroundColor: "#533BA6",
+    },
+  },
 
-//   return <button onClick={handleSubmit}>Click</button>
-// }
-const templateId = "template_f8hqo9u"
-const serviceId = "gmail"
-export const ContactUs = ({ opened }) => {
+  activeEnd: {
+    backgroundColor: "red",
+  },
+  listItemEnd: {
+    width: "120px",
+    height: "50px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "6px",
+    marginLeft: "6px",
+    backgroundColor: "#261952",
+    borderRadius: "8px",
+    fontSize: "16px",
+    // border: "#261952 solid 1px",
+    color: "white",
+    transition: "0.3s",
+    cursor: "pointer",
+    // "&:hover":
+    //  {
+    //   cursor: "pointer",
+    //   border: "#261952 solid 1px",
+    //   backgroundColor: "#ece9f5",
+    //   color: "black"
+    //   /* #301470 */
+    // },
+    // &:active {
+    //   background-color: #301470;
+    //   color: white;
+    // }
+    // &:focus {
+    //   background-color: #301470;
+    //   color: white;
+    // }
+    "@media (max-width: 664px)": {
+      width: "110px",
+      height: "45px",
+    },
+    // width: "50%",
+    // margin: 0,
+    // padding: 0,
+  },
+  listRootEnd: {
+    "&.MuiListItem-root.Mui-selected, &.MuiListItem-root.Mui-selected:hover": {
+      backgroundColor: "#533BA6",
+    },
+  },
+
+  activeDisabled: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  listItemDisabled: {
+    margin: 0,
+    padding: 0,
+  },
+  listRootDisabled: { margin: 0, padding: 0 },
+
+  listItem: {
+    margin: 0,
+    padding: 0,
+  },
+  selectMenu: {
+    height: "50px",
+
+    borderRadius: "9px",
+    marginTop: "10px",
+    marginBottom: "37px",
+    border: "1px solid black",
+    underline: {
+      "&&:before": {
+        borderBottom: "none",
+      },
+      "&&:after": {
+        borderBottom: "none",
+      },
+    },
+  },
+  selectControl: {
+    height: "34px",
+    paddingLeft: "17px",
+    paddingTop: "21px",
+    borderRadius: "9px",
+    "&.MuiSelect-select.MuiSelect-select": {
+      backgroundColor: "transparent",
+    },
+  },
+  // selectSelected: {
+  //   background: "red",
+  //   // "&.Mui-selected": {
+  //   //   backgroundColor: "red",
+  //   //   color: "white",
+  //   //   fontWeight: 600,
+  //   // },
+  // },
+}))
+
+const ContactUs = ({ opened }) => {
+  const classes = useStyles()
   const [mainState, setMainState] = useState({
     firstName: "",
     lastName: "",
-    companyName: "",
-    phoneNumber: "",
+    businessName: "",
+    phone: "",
     email: "",
+    countryId: "",
     message: "",
   })
-  console.log(mainState)
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setMainState((prevState) => ({
@@ -57,38 +196,20 @@ export const ContactUs = ({ opened }) => {
     })
   }
   const contuctUs = useSelector((store) => store.contuctUs.trigger)
-  const [open, setOpen] = useState(opened)
+  // const [open, setOpen] = useState(opened)
 
-  const handleClose = (value) => {
-    setOpen(false)
-    // setSelectedValue(value)
-  }
+  // const handleClose = (value) => {
+  //   setOpen(false)
+  //   // setSelectedValue(value)
+  // }
   const dispatch = useDispatch()
 
   const [checkmark, setCheckmark] = useState(false)
   const [flagForPreloader, setFlagForPreloader] = useState(false)
   const [transparentBg, setTransparentBg] = useState(false)
-  function sendEmail(e) {
-    e.preventDefault()
-
-    emailjs
-      .sendForm(
-        "service_lpqk8wr",
-        "template_f8hqo9u",
-        e.target,
-        "user_BwTw9tqgyd5qLmebyOlaQ"
-      )
-      .then(
-        (result) => {
-          setCheckmark(true)
-          console.log(result.text)
-        },
-        (error) => {
-          console.log(error.text)
-        }
-      )
-  }
+  const [hasError, setHasError] = useState(null)
   const { register, handleSubmit, errors } = useForm()
+  const gotCountries = useSelector((store) => store.countriesApi.countries)
 
   const onSubmit = handleSubmit((event) => {
     // event.preventDefault()
@@ -97,31 +218,45 @@ export const ContactUs = ({ opened }) => {
     sendFeedback()
   })
 
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      company: {
+        ...mainState,
+      },
+      isContactUs: true,
+    }),
+  }
+
   const sendFeedback = () => {
-    setTransparentBg(true)
-    setFlagForPreloader(true)
-    emailjs
-      .send(
-        "service_k67dcq9",
-        "template_f8hqo9u",
-        mainState,
-        "user_BwTw9tqgyd5qLmebyOlaQ"
-      )
-      .then((res) => {
-        setFlagForPreloader(false)
-        setCheckmark(true)
-        // setTransparentBg(false)
-        console.log("Email successfully sent!")
-      })
-      // Handle errors here however you like, or use a React error boundary
-      .catch((err) =>
-        console.error(
-          "Oh well, you failed. Here some thoughts on the error that occured:",
-          err
+    if (hasError) {
+      setTransparentBg(true)
+      setFlagForPreloader(true)
+      fetch("https://apidev.bookinglane.com/api/contacts", requestOptions)
+        .then((res) => {
+          setFlagForPreloader(false)
+          setCheckmark(true)
+          // setTransparentBg(false)
+          console.log("Email successfully sent!")
+        })
+        // Handle errors here however you like, or use a React error boundary
+        .catch((err) =>
+          console.error(
+            "Oh well, you failed. Here some thoughts on the error that occured:",
+            err
+          )
         )
-      )
+    } else {
+      if (!hasError) {
+        setHasError(true)
+      } else {
+        setHasError(false)
+      }
+    }
   }
   const [emailError, setEmailError] = useState("")
+
   const emailHandler = (e) => {
     var pattern = new RegExp(
       /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
@@ -139,7 +274,7 @@ export const ContactUs = ({ opened }) => {
       <Dialog
         fullWidth={true}
         maxWidth={"sm"}
-        onClose={handleClose}
+        // onClose={handleClose}
         aria-labelledby="simple-dialog-title"
         open={contuctUs}
       >
@@ -155,7 +290,7 @@ export const ContactUs = ({ opened }) => {
                 dispatch({ type: "SET_CONTUCT_US", payload: false })
               }}
             >
-              <Img src={closeIcon} />
+              <Image src={closeIcon} width={"20px"} height={"20px"} />
             </CloseIcon>
           </ContainerForTitle>
         </DialogTitle>
@@ -173,7 +308,7 @@ export const ContactUs = ({ opened }) => {
                       name="firstName"
                       onChange={handleChange}
                       required
-                      // ref={register({ required: true })}
+                      ref={register({ required: true })}
                       value={mainState.firstName}
                     />
                   </FirstNameBlock>
@@ -185,7 +320,7 @@ export const ContactUs = ({ opened }) => {
                       id="input-last-name"
                       name="lastName"
                       required
-                      // ref={register({ required: true })}
+                      ref={register({ required: true })}
                       value={mainState.lastName}
                       onChange={handleChange}
                     />
@@ -197,10 +332,10 @@ export const ContactUs = ({ opened }) => {
                   </LabelCompanyName>
                   <InputCompanyName
                     id="input-company-name"
-                    name="companyName"
+                    name="businessName"
                     required
-                    // ref={register({ required: true })}
-                    value={mainState.companyName}
+                    ref={register({ required: true })}
+                    value={mainState.businessName}
                     onChange={handleChange}
                   />
                 </CompanyNameBlock>
@@ -211,9 +346,9 @@ export const ContactUs = ({ opened }) => {
                   </LabelPhoneNumber>
                   <InputPhoneNumber
                     id="input-phone-number"
-                    name="phoneNumber"
+                    name="phone"
                     // required
-                    value={mainState.phoneNumber}
+                    value={mainState.phone}
                     onChange={handleChange}
                   />
                 </PhoneNumberBlock>
@@ -224,7 +359,7 @@ export const ContactUs = ({ opened }) => {
                     name="email"
                     type="email"
                     required
-                    // ref={register({ required: true })}
+                    ref={register({ required: true })}
                     value={mainState.email}
                     onChange={handleChange}
                     onBlur={(e) => {
@@ -237,6 +372,33 @@ export const ContactUs = ({ opened }) => {
                     {emailError}
                   </div>
                 </EmailBlock>
+
+                <Select
+                  value={mainState.countryId}
+                  onChange={handleChange}
+                  required
+                  name="countryId"
+                  // ref={register({ required: true })}
+                  displayEmpty
+                  inputProps={{ "aria-label": "Without label" }}
+                  // input={<OutlinedInput />}
+                  // InputProps={{ disableUnderline: true }}
+                  classes={{
+                    root: classes.selectControl,
+                    select: classes.selectSelected,
+                    icon: classes.arrowDownIcon,
+                  }}
+                  className={classes.selectMenu}
+                  disableUnderline
+                >
+                  <MenuItem disabled value="">
+                    <span>Select your country</span>
+                  </MenuItem>
+                  {gotCountries?.map((item) => {
+                    return <MenuItem value={item.id}>{item.name}</MenuItem>
+                  })}
+                </Select>
+
                 <MessageBlock>
                   <LabelMessage for="input-message">Message*</LabelMessage>
                   <TextareaMessageBlock
@@ -284,6 +446,8 @@ export const ContactUs = ({ opened }) => {
     </>
   )
 }
+
+export default ContactUs
 
 const Wrapper = styled.div`
   width: 100%;

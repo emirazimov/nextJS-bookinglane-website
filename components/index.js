@@ -1,2 +1,2 @@
-export { Header } from "./Header"
-export { Instagram } from "./Instagram"
+// export { Header } from "./Header"
+// export { Instagram } from "./Instagram"

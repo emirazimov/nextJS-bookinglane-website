@@ -7,7 +7,7 @@ import React, { forwardRef, useState } from "react"
 import { useSpring, animated, config } from "react-spring"
 import { InView } from "react-intersection-observer"
 import Image from "next/image"
-import "../styles/WhyBookinglane.module.scss"
+import styles from "../styles/WhyBookinglane.module.scss"
 
 export const WhyBookingLane = forwardRef(({ ref }) => {
   const [showH1, setShowH1] = React.useState(false)
@@ -98,14 +98,14 @@ export const WhyBookingLane = forwardRef(({ ref }) => {
 
               <animated.div style={imgBlock}>
                 <ImageBlock>
-                  {/* <Img> */}
-                  <Image
-                    src={whyBookinglane}
-                    className="whyBookinglaneImage"
-                    // width={"100%"}
-                    // height={"100%"}
-                  />
-                  {/* </Img> */}
+                  <Img>
+                    <Image
+                      src={whyBookinglane}
+                      // className={styles.whyBookinglaneImage}
+
+                      objectFit="contain"
+                    />
+                  </Img>
                 </ImageBlock>
               </animated.div>
             </WhyBookingLaneContainer>
@@ -175,34 +175,40 @@ const ImageBlock = styled.div`
   width: 100%;
   height: 100%;
 `
-const Img = styled.span`
-  min-width: 100%;
-  min-height: 100%;
-  @media (max-width: 1339px) {
-    width: 100%;
+const Img = styled.div`
+  width: 700px;
+  height: 450px;
+
+  @media (max-width: 900px) {
+    width: 500px;
+    height: 350px;
+  }
+  @media (max-width: 564px) {
+    width: 300px;
+    height: 250px;
   }
 `
-const WhyBookingLaneItemContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  flex-basis: 23.5%;
-  height: 370px;
-  margin-bottom: 100px;
-  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
-`
+// const WhyBookingLaneItemContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-between;
+//   flex-basis: 23.5%;
+//   height: 370px;
+//   margin-bottom: 100px;
+//   box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+// `
 
-const WhyBookingLaneTitle = styled.span`
-  color: black;
-  font-size: 23px;
-  font-weight: 500;
-  margin-top: 20px;
-`
-const WhyBookingLaneText = styled.p`
-  color: black;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 24px;
-  padding: 0 30px 45px 30px;
-`
+// const WhyBookingLaneTitle = styled.span`
+//   color: black;
+//   font-size: 23px;
+//   font-weight: 500;
+//   margin-top: 20px;
+// `
+// const WhyBookingLaneText = styled.p`
+//   color: black;
+//   font-size: 16px;
+//   font-weight: 300;
+//   line-height: 24px;
+//   padding: 0 30px 45px 30px;
+// `

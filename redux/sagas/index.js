@@ -7,6 +7,7 @@ import {
   spawn,
   all,
 } from "redux-saga/effects"
+import { getCountries } from "../../pages/api/api"
 
 function* getInstaImages() {
   // const request = yield call(
@@ -24,8 +25,14 @@ function* setContuctUs(flag) {
   yield put({ type: "SET_CONTUCT_US", payload: flag })
 }
 
+export function* setCountries() {
+  let response = yield getCountries()
+  // console.log(response)
+  yield put({ type: "SET_COUNTRIES", payload: response })
+}
+
 export function* loadInitalInfo() {
-  yield all([fork(setRequestDemo), fork(setContuctUs)])
+  yield all([fork(setRequestDemo), fork(setContuctUs), fork(setCountries)])
 }
 
 export default function* rootSaga() {

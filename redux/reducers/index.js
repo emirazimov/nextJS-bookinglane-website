@@ -1,5 +1,6 @@
 import { combineReducers } from "redux"
 import { ContuctUsReducer } from "./ContuctUs"
+import { CountriesReducer } from "./countries-reducer"
 import { instaImagesReducer } from "./instaImagesReducer"
 import { RequestDemoReducer } from "./RequestDemoReducer"
 
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   instagram: instaImagesReducer,
   requestDemo: RequestDemoReducer,
   contuctUs: ContuctUsReducer,
+  countriesApi: CountriesReducer,
 })
 
 export default rootReducer

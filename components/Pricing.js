@@ -9,6 +9,7 @@ import { useSpring, animated, config } from "react-spring"
 import React, { useState } from "react"
 import { InView, useInView } from "react-intersection-observer"
 import { CircularProgress, useMediaQuery } from "@material-ui/core"
+import checkMark from "../public/checkMark.svg"
 import Image from "next/image"
 
 export const Pricing = () => {
@@ -485,7 +486,165 @@ export const Pricing = () => {
               <Price>
                 As simple as it is - just $19.99/month plus free trial.
               </Price>
-              <Text>No hidden fees. Cancel anytime.</Text>
+              <CheckMarksBlock>
+                <FirstColumn>
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Affiliate Network</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Reservation Management</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Daily Business Management</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Payment Solution</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Website Integration</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Online Booking Tools</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Instant Invoicing </ItemText>
+                  </ItemContainer>
+                </FirstColumn>
+
+                <SecondColumn>
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Flight Tracking</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Weekly Feature Updates</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>User Friendly</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>No Office Required</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Run Your Business on the Go </ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Increased Earnings</ItemText>
+                  </ItemContainer>
+
+                  <ItemContainer>
+                    <ImgCheckmark>
+                      <Image
+                        alt="Early bird pricing"
+                        src={checkMark}
+                        objectFit="contain"
+                      ></Image>
+                    </ImgCheckmark>
+                    <ItemText>Cancel Anytime</ItemText>
+                  </ItemContainer>
+                </SecondColumn>
+              </CheckMarksBlock>
             </TextContainer>
           </TextBlock>
         </Content>
@@ -607,11 +766,21 @@ const ImgBlock = styled.div`
   @media (max-width: 1553px) {
     height: 480px;
   }
-
+  @media (max-width: 1299px) {
+    order: 2;
+    width: 27%;
+    margin-left: -200px;
+  }
   @media (max-width: 1024px) {
     order: 2;
-    width: 47%;
+    width: 27%;
+    margin-left: -350px;
+  }
+  @media (max-width: 824px) {
+    order: 2;
+    width: 50%;
     height: 460px;
+    margin-left: 0px;
     /* ${Img1} {
       width: 80%;
       height: 80%;
@@ -630,62 +799,71 @@ const ImgBlock = styled.div`
     } */
   }
   @media (max-width: 811px) {
-    width: 57%;
+    width: 56%;
   }
   @media (max-width: 703px) {
-    width: 67%;
+    width: 69%;
   }
   @media (max-width: 575px) {
-    width: 46%;
-    height: 220px;
-    margin-top: 110px;
-  }
-  @media (max-width: 475px) {
     width: 60%;
     height: 220px;
     margin-top: 110px;
+    margin-left: 50px;
+  }
+  @media (max-width: 475px) {
+    width: 68%;
+    height: 220px;
+    margin-top: 110px;
+    margin-left: 30px;
+  }
+  @media (max-width: 400px) {
+    width: 77%;
+    margin-left: 30px;
   }
   @media (max-width: 375px) {
-    width: 75%;
+    width: 90%;
   }
 `
-const Img = styled.img`
-  /* 
-  background-size: cover;
-  background-position-x: 50%;
-  height: 800px; */
-  width: 46%;
-  @media (max-width: 1553px) {
-    width: 53%;
-  }
-  @media (max-width: 1553px) {
-  }
-  @media (max-width: 1024px) {
-    order: 2;
-    width: 63%;
-  }
-  @media (max-width: 811px) {
-    width: 73%;
-  }
-  @media (max-width: 530px) {
-    width: 87%;
-  }
-`
+// const Img = styled.img`
+//   /*
+//   background-size: cover;
+//   background-position-x: 50%;
+//   height: 800px; */
+//   width: 46%;
+//   @media (max-width: 1553px) {
+//     width: 53%;
+//   }
+//   @media (max-width: 1553px) {
+//   }
+//   @media (max-width: 1024px) {
+//     order: 2;
+//     width: 63%;
+//   }
+//   @media (max-width: 811px) {
+//     width: 73%;
+//   }
+//   @media (max-width: 530px) {
+//     width: 87%;
+//   }
+// `
 const TextBlock = styled.div`
-  max-width: 450px;
-  height: 130px;
+  height: 100%;
   margin-left: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   border-radius: 8px;
   /* padding: 40px 40px; */
-  padding-right: 100px;
+  /* padding-right: 100px; */
 
   @media (max-width: 1553px) {
-    max-width: 380px;
-    padding: 0;
+    /* padding-right: 40px; */
+  }
+  @media (max-width: 1400px) {
+    /* padding-right: 100px; */
+  }
+  @media (max-width: 1299px) {
+    order: 1;
   }
   @media (max-width: 1024px) {
     max-width: 100%;
@@ -698,19 +876,20 @@ const TextBlock = styled.div`
     max-width: 90%;
   }
   @media (max-width: 818px) {
-    height: 120px;
+    height: 100%;
   }
   @media (max-width: 713px) {
   }
   @media (max-width: 629px) {
     max-width: 100%;
-    height: 100px;
+    height: 100%;
   }
   @media (max-width: 620px) {
     margin: 0 16px;
   }
   @media (max-width: 519px) {
     max-width: 400px;
+    padding-top: 25px;
   }
 `
 
@@ -718,25 +897,78 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 350px;
+  align-items: center;
+  height: 100%;
   @media (max-width: 1024px) {
     width: 100%;
-    height: 100px;
+    height: 100%;
     align-items: center;
     text-align: center;
   }
+  @media (max-width: 689px) {
+    align-items: flex-start;
+  }
 `
-const TextBlockTitle = styled.span`
-  font-weight: normal;
-  font-size: 24px;
-`
+// const TextBlockTitle = styled.span`
+//   font-weight: normal;
+//   font-size: 24px;
+// `
+
 const Price = styled.span`
   font-weight: 600;
   line-height: 33px;
   font-size: calc(21px + (7 + 7 * 0.7) * ((46vw - 620px) / 1520));
+  margin-bottom: 30px;
 `
-const Text = styled.span`
-  font-weight: 400;
-  font-size: calc(20px + (7 + 7 * 0.7) * ((46vw - 620px) / 1520));
-  line-height: 24px;
+
+const CheckMarksBlock = styled.div`
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 689px) {
+    flex-direction: column;
+
+    margin-bottom: 250px;
+  }
+  @media (max-width: 577px) {
+    margin-bottom: 300px;
+  }
+  @media (max-width: 420px) {
+    padding-left: 15px;
+  }
 `
+const FirstColumn = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+const SecondColumn = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+const ItemContainer = styled.div`
+  width: 300px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+const ImgCheckmark = styled.div`
+  width: 35px;
+  height: 35px;
+  margin-right: 18px;
+`
+const ItemText = styled.div`
+  font-weight: 600;
+  font-size: 16px;
+`
+// const Text = styled.span`
+//   font-weight: 400;
+//   font-size: calc(20px + (7 + 7 * 0.7) * ((46vw - 620px) / 1520));
+//   line-height: 24px;
+// `
