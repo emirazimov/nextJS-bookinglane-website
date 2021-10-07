@@ -1,0 +1,160 @@
+.containerForFacebook {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.containerForFacebook:hover {
+  background: #4267b2;
+  transition: 0.6s;
+  .faceBookIconForBody {
+    fill: white;
+  }
+}
+.faceBookIconForBody:hover {
+  fill: white;
+}
+
+.containerForFacebookFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: 0.3s;
+}
+.containerForFacebookFooter:hover {
+  background: #4267b2;
+  transition: 0.6s;
+  .faceBookIconForFooter {
+    fill: white;
+  }
+}
+.faceBookIconForFooter:hover {
+  fill: white;
+}
+
+.containerForTwitter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.containerForTwitter:hover {
+  background: #1da1f2;
+  transition: 0.6s;
+  .twitterIconForBody {
+    fill: white;
+  }
+}
+.twitterIconForBody:hover {
+  fill: white;
+}
+
+.containerForTwitterFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: 0.3s;
+}
+.containerForTwitterFooter:hover {
+  background: #1da1f2;
+  transition: 0.6s;
+  .twitterIconForFooter {
+    fill: white;
+  }
+}
+.twitterIconForFooter:hover {
+  fill: white;
+}
+
+.containerForInstagram {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.containerForInstagram:hover {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  transition: 0.6s;
+  .instagramIconForBody {
+    fill: white;
+  }
+}
+.instagramIconForBody:hover {
+  fill: white;
+}
+.containerForInstagramFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: 2s;
+}
+.containerForInstagramFooter:hover {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  transition: 2s;
+  .instagramIconForFooter {
+    fill: white;
+  }
+}
+.instagramIconForFooter:hover {
+  fill: white;
+}
+
+.containerForLinkedin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.containerForLinkedin:hover {
+  background: #0e76a8;
+  transition: 0.6s;
+  .linkedinIconForBody {
+    fill: white;
+  }
+}
+.linkedinIconForBody:hover {
+  fill: white;
+}
+
+.containerForLinkedinFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: 0.3s;
+}
+.containerForLinkedinFooter:hover {
+  background: #0e76a8;
+  transition: 0.6s;
+  .linkedinIconForFooter {
+    fill: white;
+  }
+}
+.linkedinIconForFooter:hover {
+  fill: white;
+}

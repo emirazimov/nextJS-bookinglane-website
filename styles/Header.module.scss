@@ -1,0 +1,88 @@
+.headerContainer {
+  max-width: 1520px;
+  height: 100vh;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url("./../public/BgMobilePhone-min.png") bottom right no-repeat;
+  background-size: 42%;
+  background-position-x: 100%;
+  background-position-y: 67%;
+  @media (max-width: 1720px) {
+    background-size: 38%;
+  }
+  @media (max-width: 1607px) {
+    margin: 0px 45px;
+    background-size: 40%;
+  }
+  @media (max-width: 1199px) {
+    background-size: 42%;
+    background-position-y: 67%;
+    background-position-x: 100%;
+  }
+  @media (max-width: 1024px) {
+    height: 690px;
+  }
+  @media (max-width: 979px) {
+    background-position-y: 54%;
+  }
+  @media (max-width: 900px) {
+    height: 800px;
+    background: url("./../public/BgMobilePhone-min.png") bottom no-repeat;
+    background-size: 45%;
+  }
+  @media (max-width: 799px) {
+    height: 900px;
+    background-size: 51%;
+  }
+  @media (max-width: 701px) {
+    background-size: 56%;
+  }
+
+  @media (max-width: 620px) {
+    /* background-position-y: 90%; */
+    margin: 0 16px;
+    background-size: 62%;
+  }
+  @media (max-width: 561px) {
+    background-size: 69%;
+  }
+  @media (max-width: 497px) {
+    background-size: 79%;
+  }
+  /* @media (max-width: 497px) {
+    background-size: 86%;
+  } */
+  @media (max-width: 415px) {
+    background-size: 94%;
+  }
+  @media (max-width: 375px) {
+    background-size: 100%;
+  }
+  @media (max-width: 353px) {
+    background-size: 110%;
+  }
+}
+.headerWithBackground {
+  /* width: 100%; */
+  /* height: 100vh; */
+  margin: 0;
+  /* padding: 40px 0 0 0; */
+
+  background: url("../public/Bg.svg") center top no-repeat;
+  background-size: cover;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+
+  /* width: 100px;
+  height: 100px; */
+  margin-top: -90px;
+  @media (max-width: 620px) {
+    padding-top: 16px;
+  }
+}
+// .headerBgMobilePhone {
+//   background-color: red;
+// }
