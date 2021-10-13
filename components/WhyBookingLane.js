@@ -16,41 +16,44 @@ export const WhyBookingLane = forwardRef(({ ref }) => {
   }
   const [flip, set] = useState(false)
   const firstText = useSpring({
-    // to: {  },
     from: {
       transform: showH1 && "translateX(-200px)",
       opacity: showH1 && 0,
     },
+    to: {
+      transform: "translateX(0)",
+      opacity: 1,
+    },
     // reset: true,
     // opacity: showH1 && 1,
     reverse: flip,
-    transform: "translateX(0)",
-    opacity: 1,
+
     delay: 200,
     config: config.molasses,
     // onRest: () => set(!flip),
   })
   const secondText = useSpring({
-    // to: {  },
     from: {
       transform: showH1 && "translateX(-200px)",
       opacity: showH1 && 0,
     },
+    to: {
+      transform: "translateX(0)",
+      opacity: 1,
+    },
     // reset: true,
     reverse: flip,
-    transform: "translateX(0)",
-    opacity: 1,
+
     delay: 200,
     config: config.molasses,
     // onRest: () => set(!flip),
   })
   const imgBlock = useSpring({
-    // to: {  },
     from: { transform: showH1 && "translateX(200px)", opacity: showH1 && 0 },
+    to: { transform: "translateX(0)", opacity: 1 },
     // reset: true,
     reverse: flip,
-    transform: "translateX(0)",
-    opacity: 1,
+
     delay: 200,
     config: config.molasses,
     // onRest: () => set(!flip),

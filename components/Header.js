@@ -160,6 +160,9 @@ const Header = () => {
     ssr: false,
   })
   const ContactUs = dynamic(() => import("./ContactUs"))
+  const OurTeam = dynamic(() => import("./OurTeam"), {
+    ssr: false,
+  })
   // const myRef = useRef(null)
 
   // const executeScroll = () => scrollToRef(myRef)

@@ -15,7 +15,7 @@ import { useState } from "react"
 import { useMediaQuery } from "@material-ui/core"
 import Image from "next/image"
 
-export const OurTeam = () => {
+const OurTeam = () => {
   const [images, setImages] = useState([
     Evgeniy,
     Becca,
@@ -124,6 +124,7 @@ export const OurTeam = () => {
                           maxHeight: "100%",
                           borderRadius: "8px",
                         }}
+                        objectFit="contain"
                       />
                     </ImgDiv>
                   )
@@ -138,10 +139,17 @@ export const OurTeam = () => {
                       <Image
                         src={image}
                         alt="Our Team"
+                        // style={{
+                        //   maxWidth: "100%",
+                        //   maxHeight: "100%",
+                        //   borderRadius: "8px",
+                        // }}
+
+                        objectFit="contain"
                         style={{
-                          maxWidth: "100%",
-                          maxHeight: "100%",
-                          borderRadius: "8px",
+                          // maxWidth: "100%",
+                          // maxHeight: "100%",
+                          borderRadius: "10px",
                         }}
                       />
                     </ImgDiv>
@@ -201,6 +209,7 @@ const ImgDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-radius: 10px;
 `
 
 const Button = styled.button`
@@ -280,3 +289,5 @@ const ImageContainer9 = styled.div`
   height: 100%;
   border-radius: 8px;
 `
+
+export default OurTeam

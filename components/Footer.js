@@ -86,7 +86,7 @@ export const Footer = () => {
           </Menu>
           <Icons>
             <a
-              href="https://www.facebook.com/bookinglane/photos/a.100117975015628/100147178346041/?type=3"
+              href="https://www.facebook.com/bookinglane"
               style={{ textDecoration: "none" }}
             >
               {!MobileForIcons ? (

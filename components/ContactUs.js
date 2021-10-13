@@ -394,8 +394,12 @@ const ContactUs = ({ opened }) => {
                   <MenuItem disabled value="">
                     <span>Select your country</span>
                   </MenuItem>
-                  {gotCountries?.map((item) => {
-                    return <MenuItem value={item.id}>{item.name}</MenuItem>
+                  {gotCountries?.map((item, index) => {
+                    return (
+                      <MenuItem key={index} value={item.id}>
+                        {item.name}
+                      </MenuItem>
+                    )
                   })}
                 </Select>
 

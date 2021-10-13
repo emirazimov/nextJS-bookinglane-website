@@ -587,7 +587,7 @@ const RequestDemo = ({ opened }) => {
   const [hasError, setHasError] = useState(null)
   useEffect(() => {
     if (requestDemo) {
-      calendarClickHandler()
+      calendarClickHandler(FormatUsaTime)
     }
   }, [])
   return (
@@ -1062,8 +1062,12 @@ const RequestDemo = ({ opened }) => {
                     <MenuItem disabled value="">
                       <span>Select your country</span>
                     </MenuItem>
-                    {gotCountries?.map((item) => {
-                      return <MenuItem value={item.id}>{item.name}</MenuItem>
+                    {gotCountries?.map((item, index) => {
+                      return (
+                        <MenuItem key={index} value={item.id}>
+                          {item.name}
+                        </MenuItem>
+                      )
                     })}
 
                     {/* <MenuItem value="">
