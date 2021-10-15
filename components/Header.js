@@ -38,7 +38,8 @@ import { useDispatch } from "react-redux"
 import { ContactUs } from "./ContactUs"
 import styles from "../styles/Header.module.scss"
 import dynamic from "next/dynamic"
-
+import Link from "next/link"
+import { useRouter } from "next/router"
 // const imgUrl = require("../public/BgMobilePhone-min.png").default
 const drawerWidth = 240
 
@@ -163,6 +164,13 @@ const Header = () => {
   const OurTeam = dynamic(() => import("./OurTeam"), {
     ssr: false,
   })
+  const WebsiteWidget = dynamic(() => import("./WebsiteWidget"), {
+    ssr: false,
+  })
+  const Pricing = dynamic(() => import("./Pricing"), {
+    ssr: false,
+  })
+
   // const myRef = useRef(null)
 
   // const executeScroll = () => scrollToRef(myRef)
@@ -172,7 +180,8 @@ const Header = () => {
     (e) => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }),
     []
   )
-
+  const router = useRouter()
+  const [openRequestDemo, setOpenRequestDemo] = useState(false)
   const [requestDemoOpen, setRequestDemoOpen] = useState(false)
   const [contactUsOpen, setContactUsOpen] = useState(false)
   const dispatch = useDispatch()
@@ -201,6 +210,7 @@ const Header = () => {
                         getEvents()
                         dispatch({ type: "SET_REQUEST_DEMO", payload: true })
                         setRequestDemoOpen(true)
+                        setOpenRequestDemo(!openRequestDemo)
                       }}
                     >
                       REQUEST DEMO
@@ -265,6 +275,7 @@ const Header = () => {
                           getEvents()
                           dispatch({ type: "SET_REQUEST_DEMO", payload: true })
                           setRequestDemoOpen(true)
+                          setOpenRequestDemo(!openRequestDemo)
                         }}
                       >
                         REQUEST DEMO
@@ -378,7 +389,8 @@ const Header = () => {
           <Footer />
         </div>
         <ContactUs opened={contactUsOpen} />
-        <RequestDemo opened={requestDemoOpen} />
+        {openRequestDemo ? <RequestDemo opened={requestDemoOpen} /> : null}
+
         {/* <Calendar /> */}
       </div>
     </>

@@ -11,8 +11,9 @@ import { InView, useInView } from "react-intersection-observer"
 import { CircularProgress, useMediaQuery } from "@material-ui/core"
 import checkMark from "../public/checkMark.svg"
 import Image from "next/image"
+import { CheckmarkPricingBlock } from "../public/icons"
 
-export const Pricing = () => {
+const Pricing = () => {
   const [showH1, setShowH1] = React.useState(false)
   const onInViewChange = (inview) => {
     if (!showH1 && inview) setShowH1(true)
@@ -38,7 +39,7 @@ export const Pricing = () => {
     opacity: 1,
     top: "-200px",
     left: "280px",
-    // background: `url(${firstMobile}) center no-repeat`,
+    // background: `url($"https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png") center no-repeat`,
     // backgroundSize: "cover",
 
     // transform: "translate(20%, -230.5%)",
@@ -130,7 +131,7 @@ export const Pricing = () => {
     opacity: 1,
     top: "-140px",
     left: "190px",
-    // background: `url(${firstMobile}) center no-repeat`,
+    // background: `url($"https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png") center no-repeat`,
     // backgroundSize: "cover",
 
     // transform: "translate(20%, -230.5%)",
@@ -223,7 +224,7 @@ export const Pricing = () => {
     opacity: 1,
     top: "-95px",
     left: "120px",
-    // background: `url(${firstMobile}) center no-repeat`,
+    // background: `url($"https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png") center no-repeat`,
     // backgroundSize: "cover",
 
     // transform: "translate(20%, -230.5%)",
@@ -307,50 +308,50 @@ export const Pricing = () => {
         <>
           <animated.div style={fourthImageMobile}>
             <Img4>
-              <Image
+              <img
                 // loader={myLoader}
-                src={fourthMobile}
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/fourthMobile-min.png"
                 alt="mobile phones"
-                // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
+                style={{ width: "100%", height: "100%" }}
+                // width={"100%"}
+                // height={"100%"}
               />
             </Img4>
           </animated.div>
           <animated.div style={thirdImageMobile}>
             <Img3>
-              <Image
+              <img
                 // loader={myLoader}
-                src={thirdMobile}
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/thirdMobile-min.png"
                 alt="mobile phones"
-                // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
+                style={{ width: "100%", height: "100%" }}
+                // width={"100%"}
+                // height={"100%"}
               />
             </Img3>
           </animated.div>
           <animated.div style={secondImageMobile}>
             <Img2>
-              <Image
+              <img
                 // loader={myLoader}
-                src={secondMobile}
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/secondMobile-min.png"
                 alt="mobile phones"
-                // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
+                style={{ width: "100%", height: "100%" }}
+                // width={"100%"}
+                // height={"100%"}
               />
             </Img2>
           </animated.div>
           <InView tag="div" onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImageMobile}>
               <Img1>
-                <Image
+                <img
                   // loader={myLoader}
-                  src={firstMobile}
+                  src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png"
                   alt="mobile phones"
-                  // style={{ width: "100%", height: "100%" }}
-                  width={"100%"}
-                  height={"100%"}
+                  style={{ width: "100%", height: "100%" }}
+                  // width={"100%"}
+                  // height={"100%"}
                 />
               </Img1>
             </animated.div>
@@ -363,50 +364,50 @@ export const Pricing = () => {
         <>
           <animated.div style={fourthImageSmall}>
             <Img4>
-              <Image
+              <img
                 // loader={myLoader}
-                src={fourthMobile}
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/fourthMobile-min.png"
                 alt="mobile phones"
-                // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
+                style={{ width: "100%", height: "100%" }}
+                // width={"100%"}
+                // height={"100%"}
               />
             </Img4>
           </animated.div>
           <animated.div style={thirdImageSmall}>
             <Img3>
-              <Image
+              <img
                 // loader={myLoader}
-                src={thirdMobile}
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/thirdMobile-min.png"
                 alt="mobile phones"
-                // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
+                style={{ width: "100%", height: "100%" }}
+                // width={"100%"}
+                // height={"100%"}
               />
             </Img3>
           </animated.div>
           <animated.div style={secondImageSmall}>
             <Img2>
-              <Image
+              <img
                 // loader={myLoader}
-                src={secondMobile}
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/secondMobile-min.png"
                 alt="mobile phones"
-                // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
+                style={{ width: "100%", height: "100%" }}
+                // width={"100%"}
+                // height={"100%"}
               />
             </Img2>
           </animated.div>
           <InView tag="div" onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImageSmall}>
               <Img1>
-                <Image
+                <img
                   // loader={myLoader}
-                  src={firstMobile}
+                  src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png"
                   alt="mobile phones"
-                  // style={{ width: "100%", height: "100%" }}
-                  width={"100%"}
-                  height={"100%"}
+                  style={{ width: "100%", height: "100%" }}
+                  // width={"100%"}
+                  // height={"100%"}
                 />
               </Img1>
             </animated.div>
@@ -419,50 +420,50 @@ export const Pricing = () => {
         <>
           <animated.div style={fourthImage}>
             {/* <Img4> */}
-            <Image
+            <img
               // loader={myLoader}
-              src={fourthMobile}
+              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/fourthMobile-min.png"
               alt="mobile phones"
-              // style={{ width: "100%", height: "100%" }}
-              width={"670%"}
-              height={"1053%"}
+              style={{ width: "100%", height: "100%" }}
+              // width={"670%"}
+              // height={"1053%"}
             />
             {/* </Img4> */}
           </animated.div>
           <animated.div style={thirdImage}>
             {/* <Img3> */}
-            <Image
+            <img
               // loader={myLoader}
-              src={thirdMobile}
+              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/thirdMobile-min.png"
               alt="mobile phones"
-              // style={{ width: "100%", height: "100%" }}
-              width={"670%"}
-              height={"1053%"}
+              style={{ width: "100%", height: "100%" }}
+              // width={"670%"}
+              // height={"1053%"}
             />
             {/* </Img3> */}
           </animated.div>
           <animated.div style={secondImage}>
             {/* <Img2> */}
-            <Image
+            <img
               // loader={myLoader}
-              src={secondMobile}
+              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/secondMobile-min.png"
               alt="mobile phones"
-              // style={{ width: "100%", height: "100%" }}
-              width={"670%"}
-              height={"1053%"}
+              style={{ width: "100%", height: "100%" }}
+              // width={"670%"}
+              // height={"1053%"}
             />
             {/* </Img2> */}
           </animated.div>
           <InView tag="div" onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImage}>
               {/* <Img1> */}
-              <Image
+              <img
                 // loader={myLoader}
-                src={firstMobile}
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png"
                 alt="mobile phones"
-                // style={{ width: "100%", height: "100%" }}
-                width={"670%"}
-                height={"1053%"}
+                style={{ width: "100%", height: "100%" }}
+                // width={"670%"}
+                // height={"1053%"}
               />
               {/* </Img1> */}
             </animated.div>
@@ -471,12 +472,12 @@ export const Pricing = () => {
       )
     }
   }
-  const isSmallDevice = useMediaQuery("(max-width:1024px)")
+  const isSmallDevice = useMediaQuery("(max-width:824px)")
   const isMobile = useMediaQuery("(max-width:575px)")
   return (
     <Wrapper>
       <MainContainer>
-        <Title>PRICING</Title>
+        <Title>EARLY BIRD PRICING</Title>
 
         <Content>
           <ImgBlock>{renderMobiles()}</ImgBlock>
@@ -490,77 +491,84 @@ export const Pricing = () => {
                 <FirstColumn>
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Affiliate Network</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Reservation Management</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Daily Business Management</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Payment Solution</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Website Integration</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Online Booking Tools</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Instant Invoicing </ItemText>
                   </ItemContainer>
@@ -569,77 +577,84 @@ export const Pricing = () => {
                 <SecondColumn>
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Flight Tracking</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Weekly Feature Updates</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>User Friendly</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>No Office Required</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Run Your Business on the Go </ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Increased Earnings</ItemText>
                   </ItemContainer>
 
                   <ItemContainer>
                     <ImgCheckmark>
-                      <Image
+                      {/* <img
                         alt="Early bird pricing"
                         src={checkMark}
                         objectFit="contain"
-                      ></Image>
+                      ></img> */}
+                      <CheckmarkPricingBlock />
                     </ImgCheckmark>
                     <ItemText>Cancel Anytime</ItemText>
                   </ItemContainer>
@@ -690,6 +705,9 @@ const Content = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 1299px) {
+    flex-direction: column;
+  }
   @media (max-width: 1024px) {
     flex-direction: column;
   }
@@ -972,3 +990,5 @@ const ItemText = styled.div`
 //   font-size: calc(20px + (7 + 7 * 0.7) * ((46vw - 620px) / 1520));
 //   line-height: 24px;
 // `
+
+export default Pricing

@@ -102,11 +102,11 @@ export const WhyBookingLane = forwardRef(({ ref }) => {
               <animated.div style={imgBlock}>
                 <ImageBlock>
                   <Img>
-                    <Image
-                      src={whyBookinglane}
+                    <img
+                      src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WhyBookinglane-min.png"
                       // className={styles.whyBookinglaneImage}
-
-                      objectFit="contain"
+                      style={{ width: "100%", height: "100%" }}
+                      // objectFit="contain"
                     />
                   </Img>
                 </ImageBlock>

@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useForm } from "react-hook-form"
 import { Checkmark } from "./Helpers/Checkmark"
 import Image from "next/image"
+import { CloseIconSvg } from "../public/icons"
 
 const useStyles = makeStyles((theme) => ({
   // root: {
@@ -290,7 +291,7 @@ const ContactUs = ({ opened }) => {
                 dispatch({ type: "SET_CONTUCT_US", payload: false })
               }}
             >
-              <Image src={closeIcon} width={"20px"} height={"20px"} />
+              <CloseIconSvg />
             </CloseIcon>
           </ContainerForTitle>
         </DialogTitle>

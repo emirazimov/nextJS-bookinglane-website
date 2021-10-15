@@ -24,10 +24,11 @@ export const AboutUs = () => {
         <WrapperWithMargin>
           <ContainerForImg>
             <Img>
-              <Image
-                src={AboutUsImg}
-                style={{ width: "100%", borderRadius: "8px" }}
-              ></Image>
+              <img
+                alt="about us"
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/AboutUs-min.jpg"
+                style={{ width: "100%", height: "100%", borderRadius: "8px" }}
+              ></img>
             </Img>
           </ContainerForImg>
           <ContainerForText>
@@ -155,11 +156,11 @@ const Img = styled.div`
   border-radius: 2.2%;
   @media (max-width: 893px) {
     max-width: 600px;
-    max-height: 340px;
+    max-height: 410px;
   }
   @media (max-width: 631px) {
     max-width: 450px;
-    max-height: 340px;
+    max-height: 290px;
   }
   @media (max-width: 495px) {
     max-width: 350px;

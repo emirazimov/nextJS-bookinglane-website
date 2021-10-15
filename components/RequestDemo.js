@@ -28,6 +28,7 @@ import styles from "../styles/RequestDemo.module.scss"
 import { Checkmark } from "./Helpers/Checkmark"
 import { gapi } from "gapi-script"
 import Image from "next/image"
+import { CloseIconSvg } from "../public/icons"
 // import { setCountries } from "../redux/sagas"
 // import { funcName, GetCountries } from "../api/api"
 // import ToggleButton from "@material-ui/lab/ToggleButton"
@@ -613,7 +614,7 @@ const RequestDemo = ({ opened }) => {
                 setDisableToday(true)
               }}
             >
-              <Image src={closeIcon} width={"20px"} height={"20px"} />
+              <CloseIconSvg />
             </CloseIcon>
           </ContainerForTitle>
         </DialogTitle>

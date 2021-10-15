@@ -10,6 +10,7 @@
 //   transpileModules: ["react-calendar"],
 //   // withImages()
 // })
+
 module.exports = {
   module: {
     rules: [
@@ -36,4 +37,11 @@ module.exports = {
       },
     ],
   },
+  // images: {
+  //   loader: "imgix",
+  //   path: "",
+  // },
+  // images: {
+  //   loader: "static",
+  // },
 }

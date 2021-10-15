@@ -17,15 +17,15 @@ import Image from "next/image"
 
 const OurTeam = () => {
   const [images, setImages] = useState([
-    Evgeniy,
-    Becca,
-    Ivan,
-    Almaz,
-    Emir,
-    Azim,
-    Saltanat,
-    Suleyman,
-    Aytemir,
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Evgeniy-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Becca-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Ivan-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Almaz-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Emir-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Azim-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Saltanat-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Suleyman-min.jpg",
+    "https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Aytemir-min.jpg",
   ])
 
   const myArrow = ({ type, onClick, isEdge }) => {
@@ -82,31 +82,64 @@ const OurTeam = () => {
             transitionMs={300}
           >
             <ImageContainer1>
-              <Image src={Evgeniy} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Evgeniy-min.jpg"
+                alt="Our Team"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer1>
             <ImageContainer2>
-              <Image src={Becca} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Becca-min.jpg"
+                alt="Our Team"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer2>
             <ImageContainer3>
-              <Image src={Ivan} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Ivan-min.jpg"
+                alt="Our Team"
+                objectFit="contain"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer3>
             <ImageContainer4>
-              <Image src={Almaz} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Almaz-min.jpg"
+                alt="Our Team"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer4>
             <ImageContainer5>
               <Image src={Emir} alt="Our Team" objectFit="contain" />
             </ImageContainer5>
             <ImageContainer6>
-              <Image src={Azim} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Azim-min.jpg"
+                alt="Our Team"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer6>
             <ImageContainer7>
-              <Image src={Saltanat} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Saltanat-min.jpg"
+                alt="Our Team"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer7>
             <ImageContainer8>
-              <Image src={Suleyman} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Suleyman-min.jpg"
+                alt="Our Team"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer8>
             <ImageContainer9>
-              <Image src={Aytemir} alt="Our Team" objectFit="contain" />
+              <img
+                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Aytemir-min.jpg"
+                alt="Our Team"
+                style={{ width: "100%", height: "100%" }}
+              />
             </ImageContainer9>
           </Carousel>
         ) : (
@@ -116,7 +149,7 @@ const OurTeam = () => {
                 while (index <= 4) {
                   return (
                     <ImgDiv>
-                      <Image
+                      <img
                         src={image}
                         alt="Our Team"
                         style={{
@@ -124,7 +157,7 @@ const OurTeam = () => {
                           maxHeight: "100%",
                           borderRadius: "8px",
                         }}
-                        objectFit="contain"
+                        // objectFit="contain"
                       />
                     </ImgDiv>
                   )
@@ -136,21 +169,21 @@ const OurTeam = () => {
                 while (index > 4) {
                   return (
                     <ImgDiv>
-                      <Image
+                      <img
                         src={image}
                         alt="Our Team"
-                        // style={{
-                        //   maxWidth: "100%",
-                        //   maxHeight: "100%",
-                        //   borderRadius: "8px",
-                        // }}
-
-                        objectFit="contain"
                         style={{
-                          // maxWidth: "100%",
-                          // maxHeight: "100%",
-                          borderRadius: "10px",
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          borderRadius: "8px",
                         }}
+
+                        // objectFit="contain"
+                        // style={{
+                        //   // maxWidth: "100%",
+                        //   // maxHeight: "100%",
+                        //   borderRadius: "10px",
+                        // }}
                       />
                     </ImgDiv>
                   )

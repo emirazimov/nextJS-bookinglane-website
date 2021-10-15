@@ -14,7 +14,7 @@ import { InView } from "react-intersection-observer"
 import React from "react"
 import Image from "next/image"
 
-export const WebsiteWidget = () => {
+const WebsiteWidget = () => {
   const [showH1, setShowH1] = React.useState(false)
   const onInViewChange = (inview) => {
     if (!showH1 && inview) setShowH1(true)
@@ -46,6 +46,7 @@ export const WebsiteWidget = () => {
 
   const isMobile = useMediaQuery("(max-width:661px)")
   const isMobileSmallest = useMediaQuery("(max-width:520px)")
+  console.log(isMobile)
   const renderBookinglaneicon = () => {
     if (isMobileSmallest) {
       return <BookinglaneIconForWidgetOnMobileSmallest />
@@ -69,8 +70,8 @@ export const WebsiteWidget = () => {
             <ImgBlock>
               <Img1>
                 <animated.div style={firstImg}>
-                  <Image
-                    src={WidgetWebsite1}
+                  <img
+                    src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite1-min.png"
                     alt="widget website"
                     style={{ width: "100%", height: "100%" }}
                   />
@@ -80,8 +81,8 @@ export const WebsiteWidget = () => {
 
               <Img2>
                 <animated.div style={secondImg}>
-                  <Image
-                    src={WidgetWebsite2}
+                  <img
+                    src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite2-min.png"
                     alt="widget website"
                     style={{ width: "100%", height: "100%" }}
                   />
@@ -300,3 +301,4 @@ const Img2 = styled.div`
 //       "box-shadow": "0 0 0 0 rgba(235,212,139)",
 //     },
 //   },
+export default WebsiteWidget
