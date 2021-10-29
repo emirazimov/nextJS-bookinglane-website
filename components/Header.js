@@ -160,6 +160,7 @@ const Header = () => {
   const RequestDemo = dynamic(() => import("./RequestDemo"), {
     ssr: false,
   })
+  // const Tutorial = dynamic(() => import("./Tutorial"))
   const ContactUs = dynamic(() => import("./ContactUs"))
   const OurTeam = dynamic(() => import("./OurTeam"), {
     ssr: false,
@@ -376,6 +377,9 @@ const Header = () => {
         <div className="WebsiteWidget">
           <WebsiteWidget />
         </div>
+        {/* <div className="Tutorial">
+          <Tutorial />
+        </div> */}
         <div className="DownloadMobileApp">
           <DownloadMobileApp />
         </div>

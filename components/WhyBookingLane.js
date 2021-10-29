@@ -106,6 +106,7 @@ export const WhyBookingLane = forwardRef(({ ref }) => {
                       src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WhyBookinglane-min.png"
                       // className={styles.whyBookinglaneImage}
                       style={{ width: "100%", height: "100%" }}
+                      alt="why bookinglane"
                       // objectFit="contain"
                     />
                   </Img>
