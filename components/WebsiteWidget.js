@@ -75,7 +75,9 @@ const WebsiteWidget = () => {
                     alt="widget website"
                     style={{ width: "100%", height: "100%" }}
                   />
-                  <Icon>{renderBookinglaneicon()}</Icon>
+                  <Icon>
+                    <BookinglaneIconForWidget />
+                  </Icon>
                 </animated.div>
               </Img1>
 

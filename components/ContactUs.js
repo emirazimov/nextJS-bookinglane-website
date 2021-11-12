@@ -234,7 +234,7 @@ const ContactUs = ({ opened }) => {
     if (hasError) {
       setTransparentBg(true)
       setFlagForPreloader(true)
-      fetch("https://apidev.bookinglane.com/api/contacts", requestOptions)
+      fetch("https://api.bookinglane.com/api/contacts", requestOptions)
         .then((res) => {
           setFlagForPreloader(false)
           setCheckmark(true)

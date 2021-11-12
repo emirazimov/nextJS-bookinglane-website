@@ -9,7 +9,7 @@ import {
   GooglePlayIcon,
   GooglePlayIconForMobile,
 } from "../public/icons"
-import React, { useCallback, useRef, useState } from "react"
+import React, { useCallback, useEffect, useRef, useState } from "react"
 
 import { makeStyles, useTheme } from "@material-ui/core/styles"
 import Drawer from "@material-ui/core/Drawer"
@@ -40,6 +40,8 @@ import styles from "../styles/Header.module.scss"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { openPopupWidget } from "react-calendly"
+
 // const imgUrl = require("../public/BgMobilePhone-min.png").default
 const drawerWidth = 240
 
@@ -145,7 +147,7 @@ const scrollToSectionAboutUs = () => {
   })
 }
 
-const Header = () => {
+const Header = ({ routeOpened }) => {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
@@ -189,6 +191,31 @@ const Header = () => {
   const isSmallDevice = useMediaQuery("(max-width:1151px)")
   const isMobile = useMediaQuery("(max-width:801px)")
   const smallIcons = useMediaQuery("(max-width: 436px)")
+  // if (window.location.href == "http://localhost:3000/request-demo") {
+  //   setOpenRequestDemo(true)
+  //   setRequestDemoOpen(true)
+  // }
+  useEffect(() => {
+    // if (window.location.href == "http://localhost:3000/request-demo") {
+    //   setOpenRequestDemo(true)
+    //   setRequestDemoOpen(true)
+    // }
+    // console.log(window.location.href == "http://localhost:3000/request-demo")
+    // console.log(router.pathname)
+    // window.location.href
+    console.log(routeOpened)
+    if (routeOpened) {
+      dispatch({ type: "SET_REQUEST_DEMO", payload: true })
+      // setRequestDemoOpen(true)
+      setOpenRequestDemo(!openRequestDemo)
+    }
+  }, [])
+
+  const CustomButton = ({ url, prefill, pageSettings, utm }) => {
+    const onClick = () => openPopupWidget({ url, prefill, pageSettings, utm })
+
+    return <Span onClick={onClick}>REQUEST DEMO</Span>
+  }
 
   return (
     <>
@@ -206,16 +233,22 @@ const Header = () => {
               <UlWrapper>
                 <Ul>
                   <Li>
-                    <Span
-                      onClick={() => {
-                        getEvents()
-                        dispatch({ type: "SET_REQUEST_DEMO", payload: true })
-                        setRequestDemoOpen(true)
-                        setOpenRequestDemo(!openRequestDemo)
+                    {/* <Span
+                    onClick={() => {
+                      getEvents()
+                      dispatch({ type: "SET_REQUEST_DEMO", payload: true })
+                      setRequestDemoOpen(true)
+                      setOpenRequestDemo(!openRequestDemo)
+                      openPopupWidget()
+                    }}
+                    > */}
+                    <CustomButton
+                      url={"https://calendly.com/bookinglane"}
+                      pageSettings={{
+                        height: "100%",
                       }}
-                    >
-                      REQUEST DEMO
-                    </Span>
+                    />
+                    {/* </Span> */}
                   </Li>
                   <Li>
                     <Span onClick={scrollToSectionWhyBookinglane}>
@@ -272,14 +305,20 @@ const Header = () => {
                   <UlMobile>
                     <Li>
                       <Span
-                        onClick={() => {
-                          getEvents()
-                          dispatch({ type: "SET_REQUEST_DEMO", payload: true })
-                          setRequestDemoOpen(true)
-                          setOpenRequestDemo(!openRequestDemo)
-                        }}
+                      // onClick={() => {
+                      //   getEvents()
+                      //   // dispatch({ type: "SET_REQUEST_DEMO", payload: true })
+                      //   // setRequestDemoOpen(true)
+                      //   // setOpenRequestDemo(!openRequestDemo)
+                      //   openPopupWidget()
+                      // }}
                       >
-                        REQUEST DEMO
+                        <CustomButton
+                          url={"https://calendly.com/bookinglane"}
+                          pageSettings={{
+                            height: "100%",
+                          }}
+                        />
                       </Span>
                     </Li>
                     <Li onClick={scrollToSectionWhyBookinglane}>
@@ -393,7 +432,7 @@ const Header = () => {
           <Footer />
         </div>
         <ContactUs opened={contactUsOpen} />
-        {openRequestDemo ? <RequestDemo opened={requestDemoOpen} /> : null}
+        <RequestDemo opened={requestDemoOpen} />
 
         {/* <Calendar /> */}
       </div>
@@ -716,6 +755,12 @@ const ContainerForButtons = styled.div`
   }
   @media (max-width: 529px) {
     margin-top: -410px;
+  }
+  @media (max-width: 356px) {
+    margin-top: -340px;
+  }
+  @media (max-width: 320px) {
+    margin-top: -360px;
   }
 `
 

@@ -158,3 +158,26 @@
 .linkedinIconForFooter:hover {
   fill: white;
 }
+
+// .BookinglaneIconForWidgetOnMobileSmallest {
+// }
+// .BookinglaneIconForWidgetOnMobile {
+//   @media (max-width: 661px) {
+//   }
+// }
+.BookinglaneIconForWidget {
+  margin-bottom: 10px;
+  margin-top: -3px;
+  margin-right: -3px;
+  margin-left: -3px;
+  @media (max-width: 661px) {
+    width: 60px;
+    height: 40px;
+  }
+  @media (max-width: 520px) {
+    width: 50px;
+    height: 30px;
+    margin-left: -10px;
+    // margin-right: 13px;
+  }
+}
