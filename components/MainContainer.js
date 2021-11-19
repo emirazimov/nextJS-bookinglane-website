@@ -57,6 +57,24 @@ const MainContainer = ({ children, keywords }) => {
           content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/AboutUs-min.jpg"
         ></meta>
         <meta property="twitter:card" content="summary"></meta>
+        <script
+          src="https://apis.google.com/js/api.js"
+          type="text/javascript"
+        ></script>
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-N6ZS1BMP1J"
+        ></script>
+        <script>
+          {`
+          window.dataLayer = window.dataLayer || [] 
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag("js", new Date()) 
+          gtag("config", "G-N6ZS1BMP1J")`}
+        </script>
         {/* <meta
           property="og:image"
           content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/AboutUs-min.jpg"
@@ -64,17 +82,33 @@ const MainContainer = ({ children, keywords }) => {
         <meta property="og:url" content="https://bookinglane.com/" /> */}
       </Head>
       <div>{children}</div>
-      <Script
+      {/* <Script
+        strategy="lazyOnload"
         src="https://apis.google.com/js/api.js"
         type="text/javascript"
+        id="my-script"
       ></Script>
       <Script
-        async
+        strategy="lazyOnload"
         src="https://www.googletagmanager.com/gtag/js?id=G-N6ZS1BMP1J"
+        id="my-script2"
       ></Script>
       <Script
+        strategy="lazyOnload"
+        id="my-script3"
         onLoad={() => {
-          window.dataLayer = window.dataLayer || []
+          // window.dataLayer = window.dataLayer || []
+          // function gtag() {
+          //   " "
+          // }
+          // {
+          //   dataLayer.push(arguments)
+          // }
+          // gtag("js", new Date())
+          // gtag("config", "G-N6ZS1BMP1J")
+        }}
+      >
+        {`window.dataLayer = window.dataLayer || []
           function gtag() {
             " "
           }
@@ -82,9 +116,22 @@ const MainContainer = ({ children, keywords }) => {
             dataLayer.push(arguments)
           }
           gtag("js", new Date())
-          gtag("config", "G-N6ZS1BMP1J")
-        }}
-      ></Script>
+          gtag("config", "G-N6ZS1BMP1J")`}
+      </Script> */}
+      {/* <script
+          src="https://apis.google.com/js/api.js"
+          type="text/javascript"
+        ></script>
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-N6ZS1BMP1J"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || [] function gtag(){" "}
+          {dataLayer.push(arguments)}
+          gtag("js", new Date()) gtag("config", "G-N6ZS1BMP1J")
+        </script> */}
     </div>
   )
 }

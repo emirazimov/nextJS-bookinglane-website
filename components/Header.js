@@ -203,11 +203,23 @@ const Header = ({ routeOpened }) => {
     // console.log(window.location.href == "http://localhost:3000/request-demo")
     // console.log(router.pathname)
     // window.location.href
+
     console.log(routeOpened)
     if (routeOpened) {
-      dispatch({ type: "SET_REQUEST_DEMO", payload: true })
+      // dispatch({ type: "SET_REQUEST_DEMO", payload: true })
       // setRequestDemoOpen(true)
-      setOpenRequestDemo(!openRequestDemo)
+      // setOpenRequestDemo(!openRequestDemo)
+      // var url = "https://calendly.com/bookinglane/demo-call?month=2021-11"
+
+      // var pageSettings = {
+      //   height: "100%",
+      // }
+      var url = "https://calendly.com/bookinglane/demo-call?month=2021-11"
+
+      var pageSettings = {
+        height: "100%",
+      }
+      openPopupWidget({ url, pageSettings })
     }
   }, [])
 
@@ -243,7 +255,9 @@ const Header = ({ routeOpened }) => {
                     }}
                     > */}
                     <CustomButton
-                      url={"https://calendly.com/bookinglane"}
+                      url={
+                        "https://calendly.com/bookinglane/demo-call?month=2021-11"
+                      }
                       pageSettings={{
                         height: "100%",
                       }}
@@ -314,7 +328,9 @@ const Header = ({ routeOpened }) => {
                       // }}
                       >
                         <CustomButton
-                          url={"https://calendly.com/bookinglane"}
+                          url={
+                            "https://calendly.com/bookinglane/demo-call?month=2021-11"
+                          }
                           pageSettings={{
                             height: "100%",
                           }}

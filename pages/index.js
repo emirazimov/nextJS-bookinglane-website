@@ -26,7 +26,7 @@ function App() {
           </div>
         </Provider>
       </MainContainer>
-      <Script
+      {/* <Script
         src="https://apis.google.com/js/api.js"
         type="text/javascript"
       ></Script>
@@ -46,7 +46,7 @@ function App() {
           gtag("js", new Date())
           gtag("config", "G-N6ZS1BMP1J")
         }}
-      ></Script>
+      ></Script> */}
     </>
   )
 }
