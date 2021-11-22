@@ -16,6 +16,7 @@ import {
 } from "../public/icons"
 import { HeaderBookingIcon, HeaderBookingIconForMobile } from "../public/images"
 import { getEvents } from "./RequestDemo"
+import { openPopupWidget } from "react-calendly"
 
 export const Footer = () => {
   const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
@@ -52,6 +53,12 @@ export const Footer = () => {
   const dispatch = useDispatch()
   const [requestDemoOpen, setRequestDemoOpen] = useState(false)
 
+  const CustomButton = ({ url, prefill, pageSettings, utm }) => {
+    const onClick = () => openPopupWidget({ url, prefill, pageSettings, utm })
+
+    return <Item onClick={onClick}>REQUEST DEMO</Item>
+  }
+
   const isMobile = useMediaQuery("(max-width:787px)")
   const MobileForIcons = useMediaQuery("(max-width: 620px)")
   return (
@@ -63,15 +70,12 @@ export const Footer = () => {
           </IconContainer>
           <Menu>
             {/* <Item>REQUEST DEMO</Item> */}
-            <Item
-              onClick={() => {
-                getEvents()
-                dispatch({ type: "SET_REQUEST_DEMO", payload: true })
-                setRequestDemoOpen(true)
+            <CustomButton
+              url={"https://calendly.com/bookinglane/demo-call?month=2021-11"}
+              pageSettings={{
+                height: "100%",
               }}
-            >
-              REQUEST DEMO
-            </Item>
+            />
             <Item onClick={scrollToSectionWhyBookinglane}>WHY BOOKINGLANE</Item>
             <Item onClick={scrollToSectionPricing}>PRICING</Item>
             <Item onClick={scrollToSectionAboutUs}>ABOUT US</Item>
