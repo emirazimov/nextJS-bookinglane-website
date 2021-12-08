@@ -76,25 +76,23 @@ export const WhyBookingLane = forwardRef(({ ref }) => {
                 >
                   <animated.div style={firstText}>
                     <Text>
-                      The limousine and town car industry has been notoriously
-                      slow to adopt technological advancements for over 15
-                      years. Transportation businesses like yours are
-                      continuously losing out on potential revenue as a result
-                      of inefficient booking, payment and customer relationship
-                      management systems. Bookinglane addresses all of these
-                      issues. You can manage your business and increase your
-                      earnings with a couple of clicks on your smartphone!
+                      The limousine and executive car service industry has been
+                      notoriously slow to adopt technological advancements for
+                      over 15 years. Limousine businesses are continuously
+                      losing out on potential revenue as a result of inefficient
+                      booking, payment and customer relationship management
+                      systems. Bookinglane addresses all of these issues and
+                      more. Run your business from palm of your hand!
                     </Text>
                   </animated.div>
                 </InView>
                 <animated.div style={secondText}>
                   <Text>
-                    We target helping small and mid-sized businesses like yours
-                    to become more visible on the market, develop affiliate
-                    networks and subsequently increase your earnings. You don’t
-                    need to have access to a computer to manage daily business
-                    anymore. Your entire business is in your smartphone. Take
-                    your business with you anywhere you go!
+                    We help limousine companies like yours to become more
+                    visible on the market, partner with affiliates and increase
+                    profits with maximum booking efficiency. Your entire
+                    business is in your smartphone. Take your business with you
+                    anywhere you go!
                   </Text>
                 </animated.div>
               </TextBlock>

@@ -26,7 +26,7 @@ import { WebsiteWidget } from "./WebsiteWidget"
 import { DownloadMobileApp } from "./DownloadMobileApp"
 // import { Instagram } from "./Instagram"
 import { AboutUs } from "./AboutUs"
-import { OurTeam } from "./OurTeam"
+// import { OurTeam } from "./OurTeam"
 import { Footer } from "./Footer"
 import { scroller } from "react-scroll"
 import { AppBar } from "@material-ui/core"
@@ -41,6 +41,7 @@ import dynamic from "next/dynamic"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { openPopupWidget } from "react-calendly"
+import { Instagram } from "./Instagram"
 
 // const imgUrl = require("../public/BgMobilePhone-min.png").default
 const drawerWidth = 240
@@ -164,9 +165,9 @@ const Header = ({ routeOpened }) => {
   })
   // const Tutorial = dynamic(() => import("./Tutorial"))
   const ContactUs = dynamic(() => import("./ContactUs"))
-  const OurTeam = dynamic(() => import("./OurTeam"), {
-    ssr: false,
-  })
+  // const OurTeam = dynamic(() => import("./OurTeam"), {
+  //   ssr: false,
+  // })
   const WebsiteWidget = dynamic(() => import("./WebsiteWidget"), {
     ssr: false,
   })
@@ -369,7 +370,9 @@ const Header = ({ routeOpened }) => {
             <SecondRowInHeader>
               <ContainerForTextBlock>
                 <Title>
-                  Comprehensive mobile CRM software for transportation companies
+                  {
+                    "Business Management and Booking Platform for Executive Car Service & Limo Companies"
+                  }
                 </Title>
 
                 <Text>
@@ -441,15 +444,15 @@ const Header = ({ routeOpened }) => {
         <div className="AboutUs">
           <AboutUs />
         </div>
-        <div className="OurTeam">
+        {/* <div className="OurTeam">
           <OurTeam />
-        </div>
+        </div> */}
         <div className="Footer">
           <Footer />
         </div>
         <ContactUs opened={contactUsOpen} />
         <RequestDemo opened={requestDemoOpen} />
-
+        {/* <Instagram /> */}
         {/* <Calendar /> */}
       </div>
     </>

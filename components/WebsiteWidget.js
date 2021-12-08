@@ -94,11 +94,11 @@ const WebsiteWidget = () => {
           </InView>
           <TextBlock>
             <Text>
-              Already have your own business website? We have good news for you.
+              Already have your own business website? We have good news for you!
               We’ve created the Bookinglane customized widget that will
-              integrate your website with our software app, so you could accept
-              reservations on both ends. It’s a win-win for you and your
-              clients. It has never been easier before!
+              integrate your website with our software app, so you could easily
+              accept reservations on both ends. It’s a win-win for you and your
+              clients
             </Text>
           </TextBlock>
         </Content>
