@@ -724,7 +724,7 @@ const ContainerForTextBlock = styled.div`
 const Title = styled.h1`
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 33px;
   line-height: 50px;
   color: black;
   /* margin-top: -70px; */
@@ -733,7 +733,7 @@ const Title = styled.h1`
     text-align: center;
   }
   @media (max-width: 973px) {
-    font-size: 26px;
+    font-size: 23px;
     line-height: 34px;
   }
 `
