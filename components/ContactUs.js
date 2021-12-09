@@ -1,7 +1,7 @@
 import styled from "styled-components"
 // import { css } from "styled-components"
 import React, { useState } from "react"
-import closeIcon from "../public/CloseIcon.svg"
+// import closeIcon from "../public/CloseIcon.svg"
 import {
   CircularProgress,
   Dialog,

@@ -7,8 +7,8 @@ import {
   BookinglaneIconForWidgetOnMobile,
   BookinglaneIconForWidgetOnMobileSmallest,
 } from "../public/icons"
-import WidgetWebsite1 from "../public/WidgetWebsite1-min.png"
-import WidgetWebsite2 from "../public/WidgetWebsite2-min.png"
+// import WidgetWebsite1 from "../public/WidgetWebsite1-min.png"
+// import WidgetWebsite2 from "../public/WidgetWebsite2-min.png"
 import { useSpring, animated, config } from "react-spring"
 import { InView } from "react-intersection-observer"
 import React from "react"

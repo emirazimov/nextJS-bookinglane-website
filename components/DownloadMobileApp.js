@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { css } from "styled-components"
-import DownloadMobileAppImg2 from "../public/DownloadMobileApp-min.png"
+// import DownloadMobileAppImg2 from "../public/DownloadMobileApp-min.png"
 import {
   AppstoreIcon,
   AppstoreIconForMobile,
@@ -11,7 +11,7 @@ import { useMediaQuery } from "@material-ui/core"
 import ScrollAnimation from "react-animate-on-scroll"
 import Image from "next/image"
 
-export const DownloadMobileApp = () => {
+const DownloadMobileApp = () => {
   const smallIcons = useMediaQuery("(max-width: 436px)")
   return (
     <MainContainerWithStyle>
@@ -286,3 +286,5 @@ const Img = styled.img`
   width: 100%;
   height: 100%;
 `
+
+export default DownloadMobileApp

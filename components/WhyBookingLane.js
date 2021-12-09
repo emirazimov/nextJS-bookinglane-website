@@ -2,14 +2,14 @@ import styled from "styled-components"
 import { css } from "styled-components"
 
 // import InstagramEmbed from "react-instagram-embed"
-import whyBookinglane from "../public/WhyBookinglane-min.png"
+// import whyBookinglane from "../public/WhyBookinglane-min.png"
 import React, { forwardRef, useState } from "react"
 import { useSpring, animated, config } from "react-spring"
 import { InView } from "react-intersection-observer"
 import Image from "next/image"
 import styles from "../styles/WhyBookinglane.module.scss"
 
-export const WhyBookingLane = forwardRef(({ ref }) => {
+const WhyBookingLane = forwardRef(({ ref }) => {
   const [showH1, setShowH1] = React.useState(false)
   const onInViewChange = (inview) => {
     if (!showH1 && inview) setShowH1(true)
@@ -214,3 +214,5 @@ const Img = styled.div`
 //   line-height: 24px;
 //   padding: 0 30px 45px 30px;
 // `
+
+export default WhyBookingLane

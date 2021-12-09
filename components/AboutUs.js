@@ -11,11 +11,11 @@ import {
   TwitterIconForBodyMobile,
 } from "../public/icons"
 
-import AboutUsImg from "../public/AboutUs-min.jpg"
+// import AboutUsImg from "../public/AboutUs-min.jpg"
 import { useMediaQuery } from "@material-ui/core"
 import Image from "next/image"
 
-export const AboutUs = () => {
+const AboutUs = () => {
   const Mobile = useMediaQuery("(max-width: 620px)")
   return (
     <MainContainer>
@@ -149,7 +149,7 @@ const WrapperWithMargin = styled.div`
 
 const ContainerForImg = styled.div``
 const Img = styled.div`
-  /* background: url(${AboutUsImg}) center no-repeat;
+  /* background: url() center no-repeat;
   background-size: contain; */
   width: 800px;
   height: 540px;
@@ -249,3 +249,5 @@ const SecondImage = styled.div`
   top: -20px;
   right: 190px;
 `
+
+export default AboutUs

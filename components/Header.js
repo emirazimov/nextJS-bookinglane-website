@@ -117,38 +117,13 @@ const useStyles = makeStyles((theme) => ({
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
-const scrollToSectionHeader = () => {
-  scroller.scrollTo("Header", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
-
-const scrollToSectionWhyBookinglane = () => {
-  scroller.scrollTo("WhyBookinglane", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
-const scrollToSectionPricing = () => {
-  scroller.scrollTo("Pricing", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
-
-const scrollToSectionAboutUs = () => {
-  scroller.scrollTo("AboutUs", {
-    duration: 800,
-    delay: 0,
-    smooth: "easeInOutQuart",
-  })
-}
-
-const Header = ({ routeOpened }) => {
+const Header = ({
+  routeOpened,
+  scrollToSectionHeader,
+  scrollToSectionWhyBookinglane,
+  scrollToSectionPricing,
+  scrollToSectionAboutUs,
+}) => {
   const classes = useStyles()
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
@@ -168,22 +143,17 @@ const Header = ({ routeOpened }) => {
   // const OurTeam = dynamic(() => import("./OurTeam"), {
   //   ssr: false,
   // })
-  const WebsiteWidget = dynamic(() => import("./WebsiteWidget"), {
-    ssr: false,
-  })
-  const Pricing = dynamic(() => import("./Pricing"), {
-    ssr: false,
-  })
+  // const WebsiteWidget = dynamic(() => import("./WebsiteWidget"), {
+  //   ssr: false,
+  // })
+  // const Pricing = dynamic(() => import("./Pricing"), {
+  //   ssr: false,
+  // })
 
   // const myRef = useRef(null)
 
   // const executeScroll = () => scrollToRef(myRef)
 
-  const [{ scroll }, set] = useSpring(() => ({ scroll: 0 }))
-  const onScroll = useCallback(
-    (e) => void set({ scroll: e.target.scrollTop / (window.innerHeight / 2) }),
-    []
-  )
   const router = useRouter()
   const [openRequestDemo, setOpenRequestDemo] = useState(false)
   const [requestDemoOpen, setRequestDemoOpen] = useState(false)
@@ -378,7 +348,8 @@ const Header = ({ routeOpened }) => {
                 <Text>
                   Bookinglane provides solutions that connect your business with
                   clients and affiliates, and support your business in the long
-                  run - all in your smartphone.
+                  <span style={{ whiteSpace: "nowrap" }}> run - all</span> in
+                  your smartphone.
                 </Text>
               </ContainerForTextBlock>
             </SecondRowInHeader>
@@ -425,36 +396,11 @@ const Header = ({ routeOpened }) => {
           </div>
         </div>
       </div>
-      <div onScroll={onScroll}>
-        <div className="WhyBookinglane">
-          <WhyBookingLane offset={scroll} start={0} end={0.5} />
-        </div>
-        <div className="Pricing">
-          <Pricing />
-        </div>
-        <div className="WebsiteWidget">
-          <WebsiteWidget />
-        </div>
-        {/* <div className="Tutorial">
-          <Tutorial />
-        </div> */}
-        <div className="DownloadMobileApp">
-          <DownloadMobileApp />
-        </div>
-        <div className="AboutUs">
-          <AboutUs />
-        </div>
-        {/* <div className="OurTeam">
-          <OurTeam />
-        </div> */}
-        <div className="Footer">
-          <Footer />
-        </div>
-        <ContactUs opened={contactUsOpen} />
-        <RequestDemo opened={requestDemoOpen} />
-        {/* <Instagram /> */}
-        {/* <Calendar /> */}
-      </div>
+
+      <ContactUs opened={contactUsOpen} />
+      <RequestDemo opened={requestDemoOpen} />
+
+      {/* <Calendar /> */}
     </>
   )
 }

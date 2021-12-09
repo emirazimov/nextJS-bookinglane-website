@@ -18,7 +18,7 @@ import { HeaderBookingIcon, HeaderBookingIconForMobile } from "../public/images"
 import { getEvents } from "./RequestDemo"
 import { openPopupWidget } from "react-calendly"
 
-export const Footer = () => {
+const Footer = () => {
   const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
   const [contactUsOpen, setContactUsOpen] = useState(false)
   const scrollToSectionHeader = () => {
@@ -209,3 +209,5 @@ const Text = styled.span`
   font-size: calc(15px + (7 + 7 * 0.7) * ((40vw - 620px) / 1520));
   color: black;
 `
+
+export default Footer
