@@ -99,9 +99,9 @@ function App() {
               {/* <div className="OurTeam">
           <OurTeam />
         </div> */}
-              {/* <div className="Instagram">
+              <div className="Instagram">
                 <Instagram />
-              </div> */}
+              </div>
               <div className="Footer">
                 <Footer />
               </div>

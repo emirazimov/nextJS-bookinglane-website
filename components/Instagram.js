@@ -67,9 +67,19 @@ const Instagram = () => {
     setPosts()
   }, [])
 
-  const isMobile = useMediaQuery("(max-width:907px)")
+  const isMobile = useMediaQuery("(max-width:1207px)")
 
-  const isSmallestMobile = useMediaQuery("(max-width:500px)")
+  const isSmallestMobile = useMediaQuery("(max-width:850px)")
+
+  const itemsToShow = () => {
+    if (isSmallestMobile) {
+      return 1
+    } else if (isMobile) {
+      return 2
+    } else if (!isMobile) {
+      return 3
+    }
+  }
 
   return (
     <>
@@ -78,30 +88,89 @@ const Instagram = () => {
         <Carousel
           renderArrow={myArrow}
           pagination={false}
-          itemsToShow={
-            (!isMobile && 3,
-            isMobile && 2,
-            // isSmallestMobile && 1,
-            isSmallestMobile || 2)
-          }
+          itemsToShow={itemsToShow()}
           transitionMs={300}
+          // style={{ height: "1000px" }}
         >
           {gramz?.map((post, index) => {
             return (
               <article className={style.mainContainer} key={index}>
-                <div className={style.imageContainer}>
-                  <img
-                    src={post.media_url}
-                    alt="instagram_post"
-                    className={style.gramzImage}
-                  ></img>
-                </div>
-                <div className={style.descriptionContainer}>
-                  <p>{post.caption}</p>
+                <div className={style.secondaryContainer}>
+                  <div className={style.imageContainer}>
+                    <img
+                      src={post.media_url}
+                      alt="instagram_post"
+                      // objectFit="contain"
+                      // style={{ width: "100%", height: "100%" }}
+                      className={style.gramzImage}
+                    />
+                  </div>
+                  <div className={style.descriptionContainer}>
+                    <p>{post.caption}</p>
+                  </div>
                 </div>
               </article>
             )
           })}
+          {/* <article className={style.mainContainer}>
+            <div className={style.secondaryContainer}>
+              <div className={style.imageContainer}>
+                <img
+                  // src={post.media_url}
+                  alt="instagram_post"
+                  className={style.gramzImage}
+                ></img>
+              </div>
+              <div className={style.descriptionContainer}>
+                <p>
+                  adsfasdf asdfsadf asdf asdf asdf asdf asdf asdf asdf
+                  asdfasdfasd asdf asdf sdaf asdf asdf asdfasdfasdf asdf asdf
+                  asdf asdfas dfasd fasd fasdf asdf asdfasdfa sdf asdf asdf sad
+                  sad as asdfasdf asdf asdfasdfa sdfa dsaf asdf asdfasdf asd
+                  fasdf asdf asd fasdf asdaf dasfasdfasdfa dasf asdf asdf asdf
+                  asdf asdf asdfasdfa dasf asdf asdf asdfas dfasdfasdf asdfasdf
+                  asdfasdfasd fasdfasdfasdf asdf asdfasdf asdf asd asd fasd fasd
+                  fasd fasdfas daf adsfasdf asdfsadf asdf asdf asdf asdf asdf
+                  asdf asdf asdfasdfasd asdf asdf sdaf asdf asdf asdfasdfasdf
+                  asdf asdf asdf asdfas dfasd fasd fasdf asdf asdfasdfa sdf asdf
+                  asdf sad sad as asdfasdf asdf asdfasdfa sdfa dsaf asdf
+                  asdfasdf asd fasdf asdf asd fasdf asdaf dasfasdfasdfa dasf
+                  asdf asdf asdf asdf asdf asdfasdfa dasf asdf asdf asdfas
+                  dfasdfasdf asdfasdf asdfasdfasd fasdfasdfasdf asdf asdfasdf
+                  asdf asd asd fasd fasd fasd fasdfas daf adsfasdf asdfsadf asdf
+                  asdf asdf asdf asdf asdf asdf asdfasdfasd asdf asdf sdaf asdf
+                  asdf asdfasdfasdf asdf asdf asdf asdfas dfasd fasd fasdf asdf
+                  asdfasdfa sdf asdf asdf sad sad as asdfasdf asdf asdfasdfa
+                  sdfa dsaf asdf asdfasdf asd fasdf asdf asd fasdf asdaf
+                  dasfasdfasdfa dasf asdf asdf asdf asdf asdf asdfasdfa dasf
+                  asdf asdf asdfas dfasdfasdf asdfasdf asdfasdfasd fasdfasdfasdf
+                  asdf asdfasdf asdf asd asd fasd fasd fasd fasdfas daf adsfasdf
+                  asdfsadf asdf asdf asdf asdf asdf asdf asdf asdfasdfasd asdf
+                  asdf sdaf asdf asdf asdfasdfasdf asdf asdf asdf asdfas dfasd
+                  fasd fasdf asdf asdfasdfa sdf asdf asdf sad sad as asdfasdf
+                  asdf asdfasdfa sdfa dsaf asdf asdfasdf asd fasdf asdf asd
+                  fasdf asdaf dasfasdfasdfa dasf asdf asdf asdf asdf asdf
+                  asdfasdfa dasf asdf asdf asdfas dfasdfasdf asdfasdf
+                  asdfasdfasd fasdfasdfasdf asdf asdfasdf asdf asd asd fasd fasd
+                  fasd fasdfas daf adsfasdf asdfsadf asdf asdf asdf asdf asdf
+                  asdf asdf asdfasdfasd asdf asdf sdaf asdf asdf asdfasdfasdf
+                  asdf asdf asdf asdfas dfasd fasd fasdf asdf asdfasdfa sdf asdf
+                  asdf sad sad as asdfasdf asdf asdfasdfa sdfa dsaf asdf
+                  asdfasdf asd fasdf asdf asd fasdf asdaf dasfasdfasdfa dasf
+                  asdf asdf asdf asdf asdf asdfasdfa dasf asdf asdf asdfas
+                  dfasdfasdf asdfasdf asdfasdfasd fasdfasdfasdf asdf asdfasdf
+                  asdf asd asd fasd fasd fasd fasdfas daf adsfasdf asdfsadf asdf
+                  asdf asdf asdf asdf asdf asdf asdfasdfasd asdf asdf sdaf asdf
+                  asdf asdfasdfasdf asdf asdf asdf asdfas dfasd fasd fasdf asdf
+                  asdfasdfa sdf asdf asdf sad sad as asdfasdf asdf asdfasdfa
+                  sdfa dsaf asdf asdfasdf asd fasdf asdf asd fasdf asdaf
+                  dasfasdfasdfa dasf asdf asdf asdf asdf asdf asdfasdfa dasf
+                  asdf asdf asdfas dfasdfasdf asdfasdf asdfasdfasd fasdfasdfasdf
+                  asdf asdfasdf asdf asd asd fasd fasd fasd fasdfas daf
+                </p>
+              </div>
+            </div>
+          </article> */}
         </Carousel>
       </div>
     </>
