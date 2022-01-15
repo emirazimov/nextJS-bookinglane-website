@@ -5,6 +5,7 @@ import style from "../styles/Instagram.module.scss"
 import Carousel, { consts } from "react-elastic-carousel"
 import { LeftArrowForCarousel, RightArrowForCarousel } from "../public/icons"
 import { useMediaQuery } from "@material-ui/core"
+// import "../styles/globals.css"
 
 const url = `https://www.instagram.com/graphql/query/?query_hash=dbdfd83895d23a4a0b0f68a85486e91c&variables={"id":"1554310719","first": 4}`
 
