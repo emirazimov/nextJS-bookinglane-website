@@ -33,19 +33,20 @@ const AboutUs = () => {
           </ContainerForImg>
           <ContainerForText>
             <Text>
-              Bookinglane is a family owned business. The founders are
-              experienced transportation business owners with extensive industry
-              and public accounting expertise. Through firsthand experience of
-              7-plus years, the founders were able to identify the key pain
-              points for transportation companies and their clients. Together
-              they built Bookinglane as a longed-for solution to all challenges
-              for business owners, drivers, and customers in the transportation
-              industry.
+              Our goal is to connect limo business owners and independent
+              operators across the globe with our latest technologies and
+              automation solutions. Through firsthand experience of operating
+              the executive car service business, we were able to identify the
+              key pain points of the grossly underserved executive car service &
+              limo industry. We built Bookinglane platform as a longed-for
+              solution to all challenges for independent operators, drivers, and
+              customers.
             </Text>
+
             <Text2>
-              As a family, we treat our clients with utmost care and strive for
-              your success. Our talented IT team constantly monitors and
-              improves our software to ensure your best experience.
+              We treat our clients with utmost care and strive for your success.
+              Our talented IT team constantly monitors and improves our software
+              to ensure your best experience.
             </Text2>
             <Icons>
               <a

@@ -477,16 +477,14 @@ const Pricing = () => {
   return (
     <Wrapper>
       <MainContainer>
-        <Title>EARLY BIRD PRICING</Title>
+        {/* <Title>PRICING</Title> */}
 
         <Content>
           <ImgBlock>{renderMobiles()}</ImgBlock>
           {/* <Img src={mainImg} /> */}
           <TextBlock>
             <TextContainer>
-              <Price>
-                As simple as it is - just $19.99/month plus free trial.
-              </Price>
+              <Price>As simple as it is - just $59.99/month.</Price>
               <CheckMarksBlock>
                 <FirstColumn>
                   <ItemContainer>
@@ -933,7 +931,7 @@ const TextContainer = styled.div`
 // `
 
 const Price = styled.span`
-  font-weight: 600;
+  font-weight: 700;
   line-height: 33px;
   font-size: calc(21px + (7 + 7 * 0.7) * ((46vw - 620px) / 1520));
   margin-bottom: 30px;

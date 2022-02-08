@@ -61,7 +61,7 @@ const Instagram = () => {
 
   const setPosts = async () => {
     const res = await getData()
-    console.log(res.data)
+    console.log(res)
     setGramz(res.data)
   }
   useEffect(() => {

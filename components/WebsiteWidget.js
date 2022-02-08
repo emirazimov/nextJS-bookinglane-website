@@ -1,18 +1,18 @@
-import { useMediaQuery } from '@material-ui/core'
-import { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { css } from 'styled-components'
+import { useMediaQuery } from "@material-ui/core"
+import { useEffect, useState } from "react"
+import styled from "styled-components"
+import { css } from "styled-components"
 import {
   BookinglaneIconForWidget,
   BookinglaneIconForWidgetOnMobile,
   BookinglaneIconForWidgetOnMobileSmallest,
-} from '../public/icons'
+} from "../public/icons"
 // import WidgetWebsite1 from "../public/WidgetWebsite1-min.png"
 // import WidgetWebsite2 from "../public/WidgetWebsite2-min.png"
-import { useSpring, animated, config } from 'react-spring'
-import { InView } from 'react-intersection-observer'
-import React from 'react'
-import Image from 'next/image'
+import { useSpring, animated, config } from "react-spring"
+import { InView } from "react-intersection-observer"
+import React from "react"
+import Image from "next/image"
 
 const WebsiteWidget = () => {
   const [showH1, setShowH1] = React.useState(false)
@@ -22,10 +22,10 @@ const WebsiteWidget = () => {
   const [flip, set] = useState(false)
   const firstImg = useSpring({
     // to: {  },
-    from: { opacity: showH1 ? 0 : 1, transform: showH1 && 'translateY(120px)' },
+    from: { opacity: showH1 ? 0 : 1, transform: showH1 && "translateY(120px)" },
     // reset: true,
     // reverse: showH1,
-    transform: 'translateY(0)',
+    transform: "translateY(0)",
     opacity: 1,
     delay: 200,
     config: config.molasses,
@@ -34,18 +34,18 @@ const WebsiteWidget = () => {
   })
   const secondImg = useSpring({
     // to: {  },
-    from: { transform: showH1 && 'translateY(120px)', opacity: showH1 ? 0 : 1 },
+    from: { transform: showH1 && "translateY(120px)", opacity: showH1 ? 0 : 1 },
     // reset: true,
     // reverse: showH1,
-    transform: 'translateY(0)',
+    transform: "translateY(0)",
     opacity: 1,
     delay: 700,
     config: config.molasses,
     onRest: () => set(showH1),
   })
 
-  const isMobile = useMediaQuery('(max-width:661px)')
-  const isMobileSmallest = useMediaQuery('(max-width:520px)')
+  const isMobile = useMediaQuery("(max-width:661px)")
+  const isMobileSmallest = useMediaQuery("(max-width:520px)")
   console.log(isMobile)
   const renderBookinglaneicon = () => {
     if (isMobileSmallest) {
@@ -64,16 +64,16 @@ const WebsiteWidget = () => {
   return (
     <MainContainerWithStyle>
       <Wrapper>
-        <Title>WEBSITE WIDGET</Title>
+        <Title>WEBSITE WIDGET TOOL</Title>
         <Content>
-          <InView tag='div' onChange={onInViewChange}>
+          <InView tag="div" onChange={onInViewChange}>
             <ImgBlock>
               <Img1>
                 <animated.div style={firstImg}>
                   <img
-                    src='https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite1-min.png'
-                    alt='widget website'
-                    style={{ width: '100%', height: '100%' }}
+                    src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite1-min.png"
+                    alt="widget website"
+                    style={{ width: "100%", height: "100%" }}
                   />
                   <Icon>
                     <BookinglaneIconForWidget />
@@ -84,9 +84,9 @@ const WebsiteWidget = () => {
               <Img2>
                 <animated.div style={secondImg}>
                   <img
-                    src='https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite2-min.png'
-                    alt='widget website'
-                    style={{ width: '100%', height: '100%' }}
+                    src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite2-min.png"
+                    alt="widget website"
+                    style={{ width: "100%", height: "100%" }}
                   />
                 </animated.div>
               </Img2>
@@ -95,10 +95,10 @@ const WebsiteWidget = () => {
           <TextBlock>
             <Text>
               Already have your own business website? We have good news for you!
-              We’ve created the Bookinglane customized widget that will
-              integrate your website with our software app, so you could easily
-              accept reservations on both ends. It’s a win-win for you and your
-              clients
+              We’ve created the Bookinglane customized widget and booking page
+              that will integrate your website with our app based on your
+              preference, so you could easily accept reservations on both ends.
+              It’s a win-win for you and your clients.
             </Text>
           </TextBlock>
         </Content>
@@ -167,6 +167,7 @@ const ImgBlock = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   @media (max-width: 1385px) {
     justify-content: space-around;
   }
@@ -177,15 +178,19 @@ const ImgBlock = styled.div`
 `
 
 const Img1 = styled.div`
-  height: 100%;
+  width: 52%;
+  height: 52%;
   position: relative;
-  padding-top: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: -1;
   @media (max-width: 1385px) {
-    width: 41.5%;
+    width: 43.5%;
   }
   @media (max-width: 1201px) {
-    width: 40.5%;
+    width: 42.5%;
   }
   @media (max-width: 1011px) {
     width: 70%;
@@ -204,7 +209,7 @@ const Icon = styled.div`
   animation: pulse 2s infinite;
   z-index: 1;
   bottom: 74px;
-  right: 104px;
+  left: 104px;
   @keyframes pulse {
     0% {
       -moz-box-shadow: 0 0 0 0 rgba(193, 152, 21);
@@ -280,6 +285,9 @@ const Icon = styled.div`
 `
 const Img2 = styled.div`
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media (max-width: 1385px) {
     width: 43%;
   }

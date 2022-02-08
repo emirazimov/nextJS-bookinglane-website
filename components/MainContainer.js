@@ -20,12 +20,12 @@ const MainContainer = ({ children, keywords }) => {
         ></meta>
         <link rel="apple-touch-icon" href="logo.png" />
         <link rel="canonical" href="https://bookinglane.com/" />
-        <meta
+        {/* <meta
           name="description"
           content="Comprehensive mobile CRM software for transportation companies. Bookinglane provides solutions that connect your business with clients
         and affiliates, and support your business in the long run - all in your
         smartphone."
-        ></meta>
+        ></meta> */}
         {/* <meta name="description" content=""></meta> */}
         <meta name="robots" content="all"></meta>
         <meta name="robots" content="max-snippet:-1"></meta>
@@ -34,27 +34,27 @@ const MainContainer = ({ children, keywords }) => {
         <meta property="og:title" content="Bookinglane" />
         <meta property="og:url" content="https://bookinglane.com/"></meta>
         <meta property="og:type" content="article"></meta>
-        <meta
+        {/* <meta
           property="og:description"
           content="Comprehensive mobile CRM software for transportation companies. Bookinglane provides solutions that connect your business with clients
         and affiliates, and support your business in the long run - all in your
         smartphone."
-        ></meta>
+        ></meta> */}
         <meta
           property="og:image"
-          content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/AboutUs-min.jpg"
+          content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/CompanyImageForSocialNetworkPreview.jpg"
         ></meta>
         {/* <meta property="fb:app_id" content="APPID" /> */}
         <meta property="twitter:title" content="Bookinglane"></meta>
-        <meta
+        {/* <meta
           property="twitter:description"
           content="Comprehensive mobile CRM software for transportation companies. Bookinglane provides solutions that connect your business with clients
         and affiliates, and support your business in the long run - all in your
         smartphone."
-        ></meta>
+        ></meta> */}
         <meta
           property="twitter:image"
-          content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/AboutUs-min.jpg"
+          content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/CompanyImageForSocialNetworkPreview.jpg"
         ></meta>
         <meta property="twitter:card" content="summary"></meta>
         <script

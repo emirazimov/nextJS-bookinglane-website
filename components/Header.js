@@ -8,6 +8,7 @@ import {
   AppstoreIconForMobile,
   GooglePlayIcon,
   GooglePlayIconForMobile,
+  CallUsIcon,
 } from "../public/icons"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 
@@ -18,7 +19,8 @@ import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import ChevronRightIcon from "@material-ui/icons/ChevronRight"
-
+import Menu from "@mui/material/Menu"
+import MenuItem from "@mui/material/MenuItem"
 import { useMediaQuery } from "@material-ui/core"
 // import { WhyBookingLane } from "./WhyBookingLane"
 // import { Pricing } from "./Pricing"
@@ -200,6 +202,15 @@ const Header = ({
     return <Span onClick={onClick}>REQUEST DEMO</Span>
   }
 
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const openCallUs = Boolean(anchorEl)
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
   return (
     <>
       <AppBar className={classes.appBar}>
@@ -256,6 +267,27 @@ const Header = ({
                       CONTACT US
                     </Span>
                   </Li>
+                  <Li>
+                    <Span onClick={handleClick}>
+                      <CallUsIcon />
+                      CALL US
+                    </Span>
+                  </Li>
+                  <Menu
+                    id="fade-menu"
+                    MenuListProps={{
+                      "aria-labelledby": "fade-button",
+                    }}
+                    anchorEl={anchorEl}
+                    open={openCallUs}
+                    onClose={handleClose}
+                    // TransitionComponent={Fade}
+                  >
+                    <MenuItem onClick={handleClose}>Pacific Time Zone</MenuItem>
+                    <MenuItem onClick={handleClose}>Monday - Friday</MenuItem>
+                    <MenuItem onClick={handleClose}>8 am - 8 pm</MenuItem>
+                    <MenuItem onClick={handleClose}>+1 (415) 384-5039</MenuItem>
+                  </Menu>
                 </Ul>
               </UlWrapper>
             ) : (
@@ -327,6 +359,39 @@ const Header = ({
                         CONTACT US
                       </Span>
                     </Li>
+                    <Li>
+                      <Span onClick={handleClick}>
+                        <CallUsIcon /> CALL US
+                      </Span>
+                    </Li>
+                    <Menu
+                      id="fade-menu"
+                      MenuListProps={{
+                        "aria-labelledby": "fade-button",
+                      }}
+                      anchorEl={anchorEl}
+                      open={openCallUs}
+                      onClose={handleClose}
+                      // TransitionComponent={Fade}
+                    >
+                      <MenuItem onClick={handleClose}>
+                        Pacific Time Zone
+                      </MenuItem>
+                      <MenuItem onClick={handleClose}>Monday - Friday</MenuItem>
+                      <MenuItem onClick={handleClose}>8 am - 8 pm</MenuItem>
+                      <MenuItem onClick={handleClose}>
+                        +1 (415) 384-5039
+                      </MenuItem>
+                    </Menu>
+                    {/* <Button
+                      id="fade-button"
+                      aria-controls={open ? "fade-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? "true" : undefined}
+                      onClick={handleClick}
+                    >
+                      Dashboard
+                    </Button> */}
                   </UlMobile>
                 </Drawer>
               </div>
