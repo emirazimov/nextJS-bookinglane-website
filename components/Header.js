@@ -281,12 +281,33 @@ const Header = ({
                     anchorEl={anchorEl}
                     open={openCallUs}
                     onClose={handleClose}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
                     // TransitionComponent={Fade}
                   >
-                    <MenuItem onClick={handleClose}>Pacific Time Zone</MenuItem>
-                    <MenuItem onClick={handleClose}>Monday - Friday</MenuItem>
-                    <MenuItem onClick={handleClose}>8 am - 8 pm</MenuItem>
-                    <MenuItem onClick={handleClose}>+1 (415) 384-5039</MenuItem>
+                    <MenuItem disableRipple style={{ cursor: "auto" }}>
+                      <span style={{ width: "100%", textAlign: "center" }}>
+                        Pacific Time Zone
+                      </span>
+                    </MenuItem>
+                    <MenuItem disableRipple style={{ cursor: "auto" }}>
+                      <span style={{ width: "100%", textAlign: "center" }}>
+                        Monday - Friday
+                      </span>
+                    </MenuItem>
+                    <MenuItem disableRipple style={{ cursor: "auto" }}>
+                      <span style={{ width: "100%", textAlign: "center" }}>
+                        8 am - 8 pm
+                      </span>
+                    </MenuItem>
+                    <MenuItem disableRipple style={{ cursor: "auto" }}>
+                      <span style={{ width: "100%", textAlign: "center" }}>
+                        +1 (415) 384-5039
+                      </span>
+                    </MenuItem>
                   </Menu>
                 </Ul>
               </UlWrapper>
@@ -627,14 +648,14 @@ const UlWrapper = styled.div`
   width: 66%;
 `
 const Ul = styled.ul`
-  width: 74%;
+  width: 84%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   list-style-type: none;
   color: black;
   @media (max-width: 1363px) {
-    width: 90%;
+    width: 98%;
   }
 `
 const UlMobile = styled.ul`

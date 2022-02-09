@@ -64,7 +64,7 @@ const WebsiteWidget = () => {
   return (
     <MainContainerWithStyle>
       <Wrapper>
-        <Title>WEBSITE WIDGET TOOL</Title>
+        <Title>WEBSITE BOOKING TOOL</Title>
         <Content>
           <InView tag="div" onChange={onInViewChange}>
             <ImgBlock>
@@ -147,7 +147,7 @@ const TextBlock = styled.div`
 `
 const Text = styled.p`
   width: 55%;
-  font-size: 24px;
+  font-size: calc(20px + (7 + 7 * 0.7) * ((40vw - 620px) / 1520));
   font-weight: 400;
   line-height: 30px;
   margin-top: 50px;
@@ -157,7 +157,7 @@ const Text = styled.p`
   }
   @media (max-width: 1011px) {
     width: 100%;
-    font-size: calc(20px + (7 + 7 * 0.7) * ((40vw - 620px) / 1520));
+    /* font-size: calc(20px + (7 + 7 * 0.7) * ((40vw - 620px) / 1520)); */
     line-height: 28px;
   }
 `
