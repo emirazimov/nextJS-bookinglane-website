@@ -31,12 +31,12 @@ export function* setCountries() {
   yield put({ type: "SET_COUNTRIES", payload: response })
 }
 
-export function* loadInitalInfo() {
+export function* loadInitalInfoWatcherSaga() {
   yield all([fork(setRequestDemo), fork(setContuctUs), fork(setCountries)])
 }
 
 export default function* rootSaga() {
-  const sagas = [loadInitalInfo]
+  const sagas = [loadInitalInfoWorkerSaga]
   const retrySagas = yield sagas.map((saga) => {
     return spawn(function* () {
       while (true) {

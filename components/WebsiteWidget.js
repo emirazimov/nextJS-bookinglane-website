@@ -68,28 +68,33 @@ const WebsiteWidget = () => {
         <Content>
           <InView tag="div" onChange={onInViewChange}>
             <ImgBlock>
-              <Img1>
-                <animated.div style={firstImg}>
-                  <img
-                    src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite1-min.png"
-                    alt="widget website"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                  <Icon>
-                    <BookinglaneIconForWidget />
-                  </Icon>
-                </animated.div>
-              </Img1>
-
-              <Img2>
-                <animated.div style={secondImg}>
-                  <img
-                    src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite2-min.png"
-                    alt="widget website"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </animated.div>
-              </Img2>
+              <Img1Container>
+                <ImgTitle>BOOKING WIDGET</ImgTitle>
+                <Img1>
+                  <animated.div style={firstImg}>
+                    <img
+                      src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite1-min.png"
+                      alt="widget website"
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                    <Icon>
+                      <BookinglaneIconForWidget />
+                    </Icon>
+                  </animated.div>
+                </Img1>
+              </Img1Container>
+              <Img2Container>
+                <ImgTitle>BOOKING PAGE</ImgTitle>
+                <Img2>
+                  <animated.div style={secondImg}>
+                    <img
+                      src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite2-min.png"
+                      alt="widget website"
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </animated.div>
+                </Img2>
+              </Img2Container>
             </ImgBlock>
           </InView>
           <TextBlock>
@@ -177,10 +182,59 @@ const ImgBlock = styled.div`
   }
 `
 
-const Img1 = styled.div`
+const Img1Container = styled.div`
   width: 52%;
   height: 52%;
   position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  @media (max-width: 1385px) {
+    width: 43.5%;
+  }
+  @media (max-width: 1201px) {
+    width: 42.5%;
+  }
+  @media (max-width: 1011px) {
+    width: 70%;
+  }
+  @media (max-width: 736px) {
+    width: 97%;
+  }
+`
+const Img2Container = styled.div`
+  width: 52%;
+  height: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1385px) {
+    width: 43%;
+  }
+  @media (max-width: 1011px) {
+    width: 70%;
+  }
+  @media (max-width: 736px) {
+    width: 97%;
+  }
+`
+
+const ImgTitle = styled.span`
+  font-size: 23px;
+  font-weight: 600;
+  @media (max-width: 800px) {
+    font-size: 19px;
+  }
+`
+
+const Img1 = styled.div`
+  width: 100%;
+  height: 100%;
+  /* position: relative;
 
   display: flex;
   align-items: center;
@@ -197,7 +251,7 @@ const Img1 = styled.div`
   }
   @media (max-width: 736px) {
     width: 97%;
-  }
+  } */
 `
 const Icon = styled.div`
   height: 95px;
@@ -284,8 +338,9 @@ const Icon = styled.div`
   }
 `
 const Img2 = styled.div`
+  width: 100%;
   height: 100%;
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
   @media (max-width: 1385px) {
@@ -296,7 +351,7 @@ const Img2 = styled.div`
   }
   @media (max-width: 736px) {
     width: 97%;
-  }
+  } */
 `
 // "@keyframes pulse": {
 //     "0%": {
