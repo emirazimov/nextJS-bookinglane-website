@@ -31,6 +31,13 @@ const PartneredWith = () => {
               style={{ width: "100%", height: "100%" }}
             />
           </GlobalNetwork>
+          <Twilio>
+            <img
+              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/twilio-min.jpg"
+              alt="Twilio"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </Twilio>
         </PartnersIconsBlockContainer>
       </Container>
     </Wrapper>
@@ -71,7 +78,7 @@ const PartnersIconsBlockContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width: 701px) {
+  @media (max-width: 801px) {
     flex-direction: column;
     align-items: center;
   }
@@ -82,14 +89,14 @@ const Stripe = styled.div`
   height: 177px;
   margin-right: 20px;
   @media (max-width: 1629px) {
-    width: 300px;
+    width: 280px;
     height: 157px;
   }
-  @media (max-width: 983px) {
+  @media (max-width: 1183px) {
     width: 260px;
-    height: 117px;
+    height: 137px;
   }
-  @media (max-width: 825px) {
+  @media (max-width: 925px) {
     width: 220px;
     height: 107px;
   }
@@ -105,14 +112,14 @@ const Gnet = styled.div`
   height: 177px;
   margin-right: 20px;
   @media (max-width: 1629px) {
-    width: 300px;
+    width: 280px;
     height: 157px;
   }
-  @media (max-width: 983px) {
+  @media (max-width: 1183px) {
     width: 260px;
-    height: 117px;
+    height: 137px;
   }
-  @media (max-width: 825px) {
+  @media (max-width: 925px) {
     width: 220px;
     height: 107px;
   }
@@ -126,15 +133,16 @@ const Gnet = styled.div`
 const GlobalNetwork = styled.div`
   width: 320px;
   height: 177px;
+  margin-right: 20px;
   @media (max-width: 1629px) {
-    width: 300px;
+    width: 280px;
     height: 157px;
   }
-  @media (max-width: 983px) {
+  @media (max-width: 1183px) {
     width: 260px;
-    height: 117px;
+    height: 137px;
   }
-  @media (max-width: 825px) {
+  @media (max-width: 925px) {
     width: 220px;
     height: 107px;
   }
@@ -145,6 +153,29 @@ const GlobalNetwork = styled.div`
     margin-bottom: 20px;
   }
   /* margin-right: 20px; */
+`
+
+const Twilio = styled.div`
+  width: 320px;
+  height: 177px;
+  @media (max-width: 1629px) {
+    width: 280px;
+    height: 157px;
+  }
+  @media (max-width: 1183px) {
+    width: 260px;
+    height: 137px;
+  }
+  @media (max-width: 925px) {
+    width: 220px;
+    height: 107px;
+  }
+  @media (max-width: 701px) {
+    width: 190px;
+    height: 97px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `
 
 export default PartneredWith
