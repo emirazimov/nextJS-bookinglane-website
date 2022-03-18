@@ -133,7 +133,7 @@ const Content = styled.div`
   /* display: flex;
   flex-direction: row; */
 `
-const WrapperWithMargin = styled.div`
+const WrapperWithMargin = styled.figure`
   max-width: 1520px;
   margin: 0px auto;
   display: flex;
@@ -178,7 +178,7 @@ const ContainerForText = styled.div`
   flex-direction: column;
   margin-top: 35px;
 `
-const Text = styled.div`
+const Text = styled.figcaption`
   font-size: calc(20px + (7 + 7 * 0.7) * ((40vw - 620px) / 1520));
   font-weight: 400;
   line-height: 30px;

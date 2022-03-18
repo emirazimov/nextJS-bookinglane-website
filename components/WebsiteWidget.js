@@ -150,7 +150,7 @@ const TextBlock = styled.div`
   align-items: center;
   width: 100%;
 `
-const Text = styled.p`
+const Text = styled.figcaption`
   width: 55%;
   font-size: calc(20px + (7 + 7 * 0.7) * ((40vw - 620px) / 1520));
   font-weight: 400;
@@ -182,7 +182,7 @@ const ImgBlock = styled.div`
   }
 `
 
-const Img1Container = styled.div`
+const Img1Container = styled.figure`
   width: 52%;
   height: 52%;
   position: relative;

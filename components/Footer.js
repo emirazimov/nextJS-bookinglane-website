@@ -15,7 +15,7 @@ import {
   TwitterIconForFooterMobile,
 } from "../public/icons"
 import { HeaderBookingIcon, HeaderBookingIconForMobile } from "../public/images"
-import { getEvents } from "./RequestDemo"
+// import { getEvents } from "./RequestDemo"
 import { openPopupWidget } from "react-calendly"
 
 const Footer = () => {

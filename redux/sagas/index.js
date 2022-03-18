@@ -36,7 +36,7 @@ export function* loadInitalInfoWatcherSaga() {
 }
 
 export default function* rootSaga() {
-  const sagas = [loadInitalInfoWorkerSaga]
+  const sagas = [loadInitalInfoWatcherSaga]
   const retrySagas = yield sagas.map((saga) => {
     return spawn(function* () {
       while (true) {

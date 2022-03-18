@@ -139,7 +139,7 @@ const WhyBookingLaneContainerWithMargin = styled.div`
   }
 `
 
-const Title = styled.span`
+const Title = styled.h3`
   font-weight: 700;
   font-size: 34px;
   color: black;
@@ -152,7 +152,7 @@ const Title = styled.span`
     font-size: 20px;
   }
 `
-const WhyBookingLaneContainer = styled.div`
+const WhyBookingLaneContainer = styled.figure`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -162,7 +162,7 @@ const WhyBookingLaneContainer = styled.div`
   }
 `
 const TextBlock = styled.div``
-const Text = styled.p`
+const Text = styled.figcaption`
   font-weight: 400;
   font-size: calc(20px + (7 + 7 * 0.7) * ((40vw - 620px) / 1520));
   line-height: 32px;

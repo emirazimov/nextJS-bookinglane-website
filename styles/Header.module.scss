@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: url("./../public/BgMobilePhone-min.png") bottom right no-repeat;
+  background: url("../public/BgMobilePhone-min.png") bottom right no-repeat;
   background-size: 42%;
   background-position-x: 100%;
   background-position-y: 67%;
@@ -29,7 +29,7 @@
   }
   @media (max-width: 900px) {
     height: 800px;
-    background: url("./../public/BgMobilePhone-min.png") bottom no-repeat;
+    background: url("../public/BgMobilePhone-min.png") bottom no-repeat;
     background-size: 45%;
   }
   @media (max-width: 799px) {
@@ -70,7 +70,7 @@
   margin: 0;
   /* padding: 40px 0 0 0; */
 
-  background: url("../public/Bg.svg") center top no-repeat;
+  background: url("../public/Bg.jpg") center top no-repeat;
   background-size: cover;
   /* display: flex;
   flex-direction: column;

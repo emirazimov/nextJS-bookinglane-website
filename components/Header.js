@@ -43,6 +43,7 @@ import dynamic from "next/dynamic"
 // import Link from "next/link"
 import { useRouter } from "next/router"
 import { openPopupWidget } from "react-calendly"
+import { setCountries } from "../redux/sagas"
 // import { Instagram } from "./Instagram"
 
 // const imgUrl = require("../public/BgMobilePhone-min.png").default
@@ -137,9 +138,9 @@ const Header = ({
   const handleDrawerClose = () => {
     setOpen(false)
   }
-  const RequestDemo = dynamic(() => import("./RequestDemo"), {
-    ssr: false,
-  })
+  // const RequestDemo = dynamic(() => import("./RequestDemo"), {
+  //   ssr: false,
+  // })
   // const Tutorial = dynamic(() => import("./Tutorial"))
   const ContactUs = dynamic(() => import("./ContactUs"))
   // const OurTeam = dynamic(() => import("./OurTeam"), {
@@ -312,7 +313,7 @@ const Header = ({
                 </Ul>
               </UlWrapper>
             ) : (
-              <div className={classes.root}>
+              <nav className={classes.root}>
                 <IconButton
                   color="inherit"
                   aria-label="open drawer"
@@ -375,6 +376,7 @@ const Header = ({
                         onClick={() => {
                           dispatch({ type: "SET_CONTUCT_US", payload: true })
                           setContactUsOpen(true)
+                          setCountries()
                         }}
                       >
                         CONTACT US
@@ -415,7 +417,7 @@ const Header = ({
                     </Button> */}
                   </UlMobile>
                 </Drawer>
-              </div>
+              </nav>
             )}
           </FirstRowInHeader>
         </FirstRowContainer>
@@ -484,7 +486,7 @@ const Header = ({
       </div>
 
       <ContactUs opened={contactUsOpen} />
-      <RequestDemo opened={requestDemoOpen} />
+      {/* <RequestDemo opened={requestDemoOpen} /> */}
 
       {/* <Calendar /> */}
     </>
@@ -525,72 +527,72 @@ const HeaderWithBackground = styled.header`
     padding-top: 16px;
   }
 `
-const HeaderContainer = styled.div`
-  max-width: 1520px;
-  height: 100vh;
-  margin: 0px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: url(${BgMobilePhoneHeader}) bottom right no-repeat;
-  background-size: 42%;
-  background-position-x: 100%;
-  background-position-y: 67%;
-  @media (max-width: 1720px) {
-    background-size: 38%;
-  }
-  @media (max-width: 1607px) {
-    margin: 0px 45px;
-    background-size: 40%;
-  }
-  @media (max-width: 1199px) {
-    background-size: 42%;
-    background-position-y: 67%;
-    background-position-x: 100%;
-  }
-  @media (max-width: 1024px) {
-    height: 690px;
-  }
-  @media (max-width: 979px) {
-    background-position-y: 54%;
-  }
-  @media (max-width: 900px) {
-    height: 800px;
-    background: url(${BgMobilePhoneHeader}) bottom no-repeat;
-    background-size: 45%;
-  }
-  @media (max-width: 799px) {
-    height: 900px;
-    background-size: 51%;
-  }
-  @media (max-width: 701px) {
-    background-size: 56%;
-  }
+// const HeaderContainer = styled.div`
+//   max-width: 1520px;
+//   height: 100vh;
+//   margin: 0px auto;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   background: url(${BgMobilePhoneHeader}) bottom right no-repeat;
+//   background-size: 42%;
+//   background-position-x: 100%;
+//   background-position-y: 67%;
+//   @media (max-width: 1720px) {
+//     background-size: 38%;
+//   }
+//   @media (max-width: 1607px) {
+//     margin: 0px 45px;
+//     background-size: 40%;
+//   }
+//   @media (max-width: 1199px) {
+//     background-size: 42%;
+//     background-position-y: 67%;
+//     background-position-x: 100%;
+//   }
+//   @media (max-width: 1024px) {
+//     height: 690px;
+//   }
+//   @media (max-width: 979px) {
+//     background-position-y: 54%;
+//   }
+//   @media (max-width: 900px) {
+//     height: 800px;
+//     background: url(${BgMobilePhoneHeader}) bottom no-repeat;
+//     background-size: 45%;
+//   }
+//   @media (max-width: 799px) {
+//     height: 900px;
+//     background-size: 51%;
+//   }
+//   @media (max-width: 701px) {
+//     background-size: 56%;
+//   }
 
-  @media (max-width: 620px) {
-    /* background-position-y: 90%; */
-    margin: 0 16px;
-    background-size: 62%;
-  }
-  @media (max-width: 561px) {
-    background-size: 69%;
-  }
-  @media (max-width: 497px) {
-    background-size: 79%;
-  }
-  /* @media (max-width: 497px) {
-    background-size: 86%;
-  } */
-  @media (max-width: 415px) {
-    background-size: 94%;
-  }
-  @media (max-width: 375px) {
-    background-size: 100%;
-  }
-  @media (max-width: 353px) {
-    background-size: 110%;
-  }
-`
+//   @media (max-width: 620px) {
+//     /* background-position-y: 90%; */
+//     margin: 0 16px;
+//     background-size: 62%;
+//   }
+//   @media (max-width: 561px) {
+//     background-size: 69%;
+//   }
+//   @media (max-width: 497px) {
+//     background-size: 79%;
+//   }
+//   /* @media (max-width: 497px) {
+//     background-size: 86%;
+//   } */
+//   @media (max-width: 415px) {
+//     background-size: 94%;
+//   }
+//   @media (max-width: 375px) {
+//     background-size: 100%;
+//   }
+//   @media (max-width: 353px) {
+//     background-size: 110%;
+//   }
+// `
 const IconContainer = styled.span`
   cursor: "pointer";
   /* &:hover {
@@ -644,7 +646,7 @@ const FirstRowInHeader = styled.div`
   }
 `
 
-const UlWrapper = styled.div`
+const UlWrapper = styled.nav`
   width: 66%;
 `
 const Ul = styled.ul`

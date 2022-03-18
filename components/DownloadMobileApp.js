@@ -121,9 +121,10 @@ const TextAndReferences = styled.div`
   }
 `
 
-const Title = styled.span`
+const Title = styled.h3`
   font-weight: 700;
   font-size: 28px;
+  margin: 0;
   color: black;
   @media (max-width: 1024px) {
     font-size: 18px;
