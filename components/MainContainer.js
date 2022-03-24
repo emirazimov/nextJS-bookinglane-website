@@ -5,14 +5,21 @@ const MainContainer = ({ children, keywords }) => {
   return (
     <div>
       <Head>
-        <title>Bookinglane</title>
+        <title>
+          Bookinglane: Business Management and Booking Platform for Executive
+          Car Service | Limo Companies
+        </title>
         <meta charset="utf-8" />
         <link
           rel="icon"
           href="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/logo.png"
         />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        {/* <meta name="theme-color" content="#000000"></meta> */}
+        <meta
+          name="google-site-verification"
+          content="sXoQ0wujmmEqIdYfFi3cG_IzxzjqABXKgDAVMKMXObI"
+        />
+
         <meta
           name="keywords"
           content="booking,book,bookinglane,trasnport,transportation,limo software,crm mobile,moile crm,Affiliate Network, Daily Business Management, Website Integration, Online Booking Tools, Instant Invoicing, No Office Required, Run Your Business on the Go, Increased Earnings, Limo Dispatch System,  Flight Tracker, Driver Tracker, Limo Dispatching System, Livery Software, Limo Service Scheduling Software, Best Limo Software, online reservations, friendly limo software"
@@ -21,20 +28,44 @@ const MainContainer = ({ children, keywords }) => {
           //     keywords
           //   }
         ></meta>
-        <link rel="apple-touch-icon" href="../public/logo.png" />
+        <link
+          rel="apple-touch-icon"
+          href="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/logo.png"
+        />
         <link rel="canonical" href="https://bookinglane.com/" />
         <meta
           name="description"
           content="Bookinglane provides solutions that connect your business with clients and affiliates, and support your business in the long run - all in your smartphone"
         ></meta>
-        {/* <meta name="description" content=""></meta> */}
+
         <meta name="robots" content="all"></meta>
         <meta name="robots" content="max-snippet:-1"></meta>
         <meta name="robots" content="max-image-preview:large"></meta>
         <meta name="robots" content="index, follow"></meta>
-        <meta property="og:title" content="Bookinglane" />
+        <meta name="robots" content="max-video-preview:-1"></meta>
+        <meta
+          name="googlebot"
+          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        ></meta>
+        <meta
+          name="bingbot"
+          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        ></meta>
+
+        {/* OG  */}
+        <meta property="og:locale" content="en_US"></meta>
+        <meta
+          property="og:title"
+          content="Bookinglane: Business Management and Booking Platform for Executive
+          Car Service | Limo Companies"
+        />
         <meta property="og:url" content="https://bookinglane.com/"></meta>
-        <meta property="og:type" content="article"></meta>
+        <meta property="og:type" content="website"></meta>
+        <meta
+          property="og:site_name"
+          content="Bookinglane: Business Management and Booking Platform for Executive
+          Car Service | Limo Companies"
+        ></meta>
         <meta
           property="og:description"
           content="Bookinglane provides solutions that connect your business with clients and affiliates, and support your business in the long run - all in your smartphone."
@@ -43,8 +74,13 @@ const MainContainer = ({ children, keywords }) => {
           property="og:image"
           content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/CompanyImageForSocialNetworkPreview.jpg"
         ></meta>
-        {/* <meta property="fb:app_id" content="APPID" /> */}
-        <meta property="twitter:title" content="Bookinglane"></meta>
+
+        {/*TWITTER*/}
+        <meta
+          property="twitter:title"
+          content="Bookinglane: Business Management and Booking Platform for Executive
+          Car Service | Limo Companies"
+        ></meta>
         <meta
           property="twitter:description"
           content="Bookinglane provides solutions that connect your business with clients and affiliates, and support your business in the long run - all in your smartphone."
@@ -53,7 +89,7 @@ const MainContainer = ({ children, keywords }) => {
           property="twitter:image"
           content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/CompanyImageForSocialNetworkPreview.jpg"
         ></meta>
-        <meta property="twitter:card" content="summary"></meta>
+        <meta property="twitter:card" content="summary_large_image"></meta>
         <script
           src="https://apis.google.com/js/api.js"
           type="text/javascript"

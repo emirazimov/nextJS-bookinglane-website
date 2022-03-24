@@ -157,6 +157,10 @@ const WhyBookingLaneContainer = styled.figure`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   @media (max-width: 1339px) {
     flex-direction: column;
   }

@@ -192,6 +192,10 @@ const Img1Container = styled.figure`
   align-items: center;
   justify-content: center;
   z-index: -1;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
   @media (max-width: 1385px) {
     width: 43.5%;
   }
