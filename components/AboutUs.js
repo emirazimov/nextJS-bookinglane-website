@@ -22,7 +22,7 @@ const AboutUs = () => {
       <Title>ABOUT US</Title>
       <Content>
         <WrapperWithMargin>
-          <ContainerForImg>
+          {/* <ContainerForImg>
             <Img>
               <img
                 alt="about us"
@@ -30,7 +30,7 @@ const AboutUs = () => {
                 style={{ width: "100%", height: "100%", borderRadius: "8px" }}
               ></img>
             </Img>
-          </ContainerForImg>
+          </ContainerForImg> */}
           <ContainerForText>
             <Text>
               Our goal is to connect limo business owners and independent
@@ -135,7 +135,7 @@ const Content = styled.div`
 `
 const WrapperWithMargin = styled.figure`
   max-width: 1520px;
-  margin: 0px auto;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -144,6 +144,7 @@ const WrapperWithMargin = styled.figure`
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
+  margin: 0px auto;
   @media (max-width: 1301px) {
     margin: 0px 45px;
   }
