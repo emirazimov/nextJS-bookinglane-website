@@ -12,6 +12,10 @@
 // })
 
 module.exports = {
+  // images: {
+  //   domains: ["https://landing-page-nextjs.s3.us-east-2.amazonaws.com"],
+  // },
+  // compress: false,
   module: {
     rules: [
       {

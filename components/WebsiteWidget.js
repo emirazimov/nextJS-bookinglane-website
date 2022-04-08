@@ -22,9 +22,16 @@ const WebsiteWidget = () => {
   const [flip, set] = useState(false)
   const firstImg = useSpring({
     // to: {  },
-    from: { opacity: showH1 ? 0 : 1, transform: showH1 && "translateY(120px)" },
+    from: {
+      width: "100%",
+      height: "100%",
+      opacity: showH1 ? 0 : 1,
+      transform: showH1 && "translateY(120px)",
+    },
     // reset: true,
     // reverse: showH1,
+    width: "100%",
+    height: "100%",
     transform: "translateY(0)",
     opacity: 1,
     delay: 200,
@@ -34,9 +41,16 @@ const WebsiteWidget = () => {
   })
   const secondImg = useSpring({
     // to: {  },
-    from: { transform: showH1 && "translateY(120px)", opacity: showH1 ? 0 : 1 },
+    from: {
+      width: "100%",
+      height: "100%",
+      transform: showH1 && "translateY(120px)",
+      opacity: showH1 ? 0 : 1,
+    },
     // reset: true,
     // reverse: showH1,
+    width: "100%",
+    height: "100%",
     transform: "translateY(0)",
     opacity: 1,
     delay: 700,
@@ -61,6 +75,11 @@ const WebsiteWidget = () => {
   // useEffect(() => {
   //   renderBookinglaneicon()
   // }, [])
+  function imageLoader({ src, width, height }) {
+    // const relativeSrc = (src) => src.split("/").pop()
+
+    return `https://landing-page-nextjs.s3.us-east-2.amazonaws.com/${src}`
+  }
   return (
     <MainContainerWithStyle>
       <Wrapper>
@@ -72,10 +91,14 @@ const WebsiteWidget = () => {
                 <ImgTitle>BOOKING WIDGET</ImgTitle>
                 <Img1>
                   <animated.div style={firstImg}>
-                    <img
-                      src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite1-min.png"
+                    <Image
+                      loader={imageLoader}
+                      src="WidgetWebsite1-min.png"
                       alt="widget website"
-                      style={{ width: "100%", height: "100%" }}
+                      // style={{ width: "100%", height: "100%" }}
+                      width={"100%"}
+                      height={"100%"}
+                      layout="fill"
                     />
                     <Icon>
                       <BookinglaneIconForWidget />
@@ -87,10 +110,18 @@ const WebsiteWidget = () => {
                 <ImgTitle>BOOKING PAGE</ImgTitle>
                 <Img2>
                   <animated.div style={secondImg}>
-                    <img
-                      src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite2-min.png"
+                    <Image
+                      // loader={imageLoader}
+                      // src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WidgetWebsite2-min.png"
+                      // alt="widget website"
+                      // style={{ width: "100%", height: "100%" }}
+                      loader={imageLoader}
+                      src="WidgetWebsite2-min.png"
                       alt="widget website"
-                      style={{ width: "100%", height: "100%" }}
+                      // style={{ width: "100%", height: "100%" }}
+                      width={"100%"}
+                      height={"100%"}
+                      layout="fill"
                     />
                   </animated.div>
                 </Img2>
@@ -183,8 +214,8 @@ const ImgBlock = styled.div`
 `
 
 const Img1Container = styled.figure`
-  width: 52%;
-  height: 52%;
+  width: 729px;
+  height: 460px;
   position: relative;
 
   display: flex;
@@ -196,34 +227,48 @@ const Img1Container = styled.figure`
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-  @media (max-width: 1385px) {
+  /* @media (max-width: 1385px) {
     width: 43.5%;
-  }
-  @media (max-width: 1201px) {
+  } */
+  /* @media (max-width: 1201px) {
     width: 42.5%;
-  }
-  @media (max-width: 1011px) {
+  } */
+  /* @media (max-width: 1011px) {
     width: 70%;
-  }
+  } */
   @media (max-width: 736px) {
     width: 97%;
+    height: 360px;
+  }
+  @media (max-width: 594px) {
+    height: 300px;
+  }
+  @media (max-width: 454px) {
+    height: 230px;
   }
 `
 const Img2Container = styled.div`
-  width: 52%;
-  height: 52%;
+  width: 729px;
+  height: 460px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (max-width: 1385px) {
+  /* @media (max-width: 1385px) {
     width: 43%;
-  }
-  @media (max-width: 1011px) {
+  } */
+  /* @media (max-width: 1011px) {
     width: 70%;
-  }
+  } */
   @media (max-width: 736px) {
     width: 97%;
+    height: 360px;
+  }
+  @media (max-width: 594px) {
+    height: 300px;
+  }
+  @media (max-width: 454px) {
+    height: 230px;
   }
 `
 

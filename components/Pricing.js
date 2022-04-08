@@ -299,8 +299,10 @@ const Pricing = () => {
     config: { duration: 800 },
     // onRest: () => set(!flip),
   })
-  const myLoader = () => {
-    return <CircularProgress color="inherit" />
+  function imageLoader({ src, width, height }) {
+    // const relativeSrc = (src) => src.split("/").pop()
+
+    return `https://landing-page-nextjs.s3.us-east-2.amazonaws.com/${src}`
   }
   const renderMobiles = () => {
     if (isMobile) {
@@ -308,50 +310,54 @@ const Pricing = () => {
         <>
           <animated.div style={fourthImageMobile}>
             <Img4>
-              <img
-                // loader={myLoader}
-                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/fourthMobile-min.png"
+              <Image
+                loader={imageLoader}
+                src="fourthMobile-min.png"
                 alt="mobile phones"
-                style={{ width: "100%", height: "100%" }}
-                // width={"100%"}
-                // height={"100%"}
+                // style={{ width: "100%", height: "100%" }}
+                width={"100%"}
+                height={"100%"}
+                layout="fill"
               />
             </Img4>
           </animated.div>
           <animated.div style={thirdImageMobile}>
             <Img3>
-              <img
-                // loader={myLoader}
-                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/thirdMobile-min.png"
+              <Image
+                loader={imageLoader}
+                src="thirdMobile-min.png"
                 alt="mobile phones"
-                style={{ width: "100%", height: "100%" }}
-                // width={"100%"}
-                // height={"100%"}
+                // style={{ width: "100%", height: "100%" }}
+                width={"100%"}
+                height={"100%"}
+                layout="fill"
               />
             </Img3>
           </animated.div>
           <animated.div style={secondImageMobile}>
             <Img2>
-              <img
-                // loader={myLoader}
-                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/secondMobile-min.png"
+              <Image
+                loader={imageLoader}
+                src="secondMobile-min.png"
                 alt="mobile phones"
-                style={{ width: "100%", height: "100%" }}
-                // width={"100%"}
-                // height={"100%"}
+                // style={{ width: "100%", height: "100%" }}
+                width={"100%"}
+                height={"100%"}
+                layout="fill"
               />
             </Img2>
           </animated.div>
           <InView tag="div" onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImageMobile}>
               <Img1>
-                <img
-                  // loader={myLoader}
-                  src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png"
+                <Image
+                  loader={imageLoader}
+                  src="firstMobile-min.png"
                   alt="mobile phones"
-                  style={{ width: "100%", height: "100%" }}
-                  // width={"100%"}
-                  // height={"100%"}
+                  // style={{ width: "100%", height: "100%" }}
+                  width={"100%"}
+                  height={"100%"}
+                  layout="fill"
                 />
               </Img1>
             </animated.div>
@@ -364,50 +370,54 @@ const Pricing = () => {
         <>
           <animated.div style={fourthImageSmall}>
             <Img4>
-              <img
-                // loader={myLoader}
-                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/fourthMobile-min.png"
+              <Image
+                loader={imageLoader}
+                src="fourthMobile-min.png"
                 alt="mobile phones"
-                style={{ width: "100%", height: "100%" }}
-                // width={"100%"}
-                // height={"100%"}
+                // style={{ width: "100%", height: "100%" }}
+                width={"100%"}
+                height={"100%"}
+                layout="fill"
               />
             </Img4>
           </animated.div>
           <animated.div style={thirdImageSmall}>
             <Img3>
-              <img
-                // loader={myLoader}
-                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/thirdMobile-min.png"
+              <Image
+                loader={imageLoader}
+                src="thirdMobile-min.png"
                 alt="mobile phones"
-                style={{ width: "100%", height: "100%" }}
-                // width={"100%"}
-                // height={"100%"}
+                // style={{ width: "100%", height: "100%" }}
+                width={"100%"}
+                height={"100%"}
+                layout="fill"
               />
             </Img3>
           </animated.div>
           <animated.div style={secondImageSmall}>
             <Img2>
-              <img
-                // loader={myLoader}
-                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/secondMobile-min.png"
+              <Image
+                loader={imageLoader}
+                src="secondMobile-min.png"
                 alt="mobile phones"
-                style={{ width: "100%", height: "100%" }}
-                // width={"100%"}
-                // height={"100%"}
+                // style={{ width: "100%", height: "100%" }}
+                width={"100%"}
+                height={"100%"}
+                layout="fill"
               />
             </Img2>
           </animated.div>
           <InView tag="div" onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImageSmall}>
               <Img1>
-                <img
-                  // loader={myLoader}
-                  src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png"
+                <Image
+                  loader={imageLoader}
+                  src="firstMobile-min.png"
                   alt="mobile phones"
-                  style={{ width: "100%", height: "100%" }}
-                  // width={"100%"}
-                  // height={"100%"}
+                  // style={{ width: "100%", height: "100%" }}
+                  width={"100%"}
+                  height={"100%"}
+                  layout="fill"
                 />
               </Img1>
             </animated.div>
@@ -420,50 +430,54 @@ const Pricing = () => {
         <>
           <animated.div style={fourthImage}>
             {/* <Img4> */}
-            <img
-              // loader={myLoader}
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/fourthMobile-min.png"
+            <Image
+              loader={imageLoader}
+              src="fourthMobile-min.png"
               alt="mobile phones"
-              style={{ width: "100%", height: "100%" }}
-              // width={"670%"}
-              // height={"1053%"}
+              // style={{ width: "100%", height: "100%" }}
+              width={"100%"}
+              height={"100%"}
+              layout="fill"
             />
             {/* </Img4> */}
           </animated.div>
           <animated.div style={thirdImage}>
             {/* <Img3> */}
-            <img
-              // loader={myLoader}
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/thirdMobile-min.png"
+            <Image
+              loader={imageLoader}
+              src="thirdMobile-min.png"
               alt="mobile phones"
-              style={{ width: "100%", height: "100%" }}
-              // width={"670%"}
-              // height={"1053%"}
+              // style={{ width: "100%", height: "100%" }}
+              width={"100%"}
+              height={"100%"}
+              layout="fill"
             />
             {/* </Img3> */}
           </animated.div>
           <animated.div style={secondImage}>
             {/* <Img2> */}
-            <img
-              // loader={myLoader}
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/secondMobile-min.png"
+            <Image
+              loader={imageLoader}
+              src="secondMobile-min.png"
               alt="mobile phones"
-              style={{ width: "100%", height: "100%" }}
-              // width={"670%"}
-              // height={"1053%"}
+              // style={{ width: "100%", height: "100%" }}
+              width={"100%"}
+              height={"100%"}
+              layout="fill"
             />
             {/* </Img2> */}
           </animated.div>
           <InView tag="div" onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImage}>
               {/* <Img1> */}
-              <img
-                // loader={myLoader}
-                src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png"
+              <Image
+                loader={imageLoader}
+                src="firstMobile-min.png"
                 alt="mobile phones"
-                style={{ width: "100%", height: "100%" }}
-                // width={"670%"}
-                // height={"1053%"}
+                // style={{ width: "100%", height: "100%" }}
+                width={"100%"}
+                height={"100%"}
+                layout="fill"
               />
               {/* </Img1> */}
             </animated.div>

@@ -59,6 +59,12 @@ const WhyBookingLane = forwardRef(({ ref }) => {
     // onRest: () => set(!flip),
   })
 
+  function imageLoader({ src, width, height }) {
+    // const relativeSrc = (src) => src.split("/").pop()
+
+    return `https://landing-page-nextjs.s3.us-east-2.amazonaws.com/${src}`
+  }
+
   return (
     <>
       <WhyBookingLaneWithBackground ref={ref}>
@@ -100,11 +106,15 @@ const WhyBookingLane = forwardRef(({ ref }) => {
               <animated.div style={imgBlock}>
                 <ImageBlock>
                   <Img>
-                    <img
-                      src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/WhyBookinglane-min.png"
+                    <Image
+                      loader={imageLoader}
+                      src="WhyBookinglane-min.png"
                       // className={styles.whyBookinglaneImage}
-                      style={{ width: "100%", height: "100%" }}
+                      // style={{ width: "100%", height: "100%" }}
                       alt="why bookinglane"
+                      width={"100%"}
+                      height={"100%"}
+                      layout="fill"
                       // objectFit="contain"
                     />
                   </Img>

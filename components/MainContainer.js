@@ -10,6 +10,10 @@ const MainContainer = ({ children, keywords }) => {
           Car Service | Limo Companies
         </title>
         <meta charset="utf-8" />
+        <meta
+          name="facebook-domain-verification"
+          content="ezyvtf65id5zk3ndcmxa0sar41b2xk"
+        />
         <link
           rel="icon"
           href="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/logo.png"
@@ -108,13 +112,52 @@ const MainContainer = ({ children, keywords }) => {
           gtag("js", new Date()) 
           gtag("config", "G-N6ZS1BMP1J")`}
         </script>
-        {/* <meta
-          property="og:image"
-          content="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/AboutUs-min.jpg"
-        />
-        <meta property="og:url" content="https://bookinglane.com/" /> */}
+
+        <script>
+          {`
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "100117945015631");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      `}
+        </script>
+
+        <script>
+          {`
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v13.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));`}
+        </script>
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-168695918-1"
+        ></script>
+        <script>
+          {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-168695918-1');`}
+        </script>
       </Head>
       <div>{children}</div>
+      {/* <!-- Messenger Chat Plugin Code --> */}
+      <div id="fb-root"></div>
+
+      {/* <!-- Your Chat Plugin code --> */}
+      <div id="fb-customer-chat" className="fb-customerchat"></div>
+
       {/* <Script
         strategy="lazyOnload"
         src="https://apis.google.com/js/api.js"
