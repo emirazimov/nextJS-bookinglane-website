@@ -1,8 +1,15 @@
-import styled from "styled-components"
-import { css } from "styled-components"
-import StripeImg from "../public/Stripe.jpg"
-import GnetImg from "../public/Gnet.jpg"
-import GlobalNetworkImg from "../public/GlobalNetwork.jpg"
+import styled from 'styled-components'
+import { css } from 'styled-components'
+import StripeImg from '../public/Stripe.jpg'
+import GnetImg from '../public/Gnet.jpg'
+import GlobalNetworkImg from '../public/GlobalNetwork.jpg'
+import Image from 'next/image'
+
+function imageLoader({ src, width, height }) {
+  // const relativeSrc = (src) => src.split("/").pop()
+
+  return `https://landing-page-nextjs.s3.us-east-2.amazonaws.com/${src}`
+}
 
 const PartneredWith = () => {
   return (
@@ -11,31 +18,59 @@ const PartneredWith = () => {
         <Title>PARTNERED WITH</Title>
         <PartnersIconsBlockContainer>
           <Stripe>
-            <img
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Stripe.jpg"
-              alt="Stripe"
-              style={{ width: "100%", height: "100%" }}
+            <Image
+              // src='https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Stripe.jpg'
+              // alt='Stripe'
+              // style={{ width: '100%', height: '100%' }}
+              loader={imageLoader}
+              src='Stripe.jpg'
+              alt='Stripe'
+              // style={{ width: "100%", height: "100%" }}
+              width={'655%'}
+              height={'368%'}
+              // layout='fill'
             />
           </Stripe>
           <Gnet>
-            <img
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Gnet.jpg"
-              alt="Gnet"
-              style={{ width: "100%", height: "100%" }}
+            <Image
+              // src='https://landing-page-nextjs.s3.us-east-2.amazonaws.com/Gnet.jpg'
+              // alt='Gnet'
+              // style={{ width: '100%', height: '100%' }}
+              loader={imageLoader}
+              src='Gnet.jpg'
+              alt='Gnet'
+              // style={{ width: "100%", height: "100%" }}
+              width={'655%'}
+              height={'368%'}
+              // layout='fill'
             />
           </Gnet>
           <GlobalNetwork>
-            <img
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/GlobalNetwork.jpg"
-              alt="GlobalNetwork"
-              style={{ width: "100%", height: "100%" }}
+            <Image
+              // src='https://landing-page-nextjs.s3.us-east-2.amazonaws.com/GlobalNetwork.jpg'
+              // alt='GlobalNetwork'
+              // style={{ width: '100%', height: '100%' }}
+              loader={imageLoader}
+              src='GlobalNetwork.jpg'
+              alt='GlobalNetwork'
+              // style={{ width: "100%", height: "100%" }}
+              width={'655%'}
+              height={'368%'}
+              // layout='fill'
             />
           </GlobalNetwork>
           <Twilio>
-            <img
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/twilio-min.jpg"
-              alt="Twilio"
-              style={{ width: "100%", height: "100%" }}
+            <Image
+              // src='https://landing-page-nextjs.s3.us-east-2.amazonaws.com/twilio-min.jpg'
+              // alt='Twilio'
+              // style={{ width: '100%', height: '100%' }}
+              loader={imageLoader}
+              src='twilio-min.jpg'
+              alt='Twilio'
+              // style={{ width: "100%", height: "100%" }}
+              width={'655%'}
+              height={'368%'}
+              // layout='fill'
             />
           </Twilio>
         </PartnersIconsBlockContainer>

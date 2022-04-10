@@ -1,18 +1,25 @@
-import styled from "styled-components"
-import { css } from "styled-components"
+import styled from 'styled-components'
+import { css } from 'styled-components'
 // import DownloadMobileAppImg2 from "../public/DownloadMobileApp-min.png"
 import {
   AppstoreIcon,
   AppstoreIconForMobile,
   GooglePlayIcon,
   GooglePlayIconForMobile,
-} from "../public/icons"
-import { useMediaQuery } from "@material-ui/core"
-import ScrollAnimation from "react-animate-on-scroll"
-import Image from "next/image"
+} from '../public/icons'
+import { useMediaQuery } from '@material-ui/core'
+import ScrollAnimation from 'react-animate-on-scroll'
+import Image from 'next/image'
+
+function imageLoader({ src, width, height }) {
+  // const relativeSrc = (src) => src.split("/").pop()
+
+  return `https://landing-page-nextjs.s3.us-east-2.amazonaws.com/${src}`
+}
 
 const DownloadMobileApp = () => {
-  const smallIcons = useMediaQuery("(max-width: 436px)")
+  const smallIcons = useMediaQuery('(max-width: 436px)')
+
   return (
     <MainContainerWithStyle>
       <Wrapper>
@@ -22,8 +29,8 @@ const DownloadMobileApp = () => {
             <ContainerForButtons>
               {/* <ScrollAnimation animateIn="fadeInLeft" duration={3} delay={300}> */}
               <a
-                href="https://apps.apple.com/app/id1560973031"
-                style={{ textDecoration: "none" }}
+                href='https://apps.apple.com/app/id1560973031'
+                style={{ textDecoration: 'none' }}
               >
                 <AppStoreButton>
                   {!smallIcons ? <AppstoreIcon /> : <AppstoreIconForMobile />}
@@ -40,8 +47,8 @@ const DownloadMobileApp = () => {
               {/* </ScrollAnimation> */}
               {/* <ScrollAnimation animateIn="fadeInRight"> */}
               <a
-                href="https://play.google.com/store/apps/details?id=com.bookinglane.manager"
-                style={{ textDecoration: "none" }}
+                href='https://play.google.com/store/apps/details?id=com.bookinglane.manager'
+                style={{ textDecoration: 'none' }}
               >
                 <GooglePlayButton>
                   {!smallIcons ? (
@@ -64,10 +71,17 @@ const DownloadMobileApp = () => {
           </TextAndReferences>
           {/* <ScrollAnimation animateIn="animate__fadeIn"> */}
           <ImgBlock>
-            <img
-              src="https://landing-page-nextjs.s3.us-east-2.amazonaws.com/DownloadMobileApp-min.png"
-              alt="Download Mobile App"
-              style={{ width: "100%", height: "100%" }}
+            <Image
+              // src='https://landing-page-nextjs.s3.us-east-2.amazonaws.com/DownloadMobileApp-min.png'
+              // alt='Download Mobile App'
+              // style={{ width: '100%', height: '100%' }}
+              loader={imageLoader}
+              src='DownloadMobileApp-min.png'
+              alt='Download Mobile App'
+              // style={{ width: "100%", height: "100%" }}
+              width={'655%'}
+              height={'407%'}
+              // layout='fill'
             />
           </ImgBlock>
           {/* </ScrollAnimation> */}
@@ -95,6 +109,7 @@ const Wrapper = styled.div`
   }
 `
 const Content = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -106,7 +121,6 @@ const Content = styled.div`
 `
 const TextAndReferences = styled.div`
   height: 230px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,7 +200,7 @@ const AppStoreButton = styled.button`
     background: rgba(255, 255, 255, 0.1);
   } */
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -200px;
@@ -234,7 +248,7 @@ const GooglePlayButton = styled.button`
     background: rgba(255, 255, 255, 0.1);
   } */
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -200px;
@@ -277,6 +291,10 @@ const SecondTextForDownloadButtons = styled.span`
 `
 
 const ImgBlock = styled.div`
+  width: 655px;
+  height: 407px;
+  /* box-sizing: border-box; */
+
   margin: 0;
   padding: 0;
   @media (max-width: 679px) {

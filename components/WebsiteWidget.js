@@ -1,18 +1,18 @@
-import { useMediaQuery } from "@material-ui/core"
-import { useEffect, useState } from "react"
-import styled from "styled-components"
-import { css } from "styled-components"
+import { useMediaQuery } from '@material-ui/core'
+import { useEffect, useState } from 'react'
+import styled from 'styled-components'
+import { css } from 'styled-components'
 import {
   BookinglaneIconForWidget,
   BookinglaneIconForWidgetOnMobile,
   BookinglaneIconForWidgetOnMobileSmallest,
-} from "../public/icons"
+} from '../public/icons'
 // import WidgetWebsite1 from "../public/WidgetWebsite1-min.png"
 // import WidgetWebsite2 from "../public/WidgetWebsite2-min.png"
-import { useSpring, animated, config } from "react-spring"
-import { InView } from "react-intersection-observer"
-import React from "react"
-import Image from "next/image"
+import { useSpring, animated, config } from 'react-spring'
+import { InView } from 'react-intersection-observer'
+import React from 'react'
+import Image from 'next/image'
 
 const WebsiteWidget = () => {
   const [showH1, setShowH1] = React.useState(false)
@@ -23,16 +23,16 @@ const WebsiteWidget = () => {
   const firstImg = useSpring({
     // to: {  },
     from: {
-      width: "100%",
-      height: "100%",
+      // width: '100%',
+      // height: '100%',
       opacity: showH1 ? 0 : 1,
-      transform: showH1 && "translateY(120px)",
+      transform: showH1 && 'translateY(120px)',
     },
     // reset: true,
     // reverse: showH1,
-    width: "100%",
-    height: "100%",
-    transform: "translateY(0)",
+    // width: '100%',
+    // height: '100%',
+    transform: 'translateY(0)',
     opacity: 1,
     delay: 200,
     config: config.molasses,
@@ -42,24 +42,24 @@ const WebsiteWidget = () => {
   const secondImg = useSpring({
     // to: {  },
     from: {
-      width: "100%",
-      height: "100%",
-      transform: showH1 && "translateY(120px)",
+      // width: '100%',
+      // height: '100%',
+      transform: showH1 && 'translateY(120px)',
       opacity: showH1 ? 0 : 1,
     },
     // reset: true,
     // reverse: showH1,
-    width: "100%",
-    height: "100%",
-    transform: "translateY(0)",
+    // width: '100%',
+    // height: '100%',
+    transform: 'translateY(0)',
     opacity: 1,
     delay: 700,
     config: config.molasses,
     onRest: () => set(showH1),
   })
 
-  const isMobile = useMediaQuery("(max-width:661px)")
-  const isMobileSmallest = useMediaQuery("(max-width:520px)")
+  const isMobile = useMediaQuery('(max-width:661px)')
+  const isMobileSmallest = useMediaQuery('(max-width:520px)')
   console.log(isMobile)
   const renderBookinglaneicon = () => {
     if (isMobileSmallest) {
@@ -85,7 +85,7 @@ const WebsiteWidget = () => {
       <Wrapper>
         <Title>WEBSITE BOOKING TOOL</Title>
         <Content>
-          <InView tag="div" onChange={onInViewChange}>
+          <InView tag='div' onChange={onInViewChange}>
             <ImgBlock>
               <Img1Container>
                 <ImgTitle>BOOKING WIDGET</ImgTitle>
@@ -93,12 +93,12 @@ const WebsiteWidget = () => {
                   <animated.div style={firstImg}>
                     <Image
                       loader={imageLoader}
-                      src="WidgetWebsite1-min.png"
-                      alt="widget website"
+                      src='WidgetWebsite1-min.png'
+                      alt='widget website'
                       // style={{ width: "100%", height: "100%" }}
-                      width={"100%"}
-                      height={"100%"}
-                      layout="fill"
+                      width={'795%'}
+                      height={'512%'}
+                      // layout="fill"
                     />
                     <Icon>
                       <BookinglaneIconForWidget />
@@ -116,12 +116,12 @@ const WebsiteWidget = () => {
                       // alt="widget website"
                       // style={{ width: "100%", height: "100%" }}
                       loader={imageLoader}
-                      src="WidgetWebsite2-min.png"
-                      alt="widget website"
+                      src='WidgetWebsite2-min.png'
+                      alt='widget website'
                       // style={{ width: "100%", height: "100%" }}
-                      width={"100%"}
-                      height={"100%"}
-                      layout="fill"
+                      width={'795%'}
+                      height={'512%'}
+                      // layout="fill"
                     />
                   </animated.div>
                 </Img2>
@@ -214,8 +214,8 @@ const ImgBlock = styled.div`
 `
 
 const Img1Container = styled.figure`
-  width: 729px;
-  height: 460px;
+  width: 760px;
+  height: 504px;
   position: relative;
 
   display: flex;
@@ -236,6 +236,15 @@ const Img1Container = styled.figure`
   /* @media (max-width: 1011px) {
     width: 70%;
   } */
+  @media (max-width: 1385px) {
+    width: 548px;
+    height: 339px;
+  }
+  @media (max-width: 1011px) {
+    width: 620px;
+    height: 383px;
+    margin-bottom: 43px;
+  }
   @media (max-width: 736px) {
     width: 97%;
     height: 360px;
@@ -248,8 +257,8 @@ const Img1Container = styled.figure`
   }
 `
 const Img2Container = styled.div`
-  width: 729px;
-  height: 460px;
+  width: 760px;
+  height: 504px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -260,6 +269,14 @@ const Img2Container = styled.div`
   /* @media (max-width: 1011px) {
     width: 70%;
   } */
+  @media (max-width: 1385px) {
+    width: 548px;
+    height: 339px;
+  }
+  @media (max-width: 1011px) {
+    width: 620px;
+    height: 383px;
+  }
   @media (max-width: 736px) {
     width: 97%;
     height: 360px;
@@ -281,8 +298,8 @@ const ImgTitle = styled.span`
 `
 
 const Img1 = styled.div`
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   /* position: relative;
 
   display: flex;
@@ -387,8 +404,7 @@ const Icon = styled.div`
   }
 `
 const Img2 = styled.div`
-  width: 100%;
-  height: 100%;
+  /*     */
   /* display: flex;
   align-items: center;
   justify-content: center;

@@ -1,17 +1,17 @@
-import styled from "styled-components"
-import { css } from "styled-components"
+import styled from 'styled-components'
+import { css } from 'styled-components'
 // import firstMobile from "../public/firstMobile-min.png"
 // import secondMobile from "../public/secondMobile-min.png"
 // import thirdMobile from "../public/thirdMobile-min.png"
 // import fourthMobile from "../public/fourthMobile-min.png"
 // import mainImg from "../assets/Pricing-min.png"
-import { useSpring, animated, config } from "react-spring"
-import React, { useState } from "react"
-import { InView, useInView } from "react-intersection-observer"
-import { CircularProgress, useMediaQuery } from "@material-ui/core"
+import { useSpring, animated, config } from 'react-spring'
+import React, { useState } from 'react'
+import { InView, useInView } from 'react-intersection-observer'
+import { CircularProgress, useMediaQuery } from '@material-ui/core'
 // import checkMark from "../public/checkMark.svg"
-import Image from "next/image"
-import { CheckmarkPricingBlock } from "../public/icons"
+import Image from 'next/image'
+import { CheckmarkPricingBlock } from '../public/icons'
 
 const Pricing = () => {
   const [showH1, setShowH1] = React.useState(false)
@@ -24,21 +24,21 @@ const Pricing = () => {
   const [flip, set] = useState(false)
   const firstImage = useSpring({
     from: {
-      width: "320px",
-      height: "500px",
-      top: showH1 && "-20px",
-      left: showH1 && "20px",
+      width: '320px',
+      height: '500px',
+      top: showH1 && '-20px',
+      left: showH1 && '20px',
       // opacity: 0.7,
     },
     // to: { top: "-60px", left: "250px" },
     zIndex: 7,
     // reverse: flip,
-    width: "320px",
-    height: "500px",
-    position: "absolute",
+    width: '320px',
+    height: '500px',
+    position: 'absolute',
     opacity: 1,
-    top: "-200px",
-    left: "280px",
+    top: '-200px',
+    left: '280px',
     // background: `url($"https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png") center no-repeat`,
     // backgroundSize: "cover",
 
@@ -49,22 +49,22 @@ const Pricing = () => {
   const secondImage = useSpring({
     // to: {  },
     from: {
-      width: "320px",
-      height: "500px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '320px',
+      height: '500px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // reset: true,
-    width: "320px",
-    height: "500px",
+    width: '320px',
+    height: '500px',
     opacity: 1,
     zIndex: 3,
     // reverse: flip,
-    position: "absolute",
+    position: 'absolute',
 
-    top: "-140px",
-    left: "173px",
+    top: '-140px',
+    left: '173px',
     // transform: "translate(75%, -220.5%)",
 
     delay: 250,
@@ -74,21 +74,21 @@ const Pricing = () => {
   const thirdImage = useSpring({
     // to: {},
     from: {
-      width: "320px",
-      height: "500px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '320px',
+      height: '500px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // reset: true,
-    width: "320px",
-    height: "500px",
+    width: '320px',
+    height: '500px',
     opacity: 1,
 
     zIndex: 1,
-    position: "absolute",
-    top: "-80px",
-    left: "80px",
+    position: 'absolute',
+    top: '-80px',
+    left: '80px',
 
     // reverse: flip,
     // transform: "translate(33%, -10.5%)",
@@ -99,15 +99,15 @@ const Pricing = () => {
   const fourthImage = useSpring({
     // to: {  },
     from: {
-      width: "310px",
-      height: "500px",
+      width: '310px',
+      height: '500px',
       // transform: "translate(33%, -100.5%)",,
       zIndex: 0,
     },
     // reset: true,
-    width: "310px",
-    height: "500px",
-    position: "absolute",
+    width: '310px',
+    height: '500px',
+    position: 'absolute',
     reverse: flip,
     zIndex: 0,
     delay: 250,
@@ -116,21 +116,21 @@ const Pricing = () => {
   })
   const firstImageSmall = useSpring({
     from: {
-      width: "250px",
-      height: "400px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '250px',
+      height: '400px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // to: { top: "-60px", left: "250px" },
     zIndex: 7,
     // reverse: flip,
-    width: "250px",
-    height: "400px",
-    position: "absolute",
+    width: '250px',
+    height: '400px',
+    position: 'absolute',
     opacity: 1,
-    top: "-140px",
-    left: "190px",
+    top: '-140px',
+    left: '190px',
     // background: `url($"https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png") center no-repeat`,
     // backgroundSize: "cover",
 
@@ -141,22 +141,22 @@ const Pricing = () => {
   const secondImageSmall = useSpring({
     // to: {  },
     from: {
-      width: "250px",
-      height: "400px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '250px',
+      height: '400px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // reset: true,
-    width: "250px",
-    height: "400px",
+    width: '250px',
+    height: '400px',
     opacity: 1,
     zIndex: 3,
     // reverse: flip,
-    position: "absolute",
+    position: 'absolute',
 
-    top: "-100px",
-    left: "113px",
+    top: '-100px',
+    left: '113px',
     // transform: "translate(75%, -220.5%)",
 
     delay: 250,
@@ -166,21 +166,21 @@ const Pricing = () => {
   const thirdImageSmall = useSpring({
     // to: {},
     from: {
-      width: "250px",
-      height: "400px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '250px',
+      height: '400px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // reset: true,
-    width: "250px",
-    height: "400px",
+    width: '250px',
+    height: '400px',
     opacity: 1,
 
     zIndex: 1,
-    position: "absolute",
-    top: "-60px",
-    left: "50px",
+    position: 'absolute',
+    top: '-60px',
+    left: '50px',
 
     // reverse: flip,
     // transform: "translate(33%, -10.5%)",
@@ -191,15 +191,15 @@ const Pricing = () => {
   const fourthImageSmall = useSpring({
     // to: {  },
     from: {
-      width: "240px",
-      height: "400px",
+      width: '240px',
+      height: '400px',
       // transform: "translate(33%, -100.5%)",,
       zIndex: 0,
     },
     // reset: true,
-    width: "240px",
-    height: "400px",
-    position: "absolute",
+    width: '240px',
+    height: '400px',
+    position: 'absolute',
     reverse: flip,
     zIndex: 0,
     delay: 250,
@@ -209,21 +209,21 @@ const Pricing = () => {
 
   const firstImageMobile = useSpring({
     from: {
-      width: "150px",
-      height: "220px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '150px',
+      height: '220px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // to: { top: "-60px", left: "250px" },
     zIndex: 7,
     // reverse: flip,
-    width: "150px",
-    height: "220px",
-    position: "absolute",
+    width: '150px',
+    height: '220px',
+    position: 'absolute',
     opacity: 1,
-    top: "-95px",
-    left: "120px",
+    top: '-95px',
+    left: '120px',
     // background: `url($"https://landing-page-nextjs.s3.us-east-2.amazonaws.com/firstMobile-min.png") center no-repeat`,
     // backgroundSize: "cover",
 
@@ -234,22 +234,22 @@ const Pricing = () => {
   const secondImageMobile = useSpring({
     // to: {  },
     from: {
-      width: "150px",
-      height: "220px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '150px',
+      height: '220px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // reset: true,
-    width: "150px",
-    height: "220px",
+    width: '150px',
+    height: '220px',
     opacity: 1,
     zIndex: 3,
     // reverse: flip,
-    position: "absolute",
+    position: 'absolute',
 
-    top: "-65px",
-    left: "73px",
+    top: '-65px',
+    left: '73px',
     // transform: "translate(75%, -220.5%)",
 
     delay: 250,
@@ -259,21 +259,21 @@ const Pricing = () => {
   const thirdImageMobile = useSpring({
     // to: {},
     from: {
-      width: "150px",
-      height: "220px",
-      top: showH1 && "0px",
-      left: showH1 && "0px",
+      width: '150px',
+      height: '220px',
+      top: showH1 && '0px',
+      left: showH1 && '0px',
       // opacity: 0.7,
     },
     // reset: true,
-    width: "150px",
-    height: "220px",
+    width: '150px',
+    height: '220px',
     opacity: 1,
 
     zIndex: 1,
-    position: "absolute",
-    top: "-35px",
-    left: "36px",
+    position: 'absolute',
+    top: '-35px',
+    left: '36px',
 
     // reverse: flip,
     // transform: "translate(33%, -10.5%)",
@@ -284,15 +284,15 @@ const Pricing = () => {
   const fourthImageMobile = useSpring({
     // to: {  },
     from: {
-      width: "150px",
-      height: "220px",
+      width: '150px',
+      height: '220px',
       // transform: "translate(33%, -100.5%)",,
       zIndex: 0,
     },
     // reset: true,
-    width: "150px",
-    height: "220px",
-    position: "absolute",
+    width: '150px',
+    height: '220px',
+    position: 'absolute',
     reverse: flip,
     zIndex: 0,
     delay: 250,
@@ -312,12 +312,12 @@ const Pricing = () => {
             <Img4>
               <Image
                 loader={imageLoader}
-                src="fourthMobile-min.png"
-                alt="mobile phones"
+                src='fourthMobile-min.png'
+                alt='mobile phones'
                 // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
-                layout="fill"
+                // width={'100%'}
+                // height={'100%'}
+                layout='fill'
               />
             </Img4>
           </animated.div>
@@ -325,12 +325,12 @@ const Pricing = () => {
             <Img3>
               <Image
                 loader={imageLoader}
-                src="thirdMobile-min.png"
-                alt="mobile phones"
+                src='thirdMobile-min.png'
+                alt='mobile phones'
                 // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
-                layout="fill"
+                // width={'100%'}
+                // height={'100%'}
+                layout='fill'
               />
             </Img3>
           </animated.div>
@@ -338,26 +338,26 @@ const Pricing = () => {
             <Img2>
               <Image
                 loader={imageLoader}
-                src="secondMobile-min.png"
-                alt="mobile phones"
+                src='secondMobile-min.png'
+                alt='mobile phones'
                 // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
-                layout="fill"
+                // width={'100%'}
+                // height={'100%'}
+                layout='fill'
               />
             </Img2>
           </animated.div>
-          <InView tag="div" onChange={onInViewChange} threshold={1}>
+          <InView tag='div' onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImageMobile}>
               <Img1>
                 <Image
                   loader={imageLoader}
-                  src="firstMobile-min.png"
-                  alt="mobile phones"
+                  src='firstMobile-min.png'
+                  alt='mobile phones'
                   // style={{ width: "100%", height: "100%" }}
-                  width={"100%"}
-                  height={"100%"}
-                  layout="fill"
+                  // width={'100%'}
+                  // height={'100%'}
+                  layout='fill'
                 />
               </Img1>
             </animated.div>
@@ -372,12 +372,12 @@ const Pricing = () => {
             <Img4>
               <Image
                 loader={imageLoader}
-                src="fourthMobile-min.png"
-                alt="mobile phones"
+                src='fourthMobile-min.png'
+                alt='mobile phones'
                 // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
-                layout="fill"
+                // width={'100%'}
+                // height={'100%'}
+                layout='fill'
               />
             </Img4>
           </animated.div>
@@ -385,12 +385,12 @@ const Pricing = () => {
             <Img3>
               <Image
                 loader={imageLoader}
-                src="thirdMobile-min.png"
-                alt="mobile phones"
+                src='thirdMobile-min.png'
+                alt='mobile phones'
                 // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
-                layout="fill"
+                // width={'100%'}
+                // height={'100%'}
+                layout='fill'
               />
             </Img3>
           </animated.div>
@@ -398,26 +398,26 @@ const Pricing = () => {
             <Img2>
               <Image
                 loader={imageLoader}
-                src="secondMobile-min.png"
-                alt="mobile phones"
+                src='secondMobile-min.png'
+                alt='mobile phones'
                 // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
-                layout="fill"
+                // width={'100%'}
+                // height={'100%'}
+                layout='fill'
               />
             </Img2>
           </animated.div>
-          <InView tag="div" onChange={onInViewChange} threshold={1}>
+          <InView tag='div' onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImageSmall}>
               <Img1>
                 <Image
                   loader={imageLoader}
-                  src="firstMobile-min.png"
-                  alt="mobile phones"
+                  src='firstMobile-min.png'
+                  alt='mobile phones'
                   // style={{ width: "100%", height: "100%" }}
-                  width={"100%"}
-                  height={"100%"}
-                  layout="fill"
+                  // width={'100%'}
+                  // height={'100%'}
+                  layout='fill'
                 />
               </Img1>
             </animated.div>
@@ -432,12 +432,12 @@ const Pricing = () => {
             {/* <Img4> */}
             <Image
               loader={imageLoader}
-              src="fourthMobile-min.png"
-              alt="mobile phones"
+              src='fourthMobile-min.png'
+              alt='mobile phones'
               // style={{ width: "100%", height: "100%" }}
-              width={"100%"}
-              height={"100%"}
-              layout="fill"
+              // width={"100%"}
+              // height={"100%"}
+              layout='fill'
             />
             {/* </Img4> */}
           </animated.div>
@@ -445,12 +445,12 @@ const Pricing = () => {
             {/* <Img3> */}
             <Image
               loader={imageLoader}
-              src="thirdMobile-min.png"
-              alt="mobile phones"
+              src='thirdMobile-min.png'
+              alt='mobile phones'
               // style={{ width: "100%", height: "100%" }}
-              width={"100%"}
-              height={"100%"}
-              layout="fill"
+              // width={"100%"}
+              // height={"100%"}
+              layout='fill'
             />
             {/* </Img3> */}
           </animated.div>
@@ -458,26 +458,26 @@ const Pricing = () => {
             {/* <Img2> */}
             <Image
               loader={imageLoader}
-              src="secondMobile-min.png"
-              alt="mobile phones"
+              src='secondMobile-min.png'
+              alt='mobile phones'
               // style={{ width: "100%", height: "100%" }}
-              width={"100%"}
-              height={"100%"}
-              layout="fill"
+              // width={"100%"}
+              // height={"100%"}
+              layout='fill'
             />
             {/* </Img2> */}
           </animated.div>
-          <InView tag="div" onChange={onInViewChange} threshold={1}>
+          <InView tag='div' onChange={onInViewChange} threshold={1}>
             <animated.div style={firstImage}>
               {/* <Img1> */}
               <Image
                 loader={imageLoader}
-                src="firstMobile-min.png"
-                alt="mobile phones"
+                src='firstMobile-min.png'
+                alt='mobile phones'
                 // style={{ width: "100%", height: "100%" }}
-                width={"100%"}
-                height={"100%"}
-                layout="fill"
+                // width={"100%"}
+                // height={"100%"}
+                layout='fill'
               />
               {/* </Img1> */}
             </animated.div>
@@ -486,8 +486,8 @@ const Pricing = () => {
       )
     }
   }
-  const isSmallDevice = useMediaQuery("(max-width:824px)")
-  const isMobile = useMediaQuery("(max-width:575px)")
+  const isSmallDevice = useMediaQuery('(max-width:824px)')
+  const isMobile = useMediaQuery('(max-width:575px)')
   return (
     <Wrapper>
       <MainContainer>

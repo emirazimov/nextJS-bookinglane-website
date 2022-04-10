@@ -1,13 +1,13 @@
-import styled from "styled-components"
-import { css } from "styled-components"
+import styled from 'styled-components'
+import { css } from 'styled-components'
 
 // import InstagramEmbed from "react-instagram-embed"
 // import whyBookinglane from "../public/WhyBookinglane-min.png"
-import React, { forwardRef, useState } from "react"
-import { useSpring, animated, config } from "react-spring"
-import { InView } from "react-intersection-observer"
-import Image from "next/image"
-import styles from "../styles/WhyBookinglane.module.scss"
+import React, { forwardRef, useState } from 'react'
+import { useSpring, animated, config } from 'react-spring'
+import { InView } from 'react-intersection-observer'
+import Image from 'next/image'
+import styles from '../styles/WhyBookinglane.module.scss'
 
 const WhyBookingLane = forwardRef(({ ref }) => {
   const [showH1, setShowH1] = React.useState(false)
@@ -17,11 +17,11 @@ const WhyBookingLane = forwardRef(({ ref }) => {
   const [flip, set] = useState(false)
   const firstText = useSpring({
     from: {
-      transform: showH1 && "translateX(-200px)",
+      transform: showH1 && 'translateX(-200px)',
       opacity: showH1 && 0,
     },
     to: {
-      transform: "translateX(0)",
+      transform: 'translateX(0)',
       opacity: 1,
     },
     // reset: true,
@@ -34,11 +34,11 @@ const WhyBookingLane = forwardRef(({ ref }) => {
   })
   const secondText = useSpring({
     from: {
-      transform: showH1 && "translateX(-200px)",
+      transform: showH1 && 'translateX(-200px)',
       opacity: showH1 && 0,
     },
     to: {
-      transform: "translateX(0)",
+      transform: 'translateX(0)',
       opacity: 1,
     },
     // reset: true,
@@ -49,8 +49,8 @@ const WhyBookingLane = forwardRef(({ ref }) => {
     // onRest: () => set(!flip),
   })
   const imgBlock = useSpring({
-    from: { transform: showH1 && "translateX(200px)", opacity: showH1 && 0 },
-    to: { transform: "translateX(0)", opacity: 1 },
+    from: { transform: showH1 && 'translateX(200px)', opacity: showH1 && 0 },
+    to: { transform: 'translateX(0)', opacity: 1 },
     // reset: true,
     reverse: flip,
 
@@ -75,7 +75,7 @@ const WhyBookingLane = forwardRef(({ ref }) => {
             <WhyBookingLaneContainer>
               <TextBlock>
                 <InView
-                  tag="div"
+                  tag='div'
                   onChange={onInViewChange}
                   threshold={1}
                   initialInView={true}
@@ -108,13 +108,13 @@ const WhyBookingLane = forwardRef(({ ref }) => {
                   <Img>
                     <Image
                       loader={imageLoader}
-                      src="WhyBookinglane-min.png"
+                      src='WhyBookinglane-min.png'
                       // className={styles.whyBookinglaneImage}
                       // style={{ width: "100%", height: "100%" }}
-                      alt="why bookinglane"
-                      width={"100%"}
-                      height={"100%"}
-                      layout="fill"
+                      alt='why bookinglane'
+                      width={'795%'}
+                      height={'512%'}
+                      // layout='fill'
                       // objectFit="contain"
                     />
                   </Img>
