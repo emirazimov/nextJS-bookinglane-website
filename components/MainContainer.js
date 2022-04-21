@@ -113,7 +113,7 @@ const MainContainer = ({ children, keywords }) => {
           gtag("config", "G-N6ZS1BMP1J")`}
         </script>
 
-        <script>
+        {/* <script>
           {`
       var chatbox = document.getElementById('fb-customer-chat');
       chatbox.setAttribute("page_id", "100117945015631");
@@ -137,7 +137,7 @@ const MainContainer = ({ children, keywords }) => {
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));`}
-        </script>
+        </script> */}
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script
           async
@@ -153,10 +153,10 @@ const MainContainer = ({ children, keywords }) => {
       </Head>
       <div>{children}</div>
       {/* <!-- Messenger Chat Plugin Code --> */}
-      <div id="fb-root"></div>
+      {/* <div id="fb-root"></div> */}
 
       {/* <!-- Your Chat Plugin code --> */}
-      <div id="fb-customer-chat" className="fb-customerchat"></div>
+      {/* <div id="fb-customer-chat" className="fb-customerchat"></div> */}
 
       {/* <Script
         strategy="lazyOnload"
