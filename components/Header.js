@@ -514,7 +514,7 @@ const HeaderWithBackground = styled.header`
   margin: 0;
   /* padding: 40px 0 0 0; */
 
-  background: url(${Bg}) center top no-repeat;
+  background: url(${Bg});
   background-size: cover;
   /* display: flex;
   flex-direction: column;

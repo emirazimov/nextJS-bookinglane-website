@@ -6,8 +6,13 @@ import {
   fork,
   spawn,
   all,
+  takeLatest,
 } from "redux-saga/effects"
 import { getCountries } from "../../pages/api/api"
+import {
+  loadUserPaymentDetailsInfo,
+  setUserPaymentBillingInformation,
+} from "./paymentFormSaga"
 
 function* getInstaImages() {
   // const request = yield call(
@@ -31,12 +36,22 @@ export function* setCountries() {
   yield put({ type: "SET_COUNTRIES", payload: response })
 }
 
-export function* loadInitalInfoWatcherSaga() {
-  yield all([fork(setRequestDemo), fork(setContuctUs), fork(setCountries)])
+export function* loadInitialInfoWatcherSaga() {
+  // yield all([
+  //   fork(setRequestDemo),
+  //   fork(setContuctUs),
+  //   fork(setCountries),
+  //   fork(loadUserPaymentDetailsInfo),
+  //   fork(setUserPaymentBillingInformation),
+  // ])
+  yield all([
+    takeEvery("GET_PAYMENT_DETAILS_INFO", loadUserPaymentDetailsInfo),
+    takeEvery("SET_PAYMENT_DETAILS_INFO", setUserPaymentBillingInformation),
+  ])
 }
 
 export default function* rootSaga() {
-  const sagas = [loadInitalInfoWatcherSaga]
+  const sagas = [loadInitialInfoWatcherSaga]
   const retrySagas = yield sagas.map((saga) => {
     return spawn(function* () {
       while (true) {
