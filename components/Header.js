@@ -219,9 +219,19 @@ const Header = ({
           <FirstRowInHeader>
             <IconContainer onClick={scrollToSectionHeader}>
               {!isMobile ? (
-                <HeaderBookingIcon />
+                <a
+                  href="https://bookinglane.com/"
+                  style={{ textDecoration: "none" }}
+                >
+                  <HeaderBookingIcon />
+                </a>
               ) : (
-                <HeaderBookingIconForMobile />
+                <a
+                  href="https://bookinglane.com/"
+                  style={{ textDecoration: "none" }}
+                >
+                  <HeaderBookingIconForMobile />
+                </a>
               )}
             </IconContainer>
             {!isSmallDevice ? (
