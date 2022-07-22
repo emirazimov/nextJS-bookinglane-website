@@ -1,73 +1,77 @@
-import { useEffect, useState } from 'react'
-import { Provider, useDispatch, useSelector } from 'react-redux'
-import Header from '../components/Header'
-import { Helmet } from 'react-helmet'
-import store from '../redux'
-import dynamic from 'next/dynamic'
-import MainContainer from '../components/MainContainer'
-import Script from 'next/script'
-import { scroller } from 'react-scroll'
-import { useSpring, animated } from 'react-spring'
-import { useCallback } from 'react'
-import loadable from '@loadable/component'
+import { useEffect, useState } from "react"
+import { Provider, useDispatch, useSelector } from "react-redux"
+import Header from "../components/Header"
+import { Helmet } from "react-helmet"
+import store from "../redux"
+import dynamic from "next/dynamic"
+import MainContainer from "../components/MainContainer"
+import Script from "next/script"
+import { scroller } from "react-scroll"
+import { useSpring, animated } from "react-spring"
+import { useCallback } from "react"
+import loadable from "@loadable/component"
+// import Specials from "../components/Specials"
 
 // const Header = dynamic(() => import("../components/Header"))
-const WhyBookingLane = loadable(() => import('../components/WhyBookingLane'), {
+const WhyBookingLane = loadable(() => import("../components/WhyBookingLane"), {
   fallback: <div>Loading...</div>,
 })
-const Pricing = loadable(() => import('../components/Pricing'), {
+const Pricing = loadable(() => import("../components/Pricing"), {
   fallback: <div>Loading...</div>,
 })
-const WebsiteWidget = loadable(() => import('../components/WebsiteWidget'), {
+const WebsiteWidget = loadable(() => import("../components/WebsiteWidget"), {
   fallback: <div>Loading...</div>,
 })
 const DownloadMobileApp = loadable(
-  () => import('../components/DownloadMobileApp'),
+  () => import("../components/DownloadMobileApp"),
   {
     fallback: <div>Loading...</div>,
   }
 )
-const AboutUs = loadable(() => import('../components/AboutUs'), {
+const AboutUs = loadable(() => import("../components/AboutUs"), {
   fallback: <div>Loading...</div>,
 })
-const Instagram = loadable(() => import('../components/Instagram'), {
+const Instagram = loadable(() => import("../components/Instagram"), {
   fallback: <div>Loading...</div>,
 })
-const Footer = loadable(() => import('../components/Footer'), {
+const Footer = loadable(() => import("../components/Footer"), {
   fallback: <div>Loading...</div>,
 })
-const PartneredWith = loadable(() => import('../components/PartneredWith'), {
+const PartneredWith = loadable(() => import("../components/PartneredWith"), {
   fallback: <div>Loading...</div>,
+})
+const Specials = dynamic(() => import("../components/Specials"), {
+  ssr: false,
 })
 
 const scrollToSectionHeader = () => {
-  scroller.scrollTo('Header', {
+  scroller.scrollTo("Header", {
     duration: 800,
     delay: 0,
-    smooth: 'easeInOutQuart',
+    smooth: "easeInOutQuart",
   })
 }
 
 const scrollToSectionWhyBookinglane = () => {
-  scroller.scrollTo('WhyBookinglane', {
+  scroller.scrollTo("WhyBookinglane", {
     duration: 800,
     delay: 0,
-    smooth: 'easeInOutQuart',
+    smooth: "easeInOutQuart",
   })
 }
 const scrollToSectionPricing = () => {
-  scroller.scrollTo('Pricing', {
+  scroller.scrollTo("Pricing", {
     duration: 800,
     delay: 0,
-    smooth: 'easeInOutQuart',
+    smooth: "easeInOutQuart",
   })
 }
 
 const scrollToSectionAboutUs = () => {
-  scroller.scrollTo('AboutUs', {
+  scroller.scrollTo("AboutUs", {
     duration: 800,
     delay: 0,
-    smooth: 'easeInOutQuart',
+    smooth: "easeInOutQuart",
   })
 }
 
@@ -82,7 +86,7 @@ function App() {
     <>
       <MainContainer>
         <Provider store={store}>
-          <div className='App'>
+          <div className="App">
             <header>
               <Header
                 scrollToSectionHeader={scrollToSectionHeader}
@@ -101,36 +105,39 @@ function App() {
 
             <main>
               <div onScroll={onScroll}>
-                <section className='WhyBookinglane'>
+                <section className="WhyBookinglane">
                   <WhyBookingLane offset={scroll} start={0} end={0.5} />
                 </section>
-                <section className='Pricing'>
+                <section className="Pricing">
                   <Pricing />
                 </section>
-                <section className='WebsiteWidget'>
+                <section className="Specials">
+                  <Specials />
+                </section>
+                <section className="WebsiteWidget">
                   <WebsiteWidget />
                 </section>
                 {/* <div className="Tutorial">
           <Tutorial />
         </div> */}
-                <section className='DownloadMobileApp'>
+                <section className="DownloadMobileApp">
                   <DownloadMobileApp />
                 </section>
-                <section className='AboutUs'>
+                <section className="AboutUs">
                   <AboutUs />
                 </section>
                 {/* <div className="OurTeam">
           <OurTeam />
         </div> */}
-                <section className='Instagram'>
+                <section className="Instagram">
                   <Instagram />
                 </section>
-                <section className='PartneredWith'>
+                <section className="PartneredWith">
                   <PartneredWith />
                 </section>
               </div>
             </main>
-            <footer className='Footer'>
+            <footer className="Footer">
               <Footer />
             </footer>
           </div>
