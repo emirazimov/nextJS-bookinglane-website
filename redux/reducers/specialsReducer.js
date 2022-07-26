@@ -15,6 +15,7 @@ const initial = {
   isSendingBillingInformation: false,
   successfullySended: false,
   failedSent: false,
+  failMessage: "",
 }
 
 export const SpecialsReducer = (state = initial, action) => {
@@ -38,6 +39,11 @@ export const SpecialsReducer = (state = initial, action) => {
       //   console.log(...action.payload)
       return { ...state, failedSent: action.payload }
     }
+    case "SET_FAIL_MESSAGE": {
+      //   console.log(...action.payload)
+      return { ...state, failMessage: action.payload }
+    }
+
     default:
       return state
   }

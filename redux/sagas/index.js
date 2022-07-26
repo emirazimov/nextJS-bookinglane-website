@@ -13,6 +13,7 @@ import {
   loadUserPaymentDetailsInfo,
   setUserPaymentBillingInformation,
 } from "./paymentFormSaga"
+import { setSpecials } from "./specialsSaga"
 
 function* getInstaImages() {
   // const request = yield call(
@@ -47,7 +48,7 @@ export function* loadInitialInfoWatcherSaga() {
   yield all([
     takeEvery("GET_PAYMENT_DETAILS_INFO", loadUserPaymentDetailsInfo),
     takeEvery("SET_PAYMENT_DETAILS_INFO", setUserPaymentBillingInformation),
-    takeEvery("SET_PAYMENT_DETAILS_INFO", setUserPaymentBillingInformation),
+    takeEvery("SET_SPECIALS", setSpecials),
   ])
 }
 

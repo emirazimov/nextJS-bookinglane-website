@@ -1,7 +1,7 @@
 export async function setSpecialsApi(body) {
   try {
     const response = await fetch(
-      `https://apidev.bookinglane.com/api/forms/special-offer`,
+      `https://api.bookinglane.com/api/forms/special-offer`,
       {
         method: "POST",
         headers: {
@@ -13,12 +13,14 @@ export async function setSpecialsApi(body) {
         }),
       }
     )
-    console.log(response.status)
-    return response.status
+    // console.log(response.status)
+    return response
     // var data = await response.json()
     // return data
   } catch (error) {
-    return error.response.status
+    if (error.response) {
+      return error.response
+    }
     // console.log(error)
   }
 

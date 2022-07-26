@@ -27,7 +27,7 @@ import { setUserPaymentBillingInformationActionCreator } from "../actions/setUse
 //   yield put(setUsersPaymentDetailsActionCreator(loadedInfo))
 // }
 
-export function* setUserPaymentBillingInformation(action) {
+export function* setSpecials(action) {
   //   console.log(data)
   //   yield console.log("ay yo im here")
 
@@ -38,7 +38,7 @@ export function* setUserPaymentBillingInformation(action) {
 
   const result = yield call(setSpecialsApi, action.payload.inputsValue)
 
-  if (result == 200) {
+  if (result.status == 200) {
     yield put({
       type: "SET_IS_SENDING_BILLING_INFORMATION",
       payload: false,
@@ -57,6 +57,10 @@ export function* setUserPaymentBillingInformation(action) {
     yield put({
       type: "SET_IS_FAILED_SENT",
       payload: true,
+    })
+    yield put({
+      type: "SET_FAIL_MESSAGE",
+      payload: result.data,
     })
   }
 

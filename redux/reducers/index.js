@@ -4,6 +4,7 @@ import { CountriesReducer } from "./countries-reducer"
 import { instaImagesReducer } from "./instaImagesReducer"
 import { PaymentFormReducer } from "./paymentFormReducer"
 import { RequestDemoReducer } from "./RequestDemoReducer"
+import { SpecialsReducer } from "./specialsReducer"
 // const initial = {
 //   people: [],
 //   planets: [],
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   contuctUs: ContuctUsReducer,
   countriesApi: CountriesReducer,
   paymentForm: PaymentFormReducer,
+  specials: SpecialsReducer,
 })
 
 export default rootReducer

@@ -6,7 +6,8 @@ import { CheckmarkPricingBlock, CloseIconSvg } from "../public/icons"
 import style from "../styles/PaymentForm.module.scss"
 import Cleave from "cleave.js/react"
 import Modal from "@mui/material/Modal"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import ReactInputMask from "react-input-mask"
 
 const Specials = () => {
   function imageLoader({ src, width, height }) {
@@ -21,8 +22,14 @@ const Specials = () => {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
+  const [openInteractive, setOpenInteractive] = useState(false)
+  const handleOpenInteractive = () => setOpenInteractive(true)
+  const handleCloseInteractive = () => setOpenInteractive(false)
+
   const [firstName, setFirsName] = useState("")
   const [lastName, setLastName] = useState("")
+  const [companyName, setCompanyName] = useState("")
+  const [companyWebsite, setCompanyWebsite] = useState("")
   const [email, setEmail] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
   const [address, setAddress] = useState("")
@@ -33,6 +40,7 @@ const Specials = () => {
   const [month, setMonth] = useState("")
   const [year, setYear] = useState("")
   const [cvc, setCvc] = useState("")
+  const [cardType, setCardType] = useState("")
   const handleCardNumber = (e) => {
     // setCreditCardNum(e.target.rawValue)
     // setCardForPaymentSubmit(e.target.value)
@@ -41,8 +49,8 @@ const Specials = () => {
     setCardNumber(e.target.value)
   }
 
-  function handleMonth(e) {
-    if (e < 12) {
+  const handleMonth = (e) => {
+    if (e <= 12) {
       setMonth(e)
     } else {
       return
@@ -51,31 +59,36 @@ const Specials = () => {
   }
 
   const handleType = (type) => {
-    // setCardType(type)
+    setCardType(type)
     // console.log(type)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     // handleOpen()
+    handleOpenInteractive()
     dispatch({
-      // type: "SET_PAYMENT_DETAILS_INFO",
+      type: "SET_SPECIALS",
       payload: {
         // paymentId,
         inputsValue: {
           //   ...paymentData,
           firstName: firstName,
           lastName: lastName,
+          companyName: companyName,
+          companyWebsite: companyWebsite,
           email: email,
           phone: phoneNumber,
           address: address,
           city: city,
           state: state,
           zip: zip,
-          cardNumber: cardNumber.replace(/\s/g, ""),
-          month: month,
-          year: year,
-          cvc: cvc,
+          cardInfo: {
+            number: cardNumber.replace(/\s/g, ""),
+            expYear: year,
+            expMonth: month,
+            cvc: cvc,
+          },
           // tipAmount: grativityAmount,
           // paymentId: parseInt(paymentId),
         },
@@ -83,23 +96,27 @@ const Specials = () => {
     })
   }
 
+  const specials = useSelector((state) => state.specials)
+
+  const [iAgree, setIAgree] = useState(false)
+
   return (
     <WrapperWtihBackground>
       <Wrapper>
         <ImagesBlock>
-          <div
-            style={{ width: "500px", height: "400px", position: "relative" }}
+          <ImageContainer
+          // style={{ width: "700px", height: "405px", position: "relative" }}
           >
             <Image
               loader={imageLoader}
-              src="specialsImages.svg"
+              src="specialsImages.png"
               alt="mobile phones"
               // style={{ width: "100%", height: "100%" }}
               // width={"100%"}
               // height={"100%"}
               layout="fill"
             />
-          </div>
+          </ImageContainer>
         </ImagesBlock>
         <TextBlock>
           <TextBlockContainer>
@@ -110,7 +127,7 @@ const Specials = () => {
                 <CheckmarkSize>
                   <CheckmarkPricingBlock />
                 </CheckmarkSize>
-                <ItemTitle>Website Landing Page</ItemTitle>
+                <ItemTitle>Website Landing Page & SEO</ItemTitle>
               </ItemContainer>
               <ItemContainer>
                 <CheckmarkSize>
@@ -122,12 +139,215 @@ const Specials = () => {
                 <CheckmarkSize>
                   <CheckmarkPricingBlock />
                 </CheckmarkSize>
-                <ItemTitle>2-Month Mobile App Subscription</ItemTitle>
+                <ItemTitle>12-Month Mobile App Subscription</ItemTitle>
               </ItemContainer>
             </WhatYoullGet>
             <ButtonClaimNow onClick={handleOpen}>Claim Now</ButtonClaimNow>
           </TextBlockContainer>
         </TextBlock>
+
+        <Modal open={openInteractive} onClose={handleCloseInteractive}>
+          {specials.isSendingBillingInformation == true ? (
+            // <div
+            // style={{
+
+            //   width: "100%",
+            //   height: "100vh",
+            //   position: "absolute",
+            //   // top: "50%",
+            //   // left: "50%",
+            //   background: "white",
+            //   // opacity: "0.5",
+            // }}
+            // >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                style={{
+                  width: "300px",
+                  height: "60%",
+                  position: "relative",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: "12px",
+                  // top: "33%",
+                  // left: "42%",
+                  background: "white",
+                  // opacity: "0.5",
+                }}
+              >
+                <h3>...Loading</h3>
+              </div>
+            </div>
+          ) : (
+            <>
+              {specials.successfullySended && (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "300px",
+                      height: "60%",
+                      position: "relative",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "12px",
+                      // top: "33%",
+                      // left: "42%",
+                      background: "white",
+                      // opacity: "0.5",
+                    }}
+                  >
+                    <svg
+                      width="53"
+                      height="53"
+                      viewBox="0 0 123 123"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="61.5"
+                        cy="61.5"
+                        r="58"
+                        stroke="#219653"
+                        stroke-width="7"
+                      />
+                      <path
+                        d="M41 61.4996L47.3088 54.9384L56.7692 64.7796L75.6923 45.0996L82 51.6596L56.7692 77.8996L41 61.4996Z"
+                        fill="#219653"
+                      />
+                    </svg>
+
+                    <h1
+                      style={{
+                        fontSize: "19px",
+                        color: "black",
+                        textAlign: "center",
+                        // marginTop: "20px",
+                      }}
+                    >
+                      You are all set! we will get in touch with you in the next
+                      24-48 hours.
+                    </h1>
+
+                    <button
+                      style={{
+                        width: "90%",
+                        height: "40px",
+                        position: "absolute",
+                        bottom: "20px",
+                        background: "#201144",
+                        color: "white",
+                        borderRadius: "10px",
+                        cursor: "pointer",
+                      }}
+                      onClick={handleCloseInteractive}
+                    >
+                      OK
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {specials.failedSent && (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "300px",
+                      height: "60%",
+                      position: "relative",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "12px",
+                      // top: "33%",
+                      // left: "42%",
+                      background: "white",
+                      // opacity: "0.5",
+                    }}
+                  >
+                    <svg
+                      width="53"
+                      height="53"
+                      viewBox="0 0 123 123"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="61.5"
+                        cy="61.5"
+                        r="58"
+                        stroke="#FB4A3C"
+                        stroke-width="7"
+                      />
+                      <path
+                        d="M45.0996 51.6596L51.6596 45.0996L77.8996 71.3396L71.3396 77.8996L45.0996 51.6596Z"
+                        fill="#FB4A3C"
+                      />
+                      <path
+                        d="M51.6596 77.8996L45.0996 71.3396L71.3396 45.0996L77.8996 51.6596L51.6596 77.8996Z"
+                        fill="#FB4A3C"
+                      />
+                    </svg>
+
+                    <h1
+                      style={{
+                        color: "black",
+                        textAlign: "center",
+                        fontSize: "19px",
+                      }}
+                    >
+                      {specials.failMessage ? specials.failMessage : `Failed`}
+                    </h1>
+                    <button
+                      style={{
+                        width: "90%",
+                        height: "40px",
+                        position: "absolute",
+                        bottom: "20px",
+                        background: "#201144",
+                        color: "white",
+                        borderRadius: "10px",
+                        cursor: "pointer",
+                      }}
+                      onClick={handleCloseInteractive}
+                    >
+                      OK
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </Modal>
+
         <Modal open={open} onClose={handleClose}>
           <div
             style={{
@@ -139,16 +359,16 @@ const Specials = () => {
             }}
             // onClick={handleClose}
           >
-            <form
+            <Form
               // className={style.wrapper}
               onSubmit={handleSubmit}
-              style={{
-                width: "400px",
-                background: "white",
-                padding: "23px",
-                borderRadius: "13px",
-                // pointerEvents: "none",
-              }}
+              // style={{
+              //   width: "400px",
+              //   background: "white",
+              //   padding: "23px",
+              //   borderRadius: "13px",
+              //   // pointerEvents: "none",
+              // }}
             >
               <div className={style.billingInformationContainer}>
                 <div
@@ -181,6 +401,25 @@ const Specials = () => {
                     required
                     onChange={(event) => {
                       setLastName(event.target.value)
+                    }}
+                  />
+                </div>
+                <div className={style.companyNameContainer}>
+                  <input
+                    className={style.companyNameInput}
+                    placeholder="Company Name"
+                    required
+                    onChange={(event) => {
+                      setCompanyName(event.target.value)
+                    }}
+                  />
+                </div>
+                <div className={style.companyWebsiteContainer}>
+                  <input
+                    className={style.companyWebsiteInput}
+                    placeholder="Company Website"
+                    onChange={(event) => {
+                      setCompanyWebsite(event.target.value)
                     }}
                   />
                 </div>
@@ -265,34 +504,113 @@ const Specials = () => {
                   />
                 </div>
                 <div className={style.monthAndYearAndCvcContainer}>
-                  <input
-                    type="number"
-                    className={style.monthInput}
-                    placeholder="Month"
-                    required
+                  <ReactInputMask
+                    name="paymentInfoMonth"
+                    // ref={register}
+                    mask="99"
+                    autoComplete="off"
                     onChange={(event) => {
                       handleMonth(event.target.value)
                     }}
-                  />
-                  <input
-                    type="number"
-                    className={style.yearInput}
-                    placeholder="Year"
-                    required
+                    // defaultValue={null}
+                    // value={month}
+                  >
+                    {() => (
+                      <input
+                        // type="number"
+                        className={style.monthInput}
+                        placeholder="Month"
+                        required
+                        // onChange={(event) => {
+                        //   handleMonth(event.target.value)
+                        // }}
+                      />
+                    )}
+                  </ReactInputMask>
+                  <ReactInputMask
+                    name="paymentInfoYear"
+                    // ref={register}
+                    mask="99"
+                    autoComplete="off"
                     onChange={(event) => {
                       setYear(event.target.value)
                     }}
-                  />
-                  <input
-                    type="number"
-                    className={style.cvcInput}
-                    placeholder="Cvc"
-                    required
+                  >
+                    {() => (
+                      <input
+                        // type="number"
+                        className={style.yearInput}
+                        placeholder="Year"
+                        required
+                        // onChange={(event) => {
+                        //   setYear(event.target.value)
+                        // }}
+                      />
+                    )}
+                  </ReactInputMask>
+                  <ReactInputMask
+                    name="paymentInfoCvc"
+                    // ref={register}
+                    mask={cardType == "amex" ? "9999" : "999"}
+                    autoComplete="off"
                     onChange={(event) => {
+                      // console.log(cardType)
                       setCvc(event.target.value)
                     }}
-                  />
+                    // defaultValue={formSummary.paymentInfo.cvc}
+                  >
+                    {() => {
+                      return (
+                        <input
+                          // type="number"
+                          className={style.cvcInput}
+                          placeholder="Cvc"
+                          required
+                          // onChange={(event) => {
+                          //   setCvc(event.target.value)
+                          // }}
+                        />
+                      )
+                    }}
+                  </ReactInputMask>
                 </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    onClick={() => setIAgree(!iAgree)}
+                    checked={iAgree}
+                    id="input"
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      display: "block",
+                      margin: "0",
+                      marginTop: "10px",
+                      marginRight: "30px",
+                      cursor: "pointer",
+                    }}
+                  />
+                  <label
+                    htmlFor="input"
+                    style={{
+                      width: "100%",
+                      // marginTop: "10px",
+                      // marginBottom: "20px",
+                      // fontWeight: "400",
+                    }}
+                  >
+                    I agree that the $599 special is non-refundable
+                  </label>
+
+                  {/* <span style={{ marginTop: "-5px" }}></span> */}
+                </div>
+                {/* <div>iAgree</div> */}
                 {/* {paymentData?.allowTip && (
               <div className={style.addTip}>
                 <label className={style.switch}>
@@ -326,8 +644,13 @@ const Specials = () => {
 
                 <input
                   type="submit"
-                  // value={`Pay $${paymentData?.invoiceReservationInfo?.total}`}
+                  value="Pay $599.00"
                   className={style.payButton}
+                  style={{
+                    borderRadius: "10px",
+                    opacity: iAgree ? "1" : "0.5",
+                  }}
+                  disabled={iAgree ? false : true}
                   // onClick={(e) => {
                   //   e.preventDefault()
 
@@ -375,7 +698,7 @@ const Specials = () => {
                   // }}
                 />
               </div>
-            </form>
+            </Form>
           </div>
         </Modal>
       </Wrapper>
@@ -397,28 +720,77 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 1385px) {
+    margin: 0px 45px;
+  }
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 620px) {
+    margin: 0px 16px;
+  }
 `
 const ImagesBlock = styled.div`
   width: 50%;
   display: flex;
   justify-content: center;
+  @media (max-width: 1024px) {
+    order: 2;
+    width: 100%;
+    margin-top: 40px;
+  }
 `
 const TextBlock = styled.div`
   width: 50%;
   display: flex;
   justify-content: center;
+  @media (max-width: 1024px) {
+    order: 1;
+    width: 100%;
+  }
 `
+const ImageContainer = styled.div`
+  width: 700px;
+  height: 405px;
+  position: relative;
+  @media (max-width: 1385px) {
+    height: 305px;
+  }
+  @media (max-width: 1024px) {
+    height: 405px;
+  }
+  @media (max-width: 748px) {
+    height: 305px;
+  }
+  @media (max-width: 531px) {
+    height: 230px;
+  }
+  @media (max-width: 411px) {
+    height: 200px;
+  }
+`
+
 const TextBlockContainer = styled.div`
   width: 58%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-width: 1353px) {
+    width: auto;
+  }
+  /* @media (max-width: 979px) {
+    width: 88%;
+  }
+  @media (max-width: 893px) {
+    width: 94%;
+  } */
 `
 
 const Title = styled.p`
   font-weight: 700;
   line-height: 33px;
-  font-size: calc(21px + (7 + 7 * 0.7) * ((46vw - 620px) / 1520));
+  font-size: 22px;
   margin-top: 0;
   margin-bottom: 40px;
 `
@@ -430,6 +802,9 @@ const WhatYoullGetTitle = styled.span`
   line-height: 150%;
   color: #000000;
   margin-bottom: 23px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
 `
 const ItemContainer = styled.div`
   display: flex;
@@ -439,8 +814,10 @@ const ItemContainer = styled.div`
 `
 
 const CheckmarkSize = styled.div`
-  width: 35px;
-  height: 35px;
+  min-width: 35px;
+  min-height: 35px;
+  max-width: 35px;
+  max-height: 35px;
   margin-right: 20px;
 `
 const ItemTitle = styled.span`
@@ -462,5 +839,25 @@ const ButtonClaimNow = styled.button`
   line-height: 150%;
   color: #ffffff;
   cursor: pointer;
+  @media (max-width: 1024px) {
+    margin-left: 0;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+  /* @media (max-width: 404px) {
+    margin-left: 0;
+    margin: 0 auto;
+  } */
 `
+
+const Form = styled.form`
+  width: 400px;
+  background: white;
+  padding: 23px;
+  border-radius: 13px;
+  @media (max-width: 420px) {
+    width: 300px;
+  }
+`
+
 export default Specials

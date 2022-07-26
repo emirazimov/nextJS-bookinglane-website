@@ -1,15 +1,15 @@
-import styled from 'styled-components'
-import { css } from 'styled-components'
+import styled from "styled-components"
+import { css } from "styled-components"
 // import DownloadMobileAppImg2 from "../public/DownloadMobileApp-min.png"
 import {
   AppstoreIcon,
   AppstoreIconForMobile,
   GooglePlayIcon,
   GooglePlayIconForMobile,
-} from '../public/icons'
-import { useMediaQuery } from '@material-ui/core'
-import ScrollAnimation from 'react-animate-on-scroll'
-import Image from 'next/image'
+} from "../public/icons"
+import { useMediaQuery } from "@material-ui/core"
+import ScrollAnimation from "react-animate-on-scroll"
+import Image from "next/image"
 
 function imageLoader({ src, width, height }) {
   // const relativeSrc = (src) => src.split("/").pop()
@@ -18,7 +18,7 @@ function imageLoader({ src, width, height }) {
 }
 
 const DownloadMobileApp = () => {
-  const smallIcons = useMediaQuery('(max-width: 436px)')
+  const smallIcons = useMediaQuery("(max-width: 436px)")
 
   return (
     <MainContainerWithStyle>
@@ -29,8 +29,8 @@ const DownloadMobileApp = () => {
             <ContainerForButtons>
               {/* <ScrollAnimation animateIn="fadeInLeft" duration={3} delay={300}> */}
               <a
-                href='https://apps.apple.com/app/id1560973031'
-                style={{ textDecoration: 'none' }}
+                href="https://apps.apple.com/app/id1560973031"
+                style={{ textDecoration: "none" }}
               >
                 <AppStoreButton>
                   {!smallIcons ? <AppstoreIcon /> : <AppstoreIconForMobile />}
@@ -47,8 +47,8 @@ const DownloadMobileApp = () => {
               {/* </ScrollAnimation> */}
               {/* <ScrollAnimation animateIn="fadeInRight"> */}
               <a
-                href='https://play.google.com/store/apps/details?id=com.bookinglane.manager'
-                style={{ textDecoration: 'none' }}
+                href="https://play.google.com/store/apps/details?id=com.bookinglane.manager"
+                style={{ textDecoration: "none" }}
               >
                 <GooglePlayButton>
                   {!smallIcons ? (
@@ -76,11 +76,11 @@ const DownloadMobileApp = () => {
               // alt='Download Mobile App'
               // style={{ width: '100%', height: '100%' }}
               loader={imageLoader}
-              src='DownloadMobileApp-min.png'
-              alt='Download Mobile App'
+              src="DownloadMobileApp-min.png"
+              alt="Download Mobile App"
               // style={{ width: "100%", height: "100%" }}
-              width={'655%'}
-              height={'407%'}
+              width={"655%"}
+              height={"407%"}
               // layout='fill'
             />
           </ImgBlock>
@@ -104,7 +104,7 @@ const Wrapper = styled.div`
   @media (max-width: 1457px) {
     margin-left: 45px;
   }
-  @media (max-width: 679px) {
+  @media (max-width: 879px) {
     margin-left: 0px;
   }
 `
@@ -115,7 +115,7 @@ const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   /* padding-top: 170px; */
-  @media (max-width: 679px) {
+  @media (max-width: 879px) {
     flex-direction: column;
   }
 `
@@ -125,10 +125,12 @@ const TextAndReferences = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 903px) {
+
+  @media (max-width: 961px) {
     height: 130px;
   }
-  @media (max-width: 679px) {
+
+  @media (max-width: 879px) {
     order: 2;
     height: 110px;
     margin-bottom: 30px;
@@ -200,7 +202,7 @@ const AppStoreButton = styled.button`
     background: rgba(255, 255, 255, 0.1);
   } */
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -200px;
@@ -248,7 +250,7 @@ const GooglePlayButton = styled.button`
     background: rgba(255, 255, 255, 0.1);
   } */
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -200px;
@@ -297,8 +299,24 @@ const ImgBlock = styled.div`
 
   margin: 0;
   padding: 0;
-  @media (max-width: 679px) {
+  /* @media (max-width: 961px) {
+    width: 555px;
+    height: 307px;
+  } */
+  @media (max-width: 879px) {
     order: 1;
+  }
+  @media (max-width: 673px) {
+    width: 455px;
+    height: 300px;
+  }
+  @media (max-width: 479px) {
+    width: 310px;
+    height: 230px;
+  }
+  @media (max-width: 365px) {
+    width: 310px;
+    height: 230px;
   }
 `
 const Img = styled.img`
